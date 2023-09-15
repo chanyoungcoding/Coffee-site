@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap');
 
-$coffe-color: #553830;
-$coffee-backgroundColor: #53565A;
+$coffee-backgroundColor: #313131;
 
 .navbar {
   display: flex;
@@ -9,11 +8,11 @@ $coffee-backgroundColor: #53565A;
   width: 80%;
   margin: 50px auto;
   position: relative;
-  background-color: $coffee-backgroundColor;
 
   .navbar__logo {
     position: absolute;
     top: -30px;
+    z-index: 1;
 
     img {
       padding: 30px;
@@ -25,19 +24,82 @@ $coffee-backgroundColor: #53565A;
   .navbar__li {
     flex-grow: 1;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     font-size: 20px;
     font-family: 'Roboto Mono', monospace;
 
-    li {
-      padding: 34px 30px;
+    .li__inner {
+      width: 50%;
+      overflow-x: hidden;
+
+      .li__left,
+      .li__right {
+        background-color: $coffee-backgroundColor;
+        border-radius: 50px;
+        transition: transform .6s;
+
+        li {
+          padding: 35px;
+          color: white;
+    
+          &:hover {
+            color: #7e6744;
+          }
+    
+          &:active {
+            transform: scale(0.9);
+          }
+        }
+
+        &.visible {
+          transform: translateX(0px);
+        }
+      }
+
+      .li__left,
+      .li__right {
+        display: flex;
+        justify-content: center;
+        border-radius: 50px;
+      }
+
+      .li__left {
+        transform: translateX(700px);
+      }
+
+      .li__right {
+        transform: translateX(-700px);
+
+      }
     }
 
-    .li__left,
-    .li__right {
-      flex-grow: 1;
-      display: flex;
-      justify-content: center;
+
+    @media screen and (max-width: 1300px) {
+      flex-direction: column;
+      align-items: center;
+      padding-top: 100px;
+
+      .li__inner {
+        width: 70%;
+
+        .li__left,
+        .li__right {
+          transform: translate(0px);
+          opacity: 0;
+          transition: opacity .6s;
+
+          &.visible {
+            opacity: 1;
+          }
+        }
+
+        .li__left {
+          border-radius: 50px 50px 0px 0px;
+        }
+        .li__right {
+          border-radius: 0px 0px 50px 50px;
+        }
+      }
     }
   }
 }
