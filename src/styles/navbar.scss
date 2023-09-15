@@ -1,3 +1,43 @@
-p {
-  color: aqua;
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap');
+
+$coffe-color: #553830;
+$coffee-backgroundColor: #53565A;
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  margin: 50px auto;
+  position: relative;
+  background-color: $coffee-backgroundColor;
+
+  .navbar__logo {
+    position: absolute;
+    top: -30px;
+
+    img {
+      padding: 30px;
+      background-color: $coffee-backgroundColor;
+      border-radius: 100%;
+    }
+  }
+
+  .navbar__li {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-around;
+    font-size: 20px;
+    font-family: 'Roboto Mono', monospace;
+
+    li {
+      padding: 34px 30px;
+    }
+
+    .li__left,
+    .li__right {
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+    }
+  }
 }
