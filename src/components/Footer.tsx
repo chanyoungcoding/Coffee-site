@@ -11,7 +11,6 @@ const Footer:React.FC = () => {
       <div className="footer__inner">
         <div className="inner__introduce">
           <p>CHAN COFFEE - &#169; {getCurrentYear()}</p>
-          <p>hello</p>
         </div>
         <img src={coffeeIcon} alt="#" />
         <div className="inner__icon">

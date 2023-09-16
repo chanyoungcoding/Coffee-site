@@ -1,21 +1,41 @@
 $coffee-backgroundColor: #313131;
+$coffee-boxColor: #986C4A;
 
 .footer {
-  background-color: aqua;
+  background-color: $coffee-backgroundColor;
   .footer__inner {
     display: flex;
     justify-content: space-around;
     align-items: center;
     
     img {
-
+      background-color: #986C4A;
+      border-radius: 100%;
+      padding: 10px;
     }
     
     .inner__introduce {
+      font-size: 19px;
 
+      p {
+        color: $coffee-boxColor;
+      }
     }
 
     .inner__icon  {
+      display: flex;
+
+      a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+        border-radius: 10px 10px 0px 0px;
+        border-bottom: 7px solid $coffee-boxColor;
+        background-color: white;
+        margin-left: 15px;
+      }
     }
   }
 }
