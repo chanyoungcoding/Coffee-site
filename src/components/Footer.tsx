@@ -3,7 +3,7 @@ import { AiFillFacebook, AiFillInstagram, AiFillYoutube} from "react-icons/ai";
 import coffeeIcon from '../assets/coffeeicon.png'
 import '../styles/footer.scss'
 
-const getCurrentYear = () => new Date().getFullYear();
+const getCurrentYear = ():number => new Date().getFullYear();
 
 const Footer:React.FC = () => {
   return ( 
