@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@500&display=swap');
+
+.homeFirst {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Fira Sans', sans-serif;
+  .firstLeft {
+    margin: 70px 0px 0px 70px;
+    h1 {
+      font-size: 150px;
+      background: -webkit-linear-gradient(90deg, rgba(76,29,21,1) 0%, rgba(132,77,68,1) 48%, rgba(178,145,143,1) 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    h2 {
+      margin:35px 0px;
+      color: #361306;
+      font-size: 70px;
+    }
+    p {
+      font-size: 20px;
+      color: #B2918F;
+    }
+    .leftButton {
+      display: flex;
+      margin-top: 50px;
+      button {
+        border: none;
+        outline: none;
+        margin-right: 30px;
+        padding: 25px 50px;
+        border-radius: 15px;
+        background-color: #361306;
+        color: white;
+        font-size: 20px;
+      }
+    }
+  }
+  .firstRight {
+    .right__box {
+      position: relative;
+      width: 750px;
+      height: 700px;
+      margin: 50px 0px;
+      background-color: #E1D9D6;
+      border-radius: 80px 0px 0px 80px;
+      img {
+        width: 500px;
+        height: 500px;
+      }
+      .box__img1,
+      .box__img2 {
+        position: absolute;
+      }
+      .box__img1 {
+        top: 30px;
+        right: 60px;
+      }
+      .box__img2 {
+        bottom: 30px;
+        left: -10px;
+      }
+    }
+  }
+}
