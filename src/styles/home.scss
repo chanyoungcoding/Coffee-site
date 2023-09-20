@@ -5,7 +5,7 @@
   justify-content: space-between;
   font-family: 'Fira Sans', sans-serif;
   .firstLeft {
-    margin: 70px 0px 0px 70px;
+    margin: 70px 50px 0px 70px;
     h1 {
       font-size: 150px;
       background: -webkit-linear-gradient(90deg, rgba(76,29,21,1) 0%, rgba(132,77,68,1) 48%, rgba(178,145,143,1) 100%);
@@ -36,11 +36,33 @@
         font-size: 20px;
       }
     }
+    
+    @media screen and (max-width: 1300px) {
+      h1 {
+        font-size: 100px;
+      }
+      h2 {
+        font-size: 40px;
+      }
+      .leftButton {
+        flex-direction: column;
+        button {
+          margin-bottom: 20px;
+          padding: 10px 20px;
+          font-size: 15px;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 1300px) {
+    .firstLeft {
+      margin-top: 0px;
+    }  
   }
   .firstRight {
     .right__box {
       position: relative;
-      width: 750px;
+      width: 700px;
       height: 700px;
       margin: 50px 0px;
       background-color: #E1D9D6;
@@ -58,8 +80,28 @@
         right: 60px;
       }
       .box__img2 {
-        bottom: 30px;
-        left: -10px;
+        bottom: -30px;
+        left: -20px;
+      }
+
+      @media screen and (max-width: 1300px) {
+        img {
+          width: 380px;
+          height: 380px;
+        }
+        .box__img1 {
+          top: 30px;
+          left: 150px;
+        }
+        .box__img2 {
+          bottom: 120px;
+          left: -10px;
+        }
+      }
+    }
+    @media screen and (max-width: 1300px) {
+      .right__box {
+        margin: 0;
       }
     }
   }

@@ -14,13 +14,13 @@ const Footer:React.FC = () => {
         </div>
         <img src={coffeeIcon} alt="#" />
         <div className="inner__icon">
-          <a href="javascript:void(0)">
+          <a href="/">
             <AiFillFacebook size ="40"/>
           </a>
-          <a href="javascript:void(0)">
+          <a href="/">
             <AiFillInstagram size ="40"/>
           </a>
-          <a href="javascript:void(0)">
+          <a href="/">
             <AiFillYoutube size ="40"/>
           </a>
         </div>
