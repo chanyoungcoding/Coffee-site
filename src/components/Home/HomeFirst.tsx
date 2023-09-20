@@ -1,6 +1,5 @@
 import coffeecup from "../../assets/coffeecup1.png";
 import coffeecup1 from "../../assets/coffeecup2.png";
-import '../../styles/home.scss';
 
 const HomeFirst = () => {
   return ( 
