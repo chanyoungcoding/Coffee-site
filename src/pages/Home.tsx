@@ -2,6 +2,7 @@ import React from 'react';
 import '../styles/home.scss';
 
 import HomeFirst from "../components/Home/HomeFirst";
+import HomeThird from "../components/Home/HomeThird";
 import HomeSecond from "../components/Home/HomeSecond";
 
 const Home:React.FC = () => {
@@ -9,6 +10,7 @@ const Home:React.FC = () => {
     <div className="home">
       <HomeFirst/>
       <HomeSecond/>
+      <HomeThird/>
     </div>
   );
 }
