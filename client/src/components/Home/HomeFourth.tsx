@@ -1,4 +1,6 @@
-const HomeFourth = () => {
+import React from "react";
+
+const HomeFourth:React.FC = () => {
   return ( 
     <div className="homefourth">
       <h2>What Happens Here</h2>
