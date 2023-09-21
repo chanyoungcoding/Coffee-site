@@ -191,21 +191,32 @@
       }
     }
   }
-  .third__imgbox {
-    width: 1590px;
-    margin: 0 auto;
-    margin-top: 100px;
-    background-color: #B2918F;
-    .carousel-container {
-      display: flex;
-      overflow: hidden;
+
+  .swiper__containers {
+    width: 100%;
+    margin: 100px auto;
+    .carousel-slide {
+      img {
+        width: 440px;
+        height: 440px;
+        object-fit: cover;
+      }
+    }
+    @media screen and (max-width: 1750px) {
+      width: 1200px;
       .carousel-slide {
-        margin: 15px;
-        transition: transform 0.5s;
         img {
-          width: 500px;
-          height: 500px;
-          object-fit: cover;
+          width: 265px;
+          height: 265px;
+        }
+      }
+    }
+    @media screen and (max-width: 1200px) {
+      width: 800px;
+      .carousel-slide {
+        img {
+          width: 165px;
+          height: 165px;
         }
       }
     }

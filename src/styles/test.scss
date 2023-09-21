@@ -1,0 +1,31 @@
+
+.swiper__containers {
+  width: 1750px;
+  margin: 0 auto;
+  background-color: antiquewhite;
+  .carousel-slide {
+    img {
+      width: 400px;
+      height: 400px;
+      object-fit: cover;
+    }
+  }
+  @media screen and (max-width: 1750px) {
+    width: 1200px;
+    .carousel-slide {
+      img {
+        width: 265px;
+        height: 265px;
+      }
+    }
+  }
+  @media screen and (max-width: 1200px) {
+    width: 800px;
+    .carousel-slide {
+      img {
+        width: 165px;
+        height: 165px;
+      }
+    }
+  }
+}
