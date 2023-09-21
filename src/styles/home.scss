@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@500&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Zeyada&display=swap');
 
 
 // homeFirst 
@@ -214,6 +214,43 @@
         img {
           width: 165px;
           height: 165px;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+// homeFourth
+
+.homefourth {
+  text-align: center;
+  h1 {
+    margin-bottom: 60px;
+    font-size: 50px;
+    font-family: 'Fira Sans', sans-serif;
+  }
+  h2 {
+    margin-bottom: 10px;
+    font-size: 25px;
+    font-family: 'Zeyada', cursive;
+  }
+  .homefourth__container {
+    display: flex;
+    justify-content: space-around;
+    background-color: #B2918F;
+    .fourth__left,
+    .fourth__right {
+      .fourth__container {
+        display: flex;
+        .container__left {
+          margin-bottom: 20px;
+          h3 {
+            font-size: 30px;
+            margin-bottom: 5px;
+          }
         }
       }
     }
