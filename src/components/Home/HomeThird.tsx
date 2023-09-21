@@ -1,7 +1,7 @@
 import React from "react";
 import coffeeBox from "../../assets/coffeebox.jpeg"
 
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
+import { Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 
@@ -11,12 +11,18 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 
-const ImgBox: React.FC = () => {
+interface Imgbox {
+  imgsrc: string
+  imgintro: string
+  imghref: string
+}
+
+const ImgBox: React.FC<Imgbox> = ({imgsrc, imgintro, imghref}) => {
   return (
     <div className="carousel-slide">
-      <img src={coffeeBox} alt="#" />
-      <p>Vanilla Latte</p>
-      <a href="/">보러가기</a>
+      <img src={imgsrc} alt="#" />
+      <p>{imgintro}</p>
+      <a href={imghref}>보러가기</a>
     </div>
   );
 }
@@ -36,17 +42,36 @@ const HomeThird: React.FC = () => {
       <div className='swiper__containers'>
         <Swiper
           // install Swiper modules
-          modules={[Navigation, Pagination, Scrollbar, A11y]}
+          modules={[Autoplay]}
           spaceBetween={50}
           slidesPerView={4}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
         >
-          <SwiperSlide>{ImgBox}</SwiperSlide>
-          <SwiperSlide>{ImgBox}</SwiperSlide>
-          <SwiperSlide>{ImgBox}</SwiperSlide>
-          <SwiperSlide>{ImgBox}</SwiperSlide>
-          <SwiperSlide>{ImgBox}</SwiperSlide>
-          <SwiperSlide>{ImgBox}</SwiperSlide>
-          <SwiperSlide>{ImgBox}</SwiperSlide>
+          <SwiperSlide>
+            <ImgBox imghref='/' imgintro='coffee' imgsrc={coffeeBox}/>
+          </SwiperSlide>
+          <SwiperSlide>
+            <ImgBox imghref='/' imgintro='coffee' imgsrc={coffeeBox}/>
+          </SwiperSlide>
+          <SwiperSlide>
+            <ImgBox imghref='/' imgintro='coffee' imgsrc={coffeeBox}/>
+          </SwiperSlide>
+          <SwiperSlide>
+            <ImgBox imghref='/' imgintro='coffee' imgsrc={coffeeBox}/>
+          </SwiperSlide>
+          <SwiperSlide>
+            <ImgBox imghref='/' imgintro='coffee' imgsrc={coffeeBox}/>
+          </SwiperSlide>
+          <SwiperSlide>
+            <ImgBox imghref='/' imgintro='coffee' imgsrc={coffeeBox}/>
+          </SwiperSlide>
+          <SwiperSlide>
+            <ImgBox imghref='/' imgintro='coffee' imgsrc={coffeeBox}/>
+          </SwiperSlide>
+
         </Swiper>
       </div>
     </div>
