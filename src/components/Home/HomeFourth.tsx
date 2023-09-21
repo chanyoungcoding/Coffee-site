@@ -32,6 +32,24 @@ const HomeFourth = () => {
               <p>$29.5</p>
             </div>
           </div>
+          <div className="fourth__container">
+            <div className="container__left">
+              <h3>CAFFE LATTE</h3>
+              <p>Fresh Coffee and strong taste</p>
+            </div>
+            <div className="container__right">
+              <p>$29.5</p>
+            </div>
+          </div>
+          <div className="fourth__container">
+            <div className="container__left">
+              <h3>CAFFE LATTE</h3>
+              <p>Fresh Coffee and strong taste</p>
+            </div>
+            <div className="container__right">
+              <p>$29.5</p>
+            </div>
+          </div>
         </div>
         <div className="fourth__right">
           <div className="fourth__container">
@@ -42,6 +60,24 @@ const HomeFourth = () => {
               <div className="container__right">
                 <p>$29.5</p>
               </div>
+          </div>
+          <div className="fourth__container">
+            <div className="container__left">
+              <h3>CAFFE LATTE</h3>
+              <p>Fresh Coffee and strong taste</p>
+            </div>
+            <div className="container__right">
+              <p>$29.5</p>
+            </div>
+          </div>
+          <div className="fourth__container">
+            <div className="container__left">
+              <h3>CAFFE LATTE</h3>
+              <p>Fresh Coffee and strong taste</p>
+            </div>
+            <div className="container__right">
+              <p>$29.5</p>
+            </div>
           </div>
           <div className="fourth__container">
             <div className="container__left">
