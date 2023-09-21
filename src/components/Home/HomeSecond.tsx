@@ -1,3 +1,6 @@
+import coffeeBox from '../../assets/coffeebox.jpeg'
+import coffeeBox1 from '../../assets/coffeebox1.jpeg'
+
 const HomeSecond = () => {
   return ( 
     <div className="homesecond">
@@ -10,10 +13,14 @@ const HomeSecond = () => {
         </p>
       </div>
       <div className="second__right">
-        <img src="" alt="" />
-        <img src="" alt="" />
-        <img src="" alt="" />
-        <img src="" alt="" />
+        <div className="right__imgbox">
+          <img src={coffeeBox} alt="#" />
+          <img src={coffeeBox1} alt="#" />
+        </div>
+        <div className="right__imgbox">
+          <img src={coffeeBox} alt="#" />
+          <img src={coffeeBox1} alt="#" />
+        </div>
       </div>
     </div>
   );

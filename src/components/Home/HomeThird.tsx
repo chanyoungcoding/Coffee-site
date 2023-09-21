@@ -1,9 +1,10 @@
 import React from "react";
+import coffeeBox from "../../assets/coffeebox.jpeg"
 
 const ImgBox: React.FC = () => {
   return (
-    <div className="imgbox__inner">
-      <img src="" alt="#" />
+    <div className="carousel-slide">
+      <img src={coffeeBox} alt="#" />
       <p>Vanilla Latte</p>
       <a href="/">보러가기</a>
     </div>
@@ -29,7 +30,9 @@ const HomeThird: React.FC = () => {
         <li>COFFEE</li>
       </div>
       <div className="third__imgbox">
-        {imgBoxes}
+        <div className="carousel-container" id="tagContainer">
+          {imgBoxes}
+        </div>
       </div>
     </div>
   );
