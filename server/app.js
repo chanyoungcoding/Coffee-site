@@ -1,5 +1,20 @@
 const express = require('express');
 const cors = require('cors');
+const mongoose = require('mongoose');
+
+const Coffee = require('./models/coffee');
+
+//MongoDB 연결
+// const dbUrl = process.env.DB_URL;
+const dbUrl = "mongodb://127.0.0.1:27017/coffeeDB"
+
+mongoose.connect(dbUrl)
+  .then(() => {
+    console.log("CoffeeDB 연결");
+  })
+  .catch((e) => {
+    console.log(e);
+  });
 
 const app = express();
 
@@ -7,34 +22,12 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-let id = 2;
-const todoList = [
-  {
-    id: 1,
-    text: '할일 - 1',
-    done: false,
-  },
-  {
-    id: 2,
-    text: '할일 - 2',
-    done: false,
-  },
-  {
-    id: 3,
-    text: '할일 - 3',
-    done: false,
-  },
-]
-
-app.get('/', (req,res) => {
-  res.send('hello world')
-}) 
-
-app.get('/api/todo', (req,res) => {
-  res.json(todoList);
+app.get('/api/coffee', async (req,res) => {
+  const coffee = await Coffee.find({});
+  res.json(coffee);
 })
 
-app.post('/api/todo', (req,res) => {
+app.post('/api/coffee', (req,res) => {
   const {text, done} = req.body;
   todoList.push({
     id: id++,
