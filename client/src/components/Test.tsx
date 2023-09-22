@@ -6,9 +6,10 @@ import axios from 'axios';
 
 // TS
 interface Data {
-  id: number;
-  text: string;
-  done: boolean;
+  _id: string;
+  coffeeName: string;
+  price: number;
+  description: string;
 }
 
 // Test 컴포넌트
@@ -17,16 +18,20 @@ const Test: React.FC = () => {
   const [data, setData] = useState<Data[]>([]);
   const [currentData, setCurrentData] = useState<Data[]>([]);
 
-  const itemsPerPage = 1; // 한 페이지당 보여줄 아이템 수
+  const itemsPerPage = 2; // 한 페이지당 보여줄 아이템 수
 
   const handlePageChange = (pageNumber: number) => {
     setPage(pageNumber);
   };
 
   const fetchData = async () => {
-    const response = await axios.get('http://localhost:4000/api/todo');
-    setData(response.data);
-    setCurrentData(data.slice(0, itemsPerPage)); // 초기 데이터 설정
+    try {
+      const response = await axios.get('http://localhost:4000/api/coffee');
+      setData(response.data);
+      setCurrentData(data.slice(0, itemsPerPage)); // 초기 데이터 설정
+    } catch(e) {
+      console.log(e)
+    }
   }
 
   useEffect(() => { fetchData(); }, []);
@@ -42,8 +47,12 @@ const Test: React.FC = () => {
     e.preventDefault();
     const text = (e.target as HTMLFormElement).text.value;
     const done = (e.target as HTMLFormElement).done.checked;
-    await axios.post('http://localhost:4000/api/todo', {text, done});
-    fetchData();
+    try {
+      await axios.post('http://localhost:4000/api/coffee', {text, done});
+      fetchData();
+    } catch(e) {
+      console.log(e)
+    }
   }
 
   return (
@@ -55,10 +64,11 @@ const Test: React.FC = () => {
       </form>
       {/* 현재 페이지의 데이터를 출력 */}
       {currentData.map((item) => (
-        <div key={item.id}>
-          <p>ID: {item.id}</p>
-          <p>Text: {item.text}</p>
-          <p>Done: {item.done ? 'Yes' : 'No'}</p>
+        <div key={item._id}>
+          <p>ID: {item._id}</p>
+          <p>CoffeeName: {item.coffeeName}</p>
+          <p>Price: {item.price}</p>
+          <p>Description: {item.description}</p>
         </div>
       ))}
 
