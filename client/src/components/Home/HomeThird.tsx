@@ -3,6 +3,7 @@ import coffeeBox from "../../assets/coffeebox.jpeg"
 
 import { Imgbox } from "../../models/coffee";
 
+
 // swiper 라이브러리
 import { Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -25,6 +26,7 @@ const ImgBox: React.FC<Imgbox> = ({imgsrc, imgintro, imghref}) => {
 const navbarLists:string[] = ['COFFEE','COFFEE','COFFEE',"COFFEE"]
 
 const HomeThird: React.FC = () => {
+
   return (
     <div className="homethird">
       <h1>MENU</h1>
