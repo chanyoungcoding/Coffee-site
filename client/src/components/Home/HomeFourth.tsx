@@ -8,10 +8,8 @@ const HomeFourth:React.FC = () => {
 
   const handleScroll = _.throttle(() => {
     const scrollY = window.scrollY;
-    console.log(scrollY)
     const windowHeight = window.innerHeight;
     const scrollPositionToShow = windowHeight * 1.5;
-    console.log(scrollPositionToShow)
 
     if(scrollY > scrollPositionToShow) {
       setIsVisible(true)
