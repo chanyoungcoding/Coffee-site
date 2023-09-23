@@ -9,7 +9,7 @@ $coffee-boxColor: #986C4A;
     align-items: center;
     
     img {
-      background-color: #986C4A;
+      background-color: $coffee-boxColor;
       border-radius: 100%;
       padding: 10px;
     }

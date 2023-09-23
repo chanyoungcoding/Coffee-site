@@ -5,6 +5,7 @@ import Pagination from 'react-js-pagination';
 import axios from 'axios';
 
 import Button from './Button';
+import Logo from './Logo';
 
 // TS
 interface Data {
@@ -59,6 +60,7 @@ const Test: React.FC = () => {
 
   return (
     <>
+      <Logo/>
       <Button>Button</Button>
       <form onSubmit={handleSubmitChange}>
         <input name='text' />
