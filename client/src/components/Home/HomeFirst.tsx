@@ -1,7 +1,8 @@
+import React from "react";
 import coffeecup from "../../assets/coffeecup1.png";
 import coffeecup1 from "../../assets/coffeecup2.png";
 
-const HomeFirst = () => {
+const HomeFirst:React.FC = () => {
   return ( 
     <div className="homeFirst">
       <div className="firstLeft">

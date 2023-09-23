@@ -4,6 +4,8 @@ import '../styles/test.scss';
 import Pagination from 'react-js-pagination';
 import axios from 'axios';
 
+import Button from './Button';
+
 // TS
 interface Data {
   _id: string;
@@ -57,6 +59,7 @@ const Test: React.FC = () => {
 
   return (
     <>
+      <Button>Button</Button>
       <form onSubmit={handleSubmitChange}>
         <input name='text' />
         <input name='done' type="checkbox" />
