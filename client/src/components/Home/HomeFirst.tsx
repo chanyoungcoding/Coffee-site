@@ -1,6 +1,7 @@
 import React from "react";
 import coffeecup from "../../assets/coffeecup1.png";
 import coffeecup1 from "../../assets/coffeecup2.png";
+import Button from "../Button";
 
 import { useSpring, animated } from 'react-spring';
 
@@ -31,8 +32,8 @@ const HomeFirst:React.FC = () => {
         <h2>An online coffee store</h2>
         <p>Learn more about coffee, and learn more about its types and recipes.</p>
         <div className="leftButton">
-          <button>Explore our products</button>
-          <button>Log in / sign up</button>
+          <Button href={'/test'}>Explore our products</Button>
+          <Button href={'/test'}>Log in / Sign up</Button>
         </div>
       </animated.div>
       <div className="firstRight">

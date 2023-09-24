@@ -31,16 +31,7 @@
     .leftButton {
       display: flex;
       margin-top: 50px;
-      button {
-        border: none;
-        outline: none;
-        margin-right: 30px;
-        padding: 25px 50px;
-        border-radius: 15px;
-        background-color: #361306;
-        color: white;
-        font-size: 20px;
-      }
+
     }
     @media screen and (max-width: 1300px) {
       h1 {

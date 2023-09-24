@@ -1,5 +1,6 @@
 import React, { ReactNode } from 'react';
 import styled from 'styled-components'
+import { Link } from 'react-router-dom';
 
 // Button components
 const StyledButton = styled.button`
@@ -7,18 +8,17 @@ const StyledButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  outline: none;
+  margin: 0 5px;
+  padding: 1rem 3rem;
   border: 2px solid #986C4A;
   border-radius: 4px;
+  outline: none;
   color: white;
   font-weight: bold;
   cursor: pointer;
-  padding-left: 1rem;
-  padding-right: 1rem;
 
   /* 크기 */
-  height: 2.25rem;
-  font-size: 1rem;
+  font-size: 20px;
 
   /* 색상 */
   color: black;
@@ -31,18 +31,21 @@ const StyledButton = styled.button`
     transform: scale(0.9);
   }
 
-  /* 기타 */
-  & + & {
-    margin-left: 1rem;
-  }
 `;
 
 interface ButtonProps {
+  href: string;
   children: ReactNode;
 }
 
-const Button:React.FC<ButtonProps> = ({children}) => {
-  return <StyledButton>{children}</StyledButton>
+const Button:React.FC<ButtonProps> = ({children, href}) => {
+  return (
+    <>
+    <Link to={href}> 
+      <StyledButton>{children}</StyledButton>
+    </Link>
+    </>
+  )
 }
 
 export default Button;
