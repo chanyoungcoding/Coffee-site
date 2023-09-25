@@ -1,0 +1,512 @@
+{
+  "Espresso" : [
+    {
+        "name": "블랙 글레이즈드 라떼",
+        "calory": 385,
+        "sugar": 37,
+        "protein": 11,
+        "sodium": 220,
+        "sat_fat": 14,
+        "caffeine": 75
+    },
+    {
+        "name": "아이스 블랙 글레이즈드 라떼",
+        "calory": 305,
+        "sugar": 31,
+        "protein": 7,
+        "sodium": 160,
+        "sat_fat": 11,
+        "caffeine": 75
+    },
+    {
+        "name": "에스프레소 콘 파나",
+        "calory": 30,
+        "sugar": 1,
+        "protein": 0,
+        "sodium": 0,
+        "sat_fat": 1.5,
+        "caffeine": 75
+    },
+    {
+        "name": "에스프레소 마키아또",
+        "calory": 10,
+        "sugar": 0,
+        "protein": 1,
+        "sodium": 0,
+        "sat_fat": 0,
+        "caffeine": 75
+    },
+    {
+        "name": "아이스 카페 아메리카노",
+        "calory": 10,
+        "sugar": 0,
+        "protein": 1,
+        "sodium": 5,
+        "sat_fat": 0,
+        "caffeine": 150
+    },
+    {
+        "name": "카페 아메리카노",
+        "calory": 10,
+        "sugar": 0,
+        "protein": 1,
+        "sodium": 5,
+        "sat_fat": 0,
+        "caffeine": 150
+    },
+    {
+        "name": "아이스 카라멜 마키아또",
+        "calory": 190,
+        "sugar": 22,
+        "protein": 6,
+        "sodium": 110,
+        "sat_fat": 4.6,
+        "caffeine": 75
+    },
+    {
+        "name": "카라멜 마키아또",
+        "calory": 200,
+        "sugar": 22,
+        "protein": 8,
+        "sodium": 130,
+        "sat_fat": 5,
+        "caffeine": 75
+    },
+    {
+        "name": "아이스 카푸치노",
+        "calory": 110,
+        "sugar": 9,
+        "protein": 6,
+        "sodium": 90,
+        "sat_fat": 3.5,
+        "caffeine": 75
+    },
+    {
+        "name": "카푸치노",
+        "calory": 110,
+        "sugar": 8,
+        "protein": 6,
+        "sodium": 70,
+        "sat_fat": 3,
+        "caffeine": 75
+    },
+    {
+        "name": "더 그린 쑥 크림 라떼",
+        "calory": 365,
+        "sugar": 33,
+        "protein": 11,
+        "sodium": 570,
+        "sat_fat": 11,
+        "caffeine": 170
+    },
+    {
+        "name": "라벤더 카페 브레베",
+        "calory": 400,
+        "sugar": 30,
+        "protein": 8,
+        "sodium": 140,
+        "sat_fat": 22,
+        "caffeine": 105
+    },
+    {
+        "name": "바닐라 빈 라떼",
+        "calory": 245,
+        "sugar": 27,
+        "protein": 9,
+        "sodium": 150,
+        "sat_fat": 6,
+        "caffeine": 210
+    },
+    {
+        "name": "브라운 슈가 오트 쉐이큰 에스프레소",
+        "calory": 135,
+        "sugar": 20,
+        "protein": 1,
+        "sodium": 55,
+        "sat_fat": 0.2,
+        "caffeine": 170
+    },
+    {
+        "name": "사케라또 비안코 오버 아이스",
+        "calory": 270,
+        "sugar": 14,
+        "protein": 3,
+        "sodium": 45,
+        "sat_fat": 18,
+        "caffeine": 315
+    },
+    {
+        "name": "스타벅스 1호점 바닐라 빈 라떼",
+        "calory": 234,
+        "sugar": 27,
+        "protein": 9,
+        "sodium": 150,
+        "sat_fat": 6,
+        "caffeine": 210
+    },
+    {
+        "name": "스타벅스 1호점 카페 라떼",
+        "calory": 191,
+        "sugar": 15,
+        "protein": 10,
+        "sodium": 150,
+        "sat_fat": 6,
+        "caffeine": 210
+    },
+    {
+        "name": "스타벅스 돌체 라떼",
+        "calory": 255,
+        "sugar": 39,
+        "protein": 12,
+        "sodium": 190,
+        "sat_fat": 2.6,
+        "caffeine": 150
+    },
+    {
+        "name": "아이스 더 그린 쑥 크림 라떼",
+        "calory": 325,
+        "sugar": 28,
+        "protein": 9,
+        "sodium": 490,
+        "sat_fat": 10,
+        "caffeine": 170
+    },
+    {
+        "name": "아이스 라벤더 카페 브레베",
+        "calory": 335,
+        "sugar": 27,
+        "protein": 6,
+        "sodium": 110,
+        "sat_fat": 18,
+        "caffeine": 105
+    },
+    {
+        "name": "아이스 바닐라 빈 라떼",
+        "calory": 155,
+        "sugar": 20,
+        "protein": 5,
+        "sodium": 75,
+        "sat_fat": 2.9,
+        "caffeine": 210
+    },
+    {
+        "name": "아이스 스타벅스 1호점 바닐라 빈 라떼",
+        "calory": 159,
+        "sugar": 21,
+        "protein": 6,
+        "sodium": 90,
+        "sat_fat": 2.9,
+        "caffeine": 210
+    },
+    {
+        "name": "아이스 스타벅스 1호점 카페 라떼",
+        "calory": 117,
+        "sugar": 9,
+        "protein": 6,
+        "sodium": 100,
+        "sat_fat": 3.2,
+        "caffeine": 210
+    },
+    {
+        "name": "아이스 스타벅스 돌체 라떼",
+        "calory": 230,
+        "sugar": 35,
+        "protein": 10,
+        "sodium": 145,
+        "sat_fat": 2.5,
+        "caffeine": 150
+    },
+    {
+        "name": "아이스 카페 라떼",
+        "calory": 110,
+        "sugar": 8,
+        "protein": 6,
+        "sodium": 75,
+        "sat_fat": 3.5,
+        "caffeine": 75
+    },
+    {
+        "name": "카페 라떼",
+        "calory": 180,
+        "sugar": 13,
+        "protein": 10,
+        "sodium": 115,
+        "sat_fat": 5,
+        "caffeine": 75
+    },
+    {
+        "name": "아이스 카페 모카",
+        "calory": 250,
+        "sugar": 21,
+        "protein": 7,
+        "sodium": 70,
+        "sat_fat": 8,
+        "caffeine": 95
+    },
+    {
+        "name": "아이스 화이트 초콜릿 모카",
+        "calory": 335,
+        "sugar": 41,
+        "protein": 8,
+        "sodium": 160,
+        "sat_fat": 8,
+        "caffeine": 75
+    },
+    {
+        "name": "카페 모카",
+        "calory": 290,
+        "sugar": 25,
+        "protein": 10,
+        "sodium": 105,
+        "sat_fat": 9,
+        "caffeine": 95
+    },
+    {
+        "name": "클래식 민트 모카",
+        "calory": 335,
+        "sugar": 43,
+        "protein": 4,
+        "sodium": 200,
+        "sat_fat": 0.7,
+        "caffeine": 210
+    },
+    {
+        "name": "화이트 초콜릿 모카",
+        "calory": 405,
+        "sugar": 47,
+        "protein": 12,
+        "sodium": 230,
+        "sat_fat": 11,
+        "caffeine": 75
+    },
+    {
+        "name": "바닐라 플랫 화이트",
+        "calory": 220,
+        "sugar": 23,
+        "protein": 9,
+        "sodium": 130,
+        "sat_fat": 5,
+        "caffeine": 260
+    },
+    {
+        "name": "바닐라 스타벅스 더블 샷",
+        "calory": 125,
+        "sugar": 14,
+        "protein": 2,
+        "sodium": 30,
+        "sat_fat": 4.5,
+        "caffeine": 150
+    },
+    {
+        "name": "블론드 바닐라 더블 샷 마키아또",
+        "calory": 315,
+        "sugar": 31,
+        "protein": 8,
+        "sodium": 130,
+        "sat_fat": 12,
+        "caffeine": 170
+    },
+    {
+        "name": "사케라또 아포가토",
+        "calory": 290,
+        "sugar": 30,
+        "protein": 4,
+        "sodium": 70,
+        "sat_fat": 10,
+        "caffeine": 210
+    },
+    {
+        "name": "스파클링 시트러스 에스프레소",
+        "calory": 65,
+        "sugar": 15,
+        "protein": 0,
+        "sodium": 5,
+        "sat_fat": 0,
+        "caffeine": 105
+    },
+    {
+        "name": "아이스 블론드 바닐라 더블 샷 마키아또",
+        "calory": 195,
+        "sugar": 22,
+        "protein": 5,
+        "sodium": 65,
+        "sat_fat": 6,
+        "caffeine": 170
+    },
+    {
+        "name": "에스프레소",
+        "calory": 5,
+        "sugar": 0,
+        "protein": 0,
+        "sodium": 0,
+        "sat_fat": 0,
+        "caffeine": 75
+    },
+    {
+        "name": "커피 스타벅스 더블 샷",
+        "calory": 125,
+        "sugar": 14,
+        "protein": 3,
+        "sodium": 28.5,
+        "sat_fat": 5,
+        "caffeine": 150
+    },
+    {
+        "name": "클래식 아포가토",
+        "calory": 240,
+        "sugar": 18,
+        "protein": 4,
+        "sodium": 70,
+        "sat_fat": 10,
+        "caffeine": 210
+    },
+    {
+        "name": "헤이즐넛 스타벅스 더블 샷",
+        "calory": 125,
+        "sugar": 14,
+        "protein": 3,
+        "sodium": 28.5,
+        "sat_fat": 5,
+        "caffeine": 150
+    }
+  ],
+
+  "coldBlue" : [
+    {
+        "name": "미키 딜라이트 콜드 브루",
+        "calory": 170,
+        "sugar": 11,
+        "protein": 1,
+        "sodium": 50,
+        "sat_fat": 10,
+        "caffeine": 138
+    },
+    {
+        "name": "콜드 브루",
+        "calory": 5,
+        "sugar": 0,
+        "protein": 0,
+        "sodium": 25,
+        "sat_fat": 0,
+        "caffeine": 360
+    },
+    {
+        "name": "나이트로 바닐라 크림",
+        "calory": 80,
+        "sugar": 10,
+        "protein": 1,
+        "sodium": 40,
+        "sat_fat": 2,
+        "caffeine": 232
+    },
+    {
+        "name": "나이트로 콜드 브루",
+        "calory": 5,
+        "sugar": 0,
+        "protein": 0,
+        "sodium": 5,
+        "sat_fat": 0,
+        "caffeine": 245
+    },
+    {
+        "name": "돌체 콜드 브루",
+        "calory": 265,
+        "sugar": 29,
+        "protein": 8,
+        "sodium": 130,
+        "sat_fat": 9,
+        "caffeine": 155
+    },
+    {
+        "name": "리저브 나이트로",
+        "calory": 5,
+        "sugar": 0,
+        "protein": 0,
+        "sodium": 0,
+        "sat_fat": 0,
+        "caffeine": 190
+    },
+    {
+        "name": "리저브 콜드 브루",
+        "calory": 5,
+        "sugar": 0,
+        "protein": 0,
+        "sodium": 0,
+        "sat_fat": 0,
+        "caffeine": 190
+    },
+    {
+        "name": "민트 콜드 브루",
+        "calory": 100,
+        "sugar": 23,
+        "protein": 0,
+        "sodium": 0,
+        "sat_fat": 0,
+        "caffeine": 415
+    },
+    {
+        "name": "바닐라 크림 콜드 브루",
+        "calory": 125,
+        "sugar": 11,
+        "protein": 3,
+        "sodium": 58,
+        "sat_fat": 6,
+        "caffeine": 155
+    },
+    {
+        "name": "시그니처 더 블랙 콜드 브루",
+        "calory": 25,
+        "sugar": 0,
+        "protein": 0,
+        "sodium": 50,
+        "sat_fat": 0,
+        "caffeine": 680
+    },
+    {
+        "name": "여수 윤슬 헤이즐넛 콜드브루",
+        "calory": 245,
+        "sugar": 27,
+        "protein": 5,
+        "sodium": 85,
+        "sat_fat": 9,
+        "caffeine": 53
+    },
+    {
+        "name": "오트 콜드 브루",
+        "calory": 120,
+        "sugar": 14,
+        "protein": 1,
+        "sodium": 95,
+        "sat_fat": 0.3,
+        "caffeine": 65
+    },
+    {
+        "name": "제주 비자림 콜드 브루",
+        "calory": 360,
+        "sugar": 39,
+        "protein": 11,
+        "sodium": 140,
+        "sat_fat": 8,
+        "caffeine": 305
+    },
+    {
+        "name": "콜드 브루 몰트",
+        "calory": 505,
+        "sugar": 41,
+        "protein": 7,
+        "sodium": 150,
+        "sat_fat": 20,
+        "caffeine": 190
+    },
+    {
+        "name": "콜드 브루 플로트",
+        "calory": 225,
+        "sugar": 18,
+        "protein": 3,
+        "sodium": 70,
+        "sat_fat": 10,
+        "caffeine": 190
+    }
+  ]
+}
+

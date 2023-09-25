@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const CoffeeSchema = new Schema({
-  coffeeName: {
+  name: {
     type: String,
     required: [true, '커피 이름이 필요합니다.']
   },
@@ -11,6 +11,7 @@ const CoffeeSchema = new Schema({
   protein:Number, 
   sugar:Number,
   caffeine:Number,
+  sat_fat: Number,
   price: Number,
   description: String
 })
