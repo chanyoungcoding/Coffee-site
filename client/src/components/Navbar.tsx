@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import '../styles/navbar.scss'
 import coffeeIcon from '../assets/coffeeicon.png'
+import { Link } from "react-router-dom";
 
 const Navbar:React.FC = () => {
 
@@ -18,15 +19,15 @@ const Navbar:React.FC = () => {
       <div className="navbar__li">
         <div className="li__inner">
           <div className={`li__left ${visible ? "visible" : ""}`}>
-            <li>HOME</li>
-            <li>MENU</li>
-            <li>RECIPE</li>
+            <Link to='/'><li>HOME</li></Link>
+            <Link to='/menu'><li>MENU</li></Link>
+            <Link to='/menu'><li>RECIPE</li></Link>
           </div>
         </div>
         <div className="li__inner">
           <div className={`li__right ${visible ? "visible" : ""}`}>
-            <li>MADE</li>
-            <li>INFROMATION</li>
+            <Link to='/'><li>MADE</li></Link>
+            <Link to='/'><li>INFROMATION</li></Link>
           </div>
         </div>
       </div>
