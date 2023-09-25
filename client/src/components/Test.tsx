@@ -9,8 +9,13 @@ import Logo from './Logo';
 // TS
 interface Data {
   _id: string;
-  coffeeName: string;
-  price: number;
+  name: string;
+  calory: number;
+  sodium: number;
+  protein: number;
+  sugar: number;
+  caffeine: number;
+  sat_fat: number;
   description: string;
 }
 
@@ -31,7 +36,6 @@ const Test: React.FC = () => {
 
   const fetchData = async () => {
     try {
-      setLoading(true);
       const response = await axios.get('http://localhost:4000/api/coffee');
       setData(response.data);
       setCurrentData(data.slice(0, itemsPerPage)); // 초기 데이터 설정
@@ -62,8 +66,7 @@ const Test: React.FC = () => {
       console.log(e)
     }
   }
-
-  if(loading) return <div>로딩중...</div>
+  if(loading) return <div>로딩중..</div>
   if(error) return <div>에러가 발생했습니다.</div>
 
   return (
@@ -78,8 +81,13 @@ const Test: React.FC = () => {
       {currentData.map((item) => (
         <div key={item._id}>
           <p>ID: {item._id}</p>
-          <p>CoffeeName: {item.coffeeName}</p>
-          <p>Price: {item.price}</p>
+          <p>이름: {item.name}</p>
+          <p>칼로리: {item.calory}</p>
+          <p>나트륨: {item.sodium}</p>
+          <p>단백질: {item.protein}</p>
+          <p>당분: {item.sugar}</p>
+          <p>카페인: {item.caffeine}</p>
+          <p>포화지방: {item.sat_fat}</p>
           <p>Description: {item.description}</p>
         </div>
       ))}
