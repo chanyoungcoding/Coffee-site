@@ -6,6 +6,11 @@ const CoffeeSchema = new Schema({
     type: String,
     required: [true, '커피 이름이 필요합니다.']
   },
+  calory:Number,
+  sodium:Number,
+  protein:Number, 
+  sugar:Number,
+  caffeine:Number,
   price: Number,
   description: String
 })

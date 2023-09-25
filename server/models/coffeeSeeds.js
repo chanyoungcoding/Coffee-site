@@ -27,6 +27,11 @@ const coffeeDB = async () => {
   for(let i = 0; i < 10; i++) {
     const coffee = new Coffee({
       coffeeName: '아메리카노',
+      calory:5,
+      sodium: 5,
+      protein: 5,
+      sugar: 5,
+      caffeine: 5,
       price: 2500,
       description: '아메리카노는 에스프레소의 진한 풍미를 잘 느낄 수 있는 음료입니다.'
     })
