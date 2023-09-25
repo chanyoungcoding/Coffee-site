@@ -12,13 +12,19 @@ mongoose.connect(dbUrl)
     console.log(e);
   });
 
-const CoffeeSchema = new Schema({
-  coffeeName: {
-    type: String,
-    required: [true, '커피 이름이 필요합니다.']
-  },
-  price: Number,
-  description: String
+  const CoffeeSchema = new Schema({
+    name: {
+      type: String,
+      required: [true, '커피 이름이 필요합니다.']
+    },
+    calory:Number,
+    sodium:Number,
+    protein:Number, 
+    sugar:Number,
+    caffeine:Number,
+    sat_fat: Number,
+    price: Number,
+    description: String
 })
 
 const Coffee = mongoose.model('Coffee', CoffeeSchema);
@@ -30,7 +36,7 @@ const coffeeDB = async () => {
     const Espresso = coffeeDetail.Espresso[i];
 
     const coffee = new Coffee({
-      coffeeName: Espresso.name,
+      name: Espresso.name,
       calory: Espresso.calory,
       sodium: Espresso.sodium,
       protein: Espresso.protein,
