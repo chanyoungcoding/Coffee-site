@@ -2,9 +2,8 @@ import React, { useEffect, useState } from 'react';
 import '../styles/test.scss';
 
 import Pagination from 'react-js-pagination';
-import axios from 'axios';
+import axios, { AxiosError } from 'axios';
 
-import Button from './Button';
 import Logo from './Logo';
 
 // TS
@@ -21,6 +20,9 @@ const Test: React.FC = () => {
   const [data, setData] = useState<Data[]>([]);
   const [currentData, setCurrentData] = useState<Data[]>([]);
 
+  const [loading, setLoading] = useState<boolean>(false);
+  const [error, setError] = useState<AxiosError | null>(null);
+
   const itemsPerPage = 2; // 한 페이지당 보여줄 아이템 수
 
   const handlePageChange = (pageNumber: number) => {
@@ -29,15 +31,18 @@ const Test: React.FC = () => {
 
   const fetchData = async () => {
     try {
+      setLoading(true);
       const response = await axios.get('http://localhost:4000/api/coffee');
       setData(response.data);
       setCurrentData(data.slice(0, itemsPerPage)); // 초기 데이터 설정
-    } catch(e) {
-      console.log(e)
+    } catch(e:unknown) {
+      if(e instanceof AxiosError)
+      setError(e);
     }
+    setLoading(false);
   }
 
-  useEffect(() => { fetchData(); }, []);
+  useEffect(() => { fetchData(); },);
 
   useEffect(() => {
     // 페이지가 변경될 때마다 해당 페이지에 해당하는 데이터를 추출하여 currentData에 설정
@@ -58,10 +63,12 @@ const Test: React.FC = () => {
     }
   }
 
+  if(loading) return <div>로딩중...</div>
+  if(error) return <div>에러가 발생했습니다.</div>
+
   return (
     <>
       <Logo/>
-      <Button>Button</Button>
       <form onSubmit={handleSubmitChange}>
         <input name='text' />
         <input name='done' type="checkbox" />
