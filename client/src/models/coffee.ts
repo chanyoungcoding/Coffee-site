@@ -15,3 +15,9 @@ export interface Data {
   sat_fat: number;
   description: string;
 }
+
+export interface DetailItem {
+  name: string;
+  detail: number | null;
+  number?: number;
+}

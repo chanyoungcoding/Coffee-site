@@ -35,7 +35,7 @@ const MenuMain: React.FC = () => {
     }
   }
 
-  useEffect(() => { fetchData() },);
+  useEffect(() => { fetchData() },[]);
 
   // 페이지가 변경될 때마다 보여줄 데이터 변경
   useEffect(() => {
@@ -59,7 +59,6 @@ const MenuMain: React.FC = () => {
 
   //에러 발생시 출력
   if(error) return <div className='mainmenu__error'>{error ? error.message : null}</div>
-
 
   return (
     <>

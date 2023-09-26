@@ -1,11 +1,22 @@
 import coffeeCup3 from '../../assets/coffeecup3.png'
 import '../../styles/menudetail.scss'
 
-import { Data } from '../../models/coffee';
+import { Data, DetailItem } from '../../models/coffee';
 
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios, { AxiosError } from 'axios';
+
+
+const MenuDetailItem:React.FC<DetailItem> = React.memo(({name, detail, number}) => {
+  return (
+  <div className={number !== 1 ? `menuintro__detail` : `menuintro__detail__${number}`}>
+    <h3>{name}</h3>
+    <h4>{detail !== null ? detail : 'Loading...'}</h4>
+  </div>
+  )
+});
+
 
 const MenuDetail:React.FC = () => {
   const {name} = useParams();
@@ -25,49 +36,27 @@ const MenuDetail:React.FC = () => {
     }
   }
   
-  useEffect(() => { fetchData() },[]);
+  useEffect(() => { fetchData() });
   
-  console.log(data);
   if(error) return <div>{error ? error.message : null}</div>
 
   return ( 
     <div className="menu">
-      <h1>{name}</h1>
+      {data.length > 0 ? (<h1>{data[0].name}</h1>) : (<h1>Loading...</h1>)}
       <h2>{name}</h2>
       <div className="menu__inner">
         <img src={coffeeCup3} alt="#" />
         <div className="inner__menuintro">
-          {/* {data.map(item => ())} */}
+          <MenuDetailItem name='칼로리' detail={data.length > 0 ? data[0].calory : null} />
+          <MenuDetailItem number={1} name='포화지방' detail={data.length > 0 ? data[0].sat_fat : null} />
         </div>
         <div className="inner__menuintro">
-          <div className="menuintro__detail">
-            <h3>칼로리</h3>
-            <h4>Kcal</h4>
-          </div>
-          <div className="menuintro__detail__1">
-            <h3>포화지방</h3>
-            <h4>g</h4>
-          </div>
+          <MenuDetailItem name='나트륨' detail={data.length > 0 ? data[0].sodium : null} />
+          <MenuDetailItem number={1} name='단백질' detail={data.length > 0 ? data[0].protein : null} />
         </div>
         <div className="inner__menuintro">
-          <div className="menuintro__detail">
-            <h3>나트륨</h3>
-            <h4>mg</h4>
-          </div>
-          <div className="menuintro__detail__1">
-            <h3>단백질</h3>
-            <h4>g</h4>
-          </div>
-        </div>
-        <div className="inner__menuintro">
-          <div className="menuintro__detail">
-            <h3>당유</h3>
-            <h4>g</h4>
-          </div>
-          <div className="menuintro__detail__1">
-            <h3>카페인</h3>
-            <h4>mg</h4>
-          </div>
+          <MenuDetailItem name='당유' detail={data.length > 0 ? data[0].sugar : null} />
+          <MenuDetailItem number={1} name='카페인' detail={data.length > 0 ? data[0].caffeine : null} />
         </div>
       </div>
       <div className="menu__detailintro">
