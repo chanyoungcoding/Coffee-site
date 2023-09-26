@@ -27,6 +27,12 @@ app.get('/api/coffee', async (req,res) => {
   res.json(coffee);
 })
 
+app.get('/api/coffeeName', async (req,res) => {
+  const coffeeName = req.query.name
+  const coffee = await Coffee.find({name : coffeeName});
+  res.json(coffee)
+})
+
 app.post('/api/coffee', (req,res) => {
   const {text, done} = req.body;
   todoList.push({
