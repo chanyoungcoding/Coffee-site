@@ -3,6 +3,7 @@ import '../../styles/menu.scss';
 
 import Pagination from 'react-js-pagination';
 import axios, { AxiosError } from 'axios';
+import { Link } from "react-router-dom";
 
 import { Data } from '../../models/coffee';
 
@@ -59,6 +60,7 @@ const MenuMain: React.FC = () => {
   //에러 발생시 출력
   if(error) return <div className='mainmenu__error'>{error ? error.message : null}</div>
 
+
   return (
     <>
       <form onSubmit={handleSubmitChange}>
@@ -78,6 +80,7 @@ const MenuMain: React.FC = () => {
           <p>카페인: {item.caffeine}</p>
           <p>포화지방: {item.sat_fat}</p>
           <p>Description: {item.description}</p>
+          <Link to={`/menuDetail/${item.name}`}>자세한 정보</Link>
         </div>
       ))}
 

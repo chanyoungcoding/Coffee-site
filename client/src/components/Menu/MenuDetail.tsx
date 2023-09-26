@@ -1,41 +1,72 @@
 import coffeeCup3 from '../../assets/coffeecup3.png'
 import '../../styles/menudetail.scss'
 
-const MenuDetail = () => {
+import { Data } from '../../models/coffee';
+
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import axios, { AxiosError } from 'axios';
+
+const MenuDetail:React.FC = () => {
+  const {name} = useParams();
+
+  const [data, setData] = useState<Data[]>([]);
+  const [error, setError] = useState<AxiosError | null>(null);
+
+  const coffeeDB = 'http://localhost:4000/api/coffeeName'
+
+  const fetchData = async () => {
+    try {
+      const response = await axios.get(`${coffeeDB}?name=${name}`);
+      setData(response.data);
+    } catch(e:unknown) {
+      if(e instanceof AxiosError)
+      setError(e);
+    }
+  }
+  
+  useEffect(() => { fetchData() },[]);
+  
+  console.log(data);
+  if(error) return <div>{error ? error.message : null}</div>
+
   return ( 
     <div className="menu">
-      <h1>아이스 아메리카노</h1>
-      <h2>Ice Americano</h2>
+      <h1>{name}</h1>
+      <h2>{name}</h2>
       <div className="menu__inner">
         <img src={coffeeCup3} alt="#" />
         <div className="inner__menuintro">
+          {/* {data.map(item => ())} */}
+        </div>
+        <div className="inner__menuintro">
           <div className="menuintro__detail">
             <h3>칼로리</h3>
-            <h4>10Kcal</h4>
+            <h4>Kcal</h4>
           </div>
           <div className="menuintro__detail__1">
-            <h3>1잔</h3>
-            <h4>1잔-355ml</h4>
+            <h3>포화지방</h3>
+            <h4>g</h4>
           </div>
         </div>
         <div className="inner__menuintro">
           <div className="menuintro__detail">
             <h3>나트륨</h3>
-            <h4>5mg</h4>
+            <h4>mg</h4>
           </div>
           <div className="menuintro__detail__1">
             <h3>단백질</h3>
-            <h4>1g</h4>
+            <h4>g</h4>
           </div>
         </div>
         <div className="inner__menuintro">
           <div className="menuintro__detail">
             <h3>당유</h3>
-            <h4>0g</h4>
+            <h4>g</h4>
           </div>
           <div className="menuintro__detail__1">
             <h3>카페인</h3>
-            <h4>150ml</h4>
+            <h4>mg</h4>
           </div>
         </div>
       </div>
