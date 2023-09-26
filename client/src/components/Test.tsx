@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import '../styles/test.scss';
+import '../styles/menu.scss';
 
 import Pagination from 'react-js-pagination';
 import axios, { AxiosError } from 'axios';

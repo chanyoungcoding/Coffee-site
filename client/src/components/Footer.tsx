@@ -1,7 +1,7 @@
 import React from "react";
 import { AiFillFacebook, AiFillInstagram, AiFillYoutube} from "react-icons/ai";
-import coffeeIcon from '../assets/coffeeicon.png'
 import '../styles/footer.scss'
+import Logo from "./Logo";
 
 const getCurrentYear = ():number => new Date().getFullYear();
 
@@ -12,7 +12,7 @@ const Footer:React.FC = () => {
         <div className="inner__introduce">
           <p>CHAN COFFEE - &#169; {getCurrentYear()}</p>
         </div>
-        <img src={coffeeIcon} alt="#" />
+        <Logo/>
         <div className="inner__icon">
           <a href="/">
             <AiFillFacebook size ="40"/>

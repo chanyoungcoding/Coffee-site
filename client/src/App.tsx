@@ -2,6 +2,7 @@ import React from 'react'
 import Home from './pages/Home'
 import Common from './pages/Common'
 import MenuDetail from './components/Menu/MenuDetail'
+import MenuMain from './components/Menu/MenuMain'
 import { Routes, Route } from 'react-router-dom'
 import './styles/common.scss'
 
@@ -13,7 +14,8 @@ const App:React.FC = () => {
       <Route element={<Common/>}>
         <Route path="/" element={<Home/>}/>
         <Route path='/test' element={<Test/>}/>
-        <Route path='/menu' element={<MenuDetail/>}/>
+        <Route path='/menuDetail' element={<MenuDetail/>}/>
+        <Route path='/menu' element={<MenuMain/>}/>
       </Route>
     </Routes>
   )

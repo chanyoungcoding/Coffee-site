@@ -1,5 +1,5 @@
 import coffeeCup3 from '../../assets/coffeecup3.png'
-import '../../styles/menu.scss'
+import '../../styles/menudetail.scss'
 
 const MenuDetail = () => {
   return ( 

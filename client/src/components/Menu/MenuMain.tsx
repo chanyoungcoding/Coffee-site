@@ -1,16 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import '../styles/test.scss';
+import '../../styles/menu.scss';
 
 import Pagination from 'react-js-pagination';
 import axios, { AxiosError } from 'axios';
 
-import Logo from '../Logo';
 import { Data } from '../../models/coffee';
 
 // Test 컴포넌트
 const MenuMain: React.FC = () => {
   //useState
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState<number>(1);
   const [data, setData] = useState<Data[]>([]);
   const [currentData, setCurrentData] = useState<Data[]>([]);
   const [error, setError] = useState<AxiosError | null>(null);
@@ -18,7 +17,7 @@ const MenuMain: React.FC = () => {
   //한 페지당 보여줄 아이템 개수
   const itemsPerPage = 4; 
 
-  const handlePageChange = (pageNumber: number) => {
+  const handlePageChange = (pageNumber: number):void => {
     setPage(pageNumber);
   };
 
@@ -62,7 +61,6 @@ const MenuMain: React.FC = () => {
 
   return (
     <>
-      <Logo/>
       <form onSubmit={handleSubmitChange}>
         <input name='text' />
         <input name='done' type="checkbox" />

@@ -2,17 +2,12 @@ $coffee-backgroundColor: #313131;
 $coffee-boxColor: #986C4A;
 
 .footer {
+  padding: 10px;
   background-color: $coffee-backgroundColor;
   .footer__inner {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    
-    img {
-      background-color: $coffee-boxColor;
-      border-radius: 100%;
-      padding: 10px;
-    }
     
     .inner__introduce {
       font-size: 19px;
