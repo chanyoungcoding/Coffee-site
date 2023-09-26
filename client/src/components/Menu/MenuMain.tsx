@@ -24,11 +24,11 @@ const MenuMain: React.FC = () => {
 
   const coffeeDB = 'http://localhost:4000/api/coffee'
 
-  const fetchData = async () => {
+  const fetchData =  async () => {
     try {
       const response = await axios.get(coffeeDB);
       setData(response.data);
-      setCurrentData(data.slice(0, itemsPerPage)); // 초기 데이터 설정
+      setCurrentData(response.data.slice(0, itemsPerPage)); // 초기 데이터 설정
     } catch(e:unknown) {
       if(e instanceof AxiosError)
       setError(e);
