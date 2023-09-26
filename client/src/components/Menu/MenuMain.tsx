@@ -4,28 +4,29 @@ import '../styles/test.scss';
 import Pagination from 'react-js-pagination';
 import axios, { AxiosError } from 'axios';
 
-import Logo from './Logo';
-import { Data } from '../models/coffee';
-
-
+import Logo from '../Logo';
+import { Data } from '../../models/coffee';
 
 // Test 컴포넌트
-const Test: React.FC = () => {
+const MenuMain: React.FC = () => {
+  //useState
   const [page, setPage] = useState(1);
   const [data, setData] = useState<Data[]>([]);
   const [currentData, setCurrentData] = useState<Data[]>([]);
-
   const [error, setError] = useState<AxiosError | null>(null);
 
-  const itemsPerPage = 4; // 한 페이지당 보여줄 아이템 수
+  //한 페지당 보여줄 아이템 개수
+  const itemsPerPage = 4; 
 
   const handlePageChange = (pageNumber: number) => {
     setPage(pageNumber);
   };
 
+  const coffeeDB = 'http://localhost:4000/api/coffee'
+
   const fetchData = async () => {
     try {
-      const response = await axios.get('http://localhost:4000/api/coffee');
+      const response = await axios.get(coffeeDB);
       setData(response.data);
       setCurrentData(data.slice(0, itemsPerPage)); // 초기 데이터 설정
     } catch(e:unknown) {
@@ -36,8 +37,8 @@ const Test: React.FC = () => {
 
   useEffect(() => { fetchData() },);
 
+  // 페이지가 변경될 때마다 보여줄 데이터 변경
   useEffect(() => {
-    // 페이지가 변경될 때마다 해당 페이지에 해당하는 데이터를 추출하여 currentData에 설정
     const startIndex = (page - 1) * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
     setCurrentData(data.slice(startIndex, endIndex));
@@ -48,14 +49,16 @@ const Test: React.FC = () => {
     const text = (e.target as HTMLFormElement).text.value;
     const done = (e.target as HTMLFormElement).done.checked;
     try {
-      await axios.post('http://localhost:4000/api/coffee', {text, done});
+      await axios.post(coffeeDB, {text, done});
       fetchData();
-    } catch(e) {
-      console.log(e)
+    } catch(e:unknown) {
+      if(e instanceof AxiosError)
+      setError(e);
     }
   }
 
-  if(error) return <div>에러가 발생했습니다.</div>
+  //에러 발생시 출력
+  if(error) return <div className='mainmenu__error'>{error ? error.message : null}</div>
 
   return (
     <>
@@ -94,4 +97,4 @@ const Test: React.FC = () => {
   );
 };
 
-export default Test;
+export default MenuMain;

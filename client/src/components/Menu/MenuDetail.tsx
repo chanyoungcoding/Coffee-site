@@ -1,7 +1,7 @@
 import coffeeCup3 from '../../assets/coffeecup3.png'
 import '../../styles/menu.scss'
 
-const Main = () => {
+const MenuDetail = () => {
   return ( 
     <div className="menu">
       <h1>아이스 아메리카노</h1>
@@ -49,4 +49,4 @@ const Main = () => {
   );
 }
 
-export default Main
+export default MenuDetail
