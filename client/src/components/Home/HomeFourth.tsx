@@ -30,6 +30,20 @@ const HomeFourth:React.FC = () => {
     transform: isVisible ? 'translateX(0)' : 'translateX(100%)',
   });
 
+const MenuDetail:React.FC = ({coffeeName, coffeeIntro, coffeePrice}) => {
+  return(
+    <div className="fourth__container">
+      <div className="container__left">
+        <h3>{coffeeName}</h3>
+        <p>{coffeeIntro}</p>
+      </div>
+      <div className="container__right">
+        <p>${coffeePrice}</p>
+      </div>
+  </div>
+  )
+}
+
   return ( 
     <div className="homefourth">
       <h2>What Happens Here</h2>
