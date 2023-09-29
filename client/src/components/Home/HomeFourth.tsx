@@ -2,6 +2,26 @@ import React, { useState } from "react";
 import { useSpring, animated } from 'react-spring'
 import _ from 'lodash';
 
+interface MenuDetail {
+  coffeeName:string;
+  coffeeIntro:string;
+  coffeePrice:string;
+}
+
+const MenuDetail:React.FC<MenuDetail> = ({coffeeName, coffeeIntro, coffeePrice}) => {
+  return(
+    <div className="fourth__container">
+      <div className="container__left">
+        <h3>{coffeeName}</h3>
+        <p>{coffeeIntro}</p>
+      </div>
+      <div className="container__right">
+        <p>${coffeePrice}</p>
+      </div>
+    </div>
+  )
+}
+
 const HomeFourth:React.FC = () => {
 
   const [isVisible, setIsVisible] = useState<boolean>(false);
@@ -30,35 +50,17 @@ const HomeFourth:React.FC = () => {
     transform: isVisible ? 'translateX(0)' : 'translateX(100%)',
   });
 
-const MenuDetail:React.FC = ({coffeeName, coffeeIntro, coffeePrice}) => {
-  return(
-    <div className="fourth__container">
-      <div className="container__left">
-        <h3>{coffeeName}</h3>
-        <p>{coffeeIntro}</p>
-      </div>
-      <div className="container__right">
-        <p>${coffeePrice}</p>
-      </div>
-  </div>
-  )
-}
-
   return ( 
     <div className="homefourth">
       <h2>What Happens Here</h2>
       <h1>요즘 커피 가격</h1>
       <div className="homefourth__container">
         <animated.div style={springPropsLeft} className="fourth__left">
-          <div className="fourth__container">
-            <div className="container__left">
-              <h3>CAFFE LATTE</h3>
-              <p>Fresh Coffee and strong taste</p>
-            </div>
-            <div className="container__right">
-              <p>$29.5</p>
-            </div>
-          </div>
+          <MenuDetail 
+            coffeeIntro="Fresh Coffee and strong taste" 
+            coffeeName="CAFFEE LATTE" 
+            coffeePrice="29"
+          />
           <div className="fourth__container">
             <div className="container__left">
               <h3>CAFFE LATTE</h3>
