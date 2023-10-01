@@ -1,14 +1,9 @@
 import React, { useState } from "react";
 import { useSpring, animated } from 'react-spring'
 import _ from 'lodash';
+import { MenuDetail } from "../../models/coffee";
 
-interface MenuDetail {
-  coffeeName:string;
-  coffeeIntro:string;
-  coffeePrice:string;
-}
-
-const MenuDetail:React.FC<MenuDetail> = ({coffeeName, coffeeIntro, coffeePrice}) => {
+const MenuDetail:React.FC<MenuDetail> = React.memo(({coffeeName, coffeeIntro, coffeePrice}) => {
   return(
     <div className="fourth__container">
       <div className="container__left">
@@ -20,7 +15,7 @@ const MenuDetail:React.FC<MenuDetail> = ({coffeeName, coffeeIntro, coffeePrice})
       </div>
     </div>
   )
-}
+})
 
 const HomeFourth:React.FC = () => {
 
@@ -56,94 +51,18 @@ const HomeFourth:React.FC = () => {
       <h1>요즘 커피 가격</h1>
       <div className="homefourth__container">
         <animated.div style={springPropsLeft} className="fourth__left">
-          <MenuDetail 
-            coffeeIntro="Fresh Coffee and strong taste" 
-            coffeeName="CAFFEE LATTE" 
-            coffeePrice="29"
-          />
-          <div className="fourth__container">
-            <div className="container__left">
-              <h3>CAFFE LATTE</h3>
-              <p>Fresh Coffee and strong taste</p>
-            </div>
-            <div className="container__right">
-              <p>$29.5</p>
-            </div>
-          </div>
-          <div className="fourth__container">
-            <div className="container__left">
-              <h3>CAFFE LATTE</h3>
-              <p>Fresh Coffee and strong taste</p>
-            </div>
-            <div className="container__right">
-              <p>$29.5</p>
-            </div>
-          </div>
-          <div className="fourth__container">
-            <div className="container__left">
-              <h3>CAFFE LATTE</h3>
-              <p>Fresh Coffee and strong taste</p>
-            </div>
-            <div className="container__right">
-              <p>$29.5</p>
-            </div>
-          </div>
-          <div className="fourth__container">
-            <div className="container__left">
-              <h3>CAFFE LATTE</h3>
-              <p>Fresh Coffee and strong taste</p>
-            </div>
-            <div className="container__right">
-              <p>$29.5</p>
-            </div>
-          </div>
+          <MenuDetail coffeeIntro="Fresh Coffee and strong taste" coffeeName="CAFFEE LATTE" coffeePrice="29"/>
+          <MenuDetail coffeeIntro="Fresh Coffee and strong taste" coffeeName="CAFFEE LATTE" coffeePrice="29"/>
+          <MenuDetail coffeeIntro="Fresh Coffee and strong taste" coffeeName="CAFFEE LATTE" coffeePrice="29"/>
+          <MenuDetail coffeeIntro="Fresh Coffee and strong taste" coffeeName="CAFFEE LATTE" coffeePrice="29"/>
+          <MenuDetail coffeeIntro="Fresh Coffee and strong taste" coffeeName="CAFFEE LATTE" coffeePrice="29"/>
         </animated.div>
         <animated.div style={springPropsRight} className="fourth__right">
-          <div className="fourth__container">
-              <div className="container__left">
-                <h3>CAFFE LATTE</h3>
-                <p>Fresh Coffee and strong taste</p>
-              </div>
-              <div className="container__right">
-                <p>$29.5</p>
-              </div>
-          </div>
-          <div className="fourth__container">
-            <div className="container__left">
-              <h3>CAFFE LATTE</h3>
-              <p>Fresh Coffee and strong taste</p>
-            </div>
-            <div className="container__right">
-              <p>$29.5</p>
-            </div>
-          </div>
-          <div className="fourth__container">
-            <div className="container__left">
-              <h3>CAFFE LATTE</h3>
-              <p>Fresh Coffee and strong taste</p>
-            </div>
-            <div className="container__right">
-              <p>$29.5</p>
-            </div>
-          </div>
-          <div className="fourth__container">
-            <div className="container__left">
-              <h3>CAFFE LATTE</h3>
-              <p>Fresh Coffee and strong taste</p>
-            </div>
-            <div className="container__right">
-              <p>$29.5</p>
-            </div>
-          </div>
-          <div className="fourth__container">
-            <div className="container__left">
-              <h3>CAFFE LATTE</h3>
-              <p>Fresh Coffee and strong taste</p>
-            </div>
-            <div className="container__right">
-              <p>$29.5</p>
-            </div>
-          </div>
+          <MenuDetail coffeeIntro="Fresh Coffee and strong taste" coffeeName="CAFFEE LATTE" coffeePrice="29"/>
+          <MenuDetail coffeeIntro="Fresh Coffee and strong taste" coffeeName="CAFFEE LATTE" coffeePrice="29"/>
+          <MenuDetail coffeeIntro="Fresh Coffee and strong taste" coffeeName="CAFFEE LATTE" coffeePrice="29"/>
+          <MenuDetail coffeeIntro="Fresh Coffee and strong taste" coffeeName="CAFFEE LATTE" coffeePrice="29"/>
+          <MenuDetail coffeeIntro="Fresh Coffee and strong taste" coffeeName="CAFFEE LATTE" coffeePrice="29"/>
         </animated.div>
       </div>
     </div>

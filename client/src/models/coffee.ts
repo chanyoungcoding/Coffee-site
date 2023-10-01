@@ -21,3 +21,9 @@ export interface DetailItem {
   detail: number | null;
   number?: number;
 }
+
+export interface MenuDetail {
+  coffeeName:string;
+  coffeeIntro:string;
+  coffeePrice:string;
+}
