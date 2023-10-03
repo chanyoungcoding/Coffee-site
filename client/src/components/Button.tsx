@@ -9,7 +9,7 @@ const StyledButton = styled.button`
   justify-content: center;
   align-items: center;
   margin: 0 5px;
-  padding: 1rem 3rem;
+  padding: 1rem 2rem;
   border: 2px solid #986C4A;
   border-radius: 4px;
   outline: none;
@@ -18,7 +18,7 @@ const StyledButton = styled.button`
   cursor: pointer;
 
   /* 크기 */
-  font-size: 20px;
+  font-size: 1rem;
 
   /* 색상 */
   color: black;

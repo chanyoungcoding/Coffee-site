@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import '../../styles/menu.scss';
+import coffeeCup from '../../assets/coffeecup.png'
+
+import Button from '../Button';
 
 import Pagination from 'react-js-pagination';
 import axios, { AxiosError } from 'axios';
@@ -44,44 +47,21 @@ const MenuMain: React.FC = () => {
     setCurrentData(data.slice(startIndex, endIndex));
   }, [page, data]);
 
-  const handleSubmitChange = async (e:React.FormEvent<HTMLFormElement>)=> {
-    e.preventDefault();
-    const text = (e.target as HTMLFormElement).text.value;
-    const done = (e.target as HTMLFormElement).done.checked;
-    try {
-      await axios.post(coffeeDB, {text, done});
-      fetchData();
-    } catch(e:unknown) {
-      if(e instanceof AxiosError)
-      setError(e);
-    }
-  }
-
   //에러 발생시 출력
   if(error) return <div className='mainmenu__error'>{error ? error.message : null}</div>
 
   return (
-    <>
-      <form onSubmit={handleSubmitChange}>
-        <input name='text' />
-        <input name='done' type="checkbox" />
-        <input value='추가' type="submit" />
-      </form>
-      {/* 현재 페이지의 데이터를 출력 */}
+    <div className='menumain'>
+      <h1>메뉴</h1>
+      <div className="menu__center">
       {currentData.map((item) => (
-        <div key={item._id}>
-          <p>ID: {item._id}</p>
-          <p>이름: {item.name}</p>
-          <p>칼로리: {item.calory}</p>
-          <p>나트륨: {item.sodium}</p>
-          <p>단백질: {item.protein}</p>
-          <p>당분: {item.sugar}</p>
-          <p>카페인: {item.caffeine}</p>
-          <p>포화지방: {item.sat_fat}</p>
-          <p>Description: {item.description}</p>
-          <Link to={`/menuDetail/${item.name}`}>자세한 정보</Link>
+        <div key={item._id} className='menumain__detail'>
+          <img src={coffeeCup} alt="#" />
+          <p>{item.name}</p>
+          <Button href={`/menuDetail/${item.name}`}>자세한 정보</Button>
         </div>
       ))}
+      </div>
 
       {/* 페이지네이션 컴포넌트 */}
       <Pagination
@@ -93,7 +73,7 @@ const MenuMain: React.FC = () => {
         nextPageText={'>'}
         onChange={handlePageChange}
       />
-    </>
+    </div>
   );
 };
 
