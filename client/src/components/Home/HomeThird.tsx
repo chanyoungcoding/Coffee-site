@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import coffeeBox from "../../assets/coffeebox.jpeg"
 
 import { Imgbox } from "../../models/coffee";
+import { Data } from '../../models/coffee';
+
+import Button from "../Button";
 
 
 // swiper 라이브러리
@@ -12,13 +15,14 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+import axios, { AxiosError } from "axios";
 
 const ImgBox: React.FC<Imgbox> = ({imgsrc, imgintro, imghref}) => {
   return (
     <div className="carousel-slide">
       <img src={imgsrc} alt="#" />
       <p>{imgintro}</p>
-      <a href={imghref}>보러가기</a>
+      <Button href={imghref}>보러가기</Button>
     </div>
   );
 }
@@ -26,6 +30,23 @@ const ImgBox: React.FC<Imgbox> = ({imgsrc, imgintro, imghref}) => {
 const navbarLists:string[] = ['COFFEE','COFFEE','COFFEE',"COFFEE"]
 
 const HomeThird: React.FC = () => {
+  const [data, setData] = useState<Data[]>([]);
+  const [error, setError] = useState<AxiosError | null>(null);
+
+  const coffeeDB = 'http://localhost:4000/api/coffee'
+
+  const fetchData = async () => {
+    try {
+      const response = await axios.get(coffeeDB);
+      setData(response.data);
+    } catch(e:unknown) {
+      if(e instanceof AxiosError) setError(e);
+    }
+  }
+
+  useEffect(() => { fetchData()},[]);
+
+  if(error) return <div className='mainmenu__error'>{error ? error.message : null}</div>
 
   return (
     <div className="homethird">
@@ -47,28 +68,11 @@ const HomeThird: React.FC = () => {
             disableOnInteraction: false,
           }}
         >
-          <SwiperSlide>
-            <ImgBox imghref='/' imgintro='coffee' imgsrc={coffeeBox}/>
-          </SwiperSlide>
-          <SwiperSlide>
-            <ImgBox imghref='/' imgintro='coffee' imgsrc={coffeeBox}/>
-          </SwiperSlide>
-          <SwiperSlide>
-            <ImgBox imghref='/' imgintro='coffee' imgsrc={coffeeBox}/>
-          </SwiperSlide>
-          <SwiperSlide>
-            <ImgBox imghref='/' imgintro='coffee' imgsrc={coffeeBox}/>
-          </SwiperSlide>
-          <SwiperSlide>
-            <ImgBox imghref='/' imgintro='coffee' imgsrc={coffeeBox}/>
-          </SwiperSlide>
-          <SwiperSlide>
-            <ImgBox imghref='/' imgintro='coffee' imgsrc={coffeeBox}/>
-          </SwiperSlide>
-          <SwiperSlide>
-            <ImgBox imghref='/' imgintro='coffee' imgsrc={coffeeBox}/>
-          </SwiperSlide>
-
+          {data.map((item) => (
+            <SwiperSlide key={item._id}>
+              <ImgBox imghref={`/menuDetail/${item.name}`} imgintro={item.name} imgsrc={coffeeBox}/>
+            </SwiperSlide>
+          ))}
         </Swiper>
       </div>
     </div>

@@ -5,6 +5,20 @@ import kena from '../../assets/케냐.png';
 import kenaflaver from '../../assets/케냐커피맛.jpg';
 import kenacoffee from '../../assets/케냐커피.jpg';
 
+interface introBox {
+  imgsrc: string;
+  intro: string;
+}
+
+const IntroBox:React.FC<introBox> = React.memo(({imgsrc, intro}) => {
+  return (
+    <div className="intro__box">
+      <img src={imgsrc} alt="" />
+      <p>{intro}</p>
+    </div>
+  )
+})
+
 const Country:React.FC = () => {
   return ( 
     <div className="country">
@@ -29,18 +43,9 @@ const Country:React.FC = () => {
             <p>Roast</p>
           </div>
           <div className="type__intro">
-            <div className="intro__box">
-              <img src={kena} alt="#" />
-              <p>케냐</p>
-            </div>
-            <div className="intro__box">
-              <img src={kenaflaver} alt="" />
-              <p>apple</p>
-            </div>
-            <div className="intro__box">
-              <img src={kenacoffee} alt="" />
-              <p>dark</p>
-            </div>
+            <IntroBox imgsrc={kena} intro="케냐"/>
+            <IntroBox imgsrc={kenaflaver} intro="apple"/>
+            <IntroBox imgsrc={kenacoffee} intro="dark"/>
           </div>
           <div className="type__intro"></div>
         </div>

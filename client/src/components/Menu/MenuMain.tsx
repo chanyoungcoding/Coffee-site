@@ -32,8 +32,7 @@ const MenuMain: React.FC = () => {
       setData(response.data);
       setCurrentData(response.data.slice(0, itemsPerPage)); // 초기 데이터 설정
     } catch(e:unknown) {
-      if(e instanceof AxiosError)
-      setError(e);
+      if(e instanceof AxiosError) setError(e);
     }
   }
 
