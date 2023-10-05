@@ -6,7 +6,6 @@ import Button from '../Button';
 
 import Pagination from 'react-js-pagination';
 import axios, { AxiosError } from 'axios';
-import { Link } from "react-router-dom";
 
 import { Data } from '../../models/coffee';
 

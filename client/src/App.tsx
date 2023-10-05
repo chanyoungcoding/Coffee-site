@@ -1,12 +1,13 @@
 import React from 'react'
+import { Routes, Route } from 'react-router-dom'
+import './styles/common.scss'
+
 import Home from './pages/Home'
 import Common from './pages/Common'
 import MenuDetail from './components/Menu/MenuDetail'
 import MenuMain from './components/Menu/MenuMain'
-import { Routes, Route } from 'react-router-dom'
-import './styles/common.scss'
-
 import Test from './components/Test'
+import Country from './components/Country/Country'
 
 const App:React.FC = () => {
   return (
@@ -16,6 +17,7 @@ const App:React.FC = () => {
         <Route path='/test' element={<Test/>}/>
         <Route path='/menuDetail/:name' element={<MenuDetail/>}/>
         <Route path='/menu' element={<MenuMain/>}/>
+        <Route path='/country' element={<Country/>}/>
       </Route>
     </Routes>
   )

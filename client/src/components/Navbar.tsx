@@ -26,7 +26,7 @@ const Navbar:React.FC = () => {
         </div>
         <div className="li__inner">
           <div className={`li__right ${visible ? "visible" : ""}`}>
-            <Link to='/'><li>MADE</li></Link>
+            <Link to='/country'><li>COUNTRY</li></Link>
             <Link to='/'><li>INFROMATION</li></Link>
           </div>
         </div>
