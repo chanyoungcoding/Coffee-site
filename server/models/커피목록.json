@@ -7,7 +7,9 @@
         "protein": 11,
         "sodium": 220,
         "sat_fat": 14,
-        "caffeine": 75
+        "caffeine": 75,
+        "description": "짙고 풍부한 커피와 달콤하고 부드러운 글레이즈드 폼의 조화를 느낄 수 있습니다.",
+        "imgurl": "https://res.cloudinary.com/dnjjlp2uy/image/upload/v1696566343/Coffee/%EB%B8%94%EB%9E%99%EA%B8%80%EB%A0%88%EC%9D%B4%EC%A6%88%EB%93%9C%EB%9D%BC%EB%96%BC_vuob7j.png"
     },
     {
         "name": "아이스 블랙 글레이즈드 라떼",
@@ -16,16 +18,9 @@
         "protein": 7,
         "sodium": 160,
         "sat_fat": 11,
-        "caffeine": 75
-    },
-    {
-        "name": "에스프레소 콘 파나",
-        "calory": 30,
-        "sugar": 1,
-        "protein": 0,
-        "sodium": 0,
-        "sat_fat": 1.5,
-        "caffeine": 75
+        "caffeine": 75,
+        "description": "짙고 풍부한 커피와 달콤하고 부드러운 글레이즈드 폼의 조화를 느낄 수 있습니다.",
+        "imgurl": "https://res.cloudinary.com/dnjjlp2uy/image/upload/v1696566343/Coffee/%EB%B8%94%EB%9E%99%EA%B8%80%EB%A0%88%EC%9D%B4%EC%A6%88%EB%93%9C%EB%9D%BC%EB%96%BC_vuob7j.png"
     },
     {
         "name": "에스프레소 마키아또",
@@ -34,7 +29,9 @@
         "protein": 1,
         "sodium": 0,
         "sat_fat": 0,
-        "caffeine": 75
+        "caffeine": 75,
+        "description":"강렬한 에스프레소의 맛과 우유의 부드러움을 같이 즐길 수 있는 커피입니다.",
+        "imgurl": "https://res.cloudinary.com/dnjjlp2uy/image/upload/v1696565421/Coffee/%EB%A7%88%ED%82%A4%EC%95%84%ED%86%A0_ujpl7h.png"
     },
     {
         "name": "아이스 카페 아메리카노",
@@ -43,7 +40,9 @@
         "protein": 1,
         "sodium": 5,
         "sat_fat": 0,
-        "caffeine": 150
+        "caffeine": 150,
+        "description": "아메리카노는 에스프레소의 진한 풍미를 잘 느낄 수 있는 커피입니다.",
+        "imgurl": "https://res.cloudinary.com/dnjjlp2uy/image/upload/v1696564826/Coffee/coffeecup3_iv9bme.png"
     },
     {
         "name": "카페 아메리카노",
@@ -52,7 +51,9 @@
         "protein": 1,
         "sodium": 5,
         "sat_fat": 0,
-        "caffeine": 150
+        "caffeine": 150,
+        "description": "아메리카노는 에스프레소의 진한 풍미를 잘 느낄 수 있는 커피입니다.",
+        "imgurl": "https://res.cloudinary.com/dnjjlp2uy/image/upload/v1696564826/Coffee/coffeecup3_iv9bme.png"
     },
     {
         "name": "아이스 카라멜 마키아또",
@@ -61,7 +62,9 @@
         "protein": 6,
         "sodium": 110,
         "sat_fat": 4.6,
-        "caffeine": 75
+        "caffeine": 75,
+        "description":"향긋한 바닐라 시럽과 시원한 우유의 조합을 느낄 수 있는 커피입니다.",
+        "imgurl": "https://res.cloudinary.com/dnjjlp2uy/image/upload/v1696565536/Coffee/%EC%B9%B4%EB%9D%BC%EB%A9%9C%EB%A7%88%ED%82%A4%EC%95%84%ED%86%A0_rad16d.png"
     },
     {
         "name": "카라멜 마키아또",
@@ -70,7 +73,9 @@
         "protein": 8,
         "sodium": 130,
         "sat_fat": 5,
-        "caffeine": 75
+        "caffeine": 75,
+        "description":"향긋한 바닐라 시럽과 시원한 우유의 조합을 느낄 수 있는 커피입니다.",
+        "imgurl": "https://res.cloudinary.com/dnjjlp2uy/image/upload/v1696565536/Coffee/%EC%B9%B4%EB%9D%BC%EB%A9%9C%EB%A7%88%ED%82%A4%EC%95%84%ED%86%A0_rad16d.png"
     },
     {
         "name": "아이스 카푸치노",
@@ -79,7 +84,9 @@
         "protein": 6,
         "sodium": 90,
         "sat_fat": 3.5,
-        "caffeine": 75
+        "caffeine": 75,
+        "description":"풍부하고 진한 에스프레소에 신선한 우유와 우유 거품이 들어간 커피입니다.",
+        "imgurl":"https://res.cloudinary.com/dnjjlp2uy/image/upload/v1696565719/Coffee/%EC%B9%B4%ED%91%B8%EC%B9%98%EB%85%B8_eux1rf.png"
     },
     {
         "name": "카푸치노",
@@ -88,97 +95,20 @@
         "protein": 6,
         "sodium": 70,
         "sat_fat": 3,
-        "caffeine": 75
-    },
-    {
-        "name": "더 그린 쑥 크림 라떼",
-        "calory": 365,
-        "sugar": 33,
-        "protein": 11,
-        "sodium": 570,
-        "sat_fat": 11,
-        "caffeine": 170
-    },
-    {
-        "name": "라벤더 카페 브레베",
-        "calory": 400,
-        "sugar": 30,
-        "protein": 8,
-        "sodium": 140,
-        "sat_fat": 22,
-        "caffeine": 105
+        "caffeine": 75,
+        "description":"풍부하고 진한 에스프레소에 신선한 우유와 우유 거품이 들어간 커피입니다.",
+        "imgurl":"https://res.cloudinary.com/dnjjlp2uy/image/upload/v1696565719/Coffee/%EC%B9%B4%ED%91%B8%EC%B9%98%EB%85%B8_eux1rf.png"
     },
     {
         "name": "바닐라 빈 라떼",
-        "calory": 245,
-        "sugar": 27,
-        "protein": 9,
-        "sodium": 150,
-        "sat_fat": 6,
-        "caffeine": 210
-    },
-    {
-        "name": "브라운 슈가 오트 쉐이큰 에스프레소",
-        "calory": 135,
-        "sugar": 20,
-        "protein": 1,
-        "sodium": 55,
-        "sat_fat": 0.2,
-        "caffeine": 170
-    },
-    {
-        "name": "사케라또 비안코 오버 아이스",
-        "calory": 270,
-        "sugar": 14,
-        "protein": 3,
-        "sodium": 45,
-        "sat_fat": 18,
-        "caffeine": 315
-    },
-    {
-        "name": "스타벅스 1호점 바닐라 빈 라떼",
         "calory": 234,
         "sugar": 27,
         "protein": 9,
         "sodium": 150,
         "sat_fat": 6,
-        "caffeine": 210
-    },
-    {
-        "name": "스타벅스 1호점 카페 라떼",
-        "calory": 191,
-        "sugar": 15,
-        "protein": 10,
-        "sodium": 150,
-        "sat_fat": 6,
-        "caffeine": 210
-    },
-    {
-        "name": "스타벅스 돌체 라떼",
-        "calory": 255,
-        "sugar": 39,
-        "protein": 12,
-        "sodium": 190,
-        "sat_fat": 2.6,
-        "caffeine": 150
-    },
-    {
-        "name": "아이스 더 그린 쑥 크림 라떼",
-        "calory": 325,
-        "sugar": 28,
-        "protein": 9,
-        "sodium": 490,
-        "sat_fat": 10,
-        "caffeine": 170
-    },
-    {
-        "name": "아이스 라벤더 카페 브레베",
-        "calory": 335,
-        "sugar": 27,
-        "protein": 6,
-        "sodium": 110,
-        "sat_fat": 18,
-        "caffeine": 105
+        "caffeine": 210,
+        "description":"바닐라 빈 시럽이 부드럽게 어우러진 카페 라떼입니다.",
+        "imgurl": "https://res.cloudinary.com/dnjjlp2uy/image/upload/v1696565933/Coffee/%EB%B0%94%EB%8B%90%EB%9D%BC%EB%9D%BC%EB%96%BC_n5d0zs.png"
     },
     {
         "name": "아이스 바닐라 빈 라떼",
@@ -187,34 +117,31 @@
         "protein": 5,
         "sodium": 75,
         "sat_fat": 2.9,
-        "caffeine": 210
+        "caffeine": 210,
+        "description":"바닐라 빈 시럽이 부드럽게 어우러진 카페 라떼입니다.",
+        "imgurl": "https://res.cloudinary.com/dnjjlp2uy/image/upload/v1696566138/Coffee/%EB%B0%94%EB%8B%90%EB%9D%BC%EB%B9%88%EB%9D%BC%EB%96%BC_anxikw.png"
     },
     {
-        "name": "아이스 스타벅스 1호점 바닐라 빈 라떼",
-        "calory": 159,
-        "sugar": 21,
-        "protein": 6,
-        "sodium": 90,
-        "sat_fat": 2.9,
-        "caffeine": 210
+        "name": "돌체 라떼",
+        "calory": 255,
+        "sugar": 39,
+        "protein": 12,
+        "sodium": 190,
+        "sat_fat": 2.6,
+        "caffeine": 150,
+        "description":"더욱 깊은 커피의 맛과 향에 깔끔한 무지방 우유와 돌체 시럽이 들어간 커피입니다.",
+        "imgurl": "https://res.cloudinary.com/dnjjlp2uy/image/upload/v1696566072/Coffee/%EB%8F%8C%EC%B2%B4%EB%9D%BC%EB%96%BC_auoqad.png"
     },
     {
-        "name": "아이스 스타벅스 1호점 카페 라떼",
-        "calory": 117,
-        "sugar": 9,
-        "protein": 6,
-        "sodium": 100,
-        "sat_fat": 3.2,
-        "caffeine": 210
-    },
-    {
-        "name": "아이스 스타벅스 돌체 라떼",
+        "name": "아이스 돌체 라떼",
         "calory": 230,
         "sugar": 35,
         "protein": 10,
         "sodium": 145,
         "sat_fat": 2.5,
-        "caffeine": 150
+        "caffeine": 150,
+        "description":"더욱 깊은 커피의 맛과 향에 깔끔한 무지방 우유와 돌체 시럽이 들어간 커피입니다.",
+        "imgurl": "https://res.cloudinary.com/dnjjlp2uy/image/upload/v1696566072/Coffee/%EB%8F%8C%EC%B2%B4%EB%9D%BC%EB%96%BC_auoqad.png"
     },
     {
         "name": "아이스 카페 라떼",
@@ -223,7 +150,9 @@
         "protein": 6,
         "sodium": 75,
         "sat_fat": 3.5,
-        "caffeine": 75
+        "caffeine": 75,
+        "description":"진한 에스프레소가 신선한 스팀 밀크를 만나 부드러워진 커피 위에 우유 거품을 살짝 얹은 카페 라떼입니다.",
+        "imgurl": "https://res.cloudinary.com/dnjjlp2uy/image/upload/v1696564276/Coffee/%EC%B9%B4%ED%8E%98%EB%9D%BC%EB%96%BC_s43et0.png"
     },
     {
         "name": "카페 라떼",
@@ -232,7 +161,9 @@
         "protein": 10,
         "sodium": 115,
         "sat_fat": 5,
-        "caffeine": 75
+        "caffeine": 75,
+        "description":"진한 에스프레소가 신선한 스팀 밀크를 만나 부드러워진 커피 위에 우유 거품을 살짝 얹은 카페 라떼입니다.",
+        "imgurl": "https://res.cloudinary.com/dnjjlp2uy/image/upload/v1696564276/Coffee/%EC%B9%B4%ED%8E%98%EB%9D%BC%EB%96%BC_s43et0.png"
     },
     {
         "name": "아이스 카페 모카",
@@ -241,16 +172,9 @@
         "protein": 7,
         "sodium": 70,
         "sat_fat": 8,
-        "caffeine": 95
-    },
-    {
-        "name": "아이스 화이트 초콜릿 모카",
-        "calory": 335,
-        "sugar": 41,
-        "protein": 8,
-        "sodium": 160,
-        "sat_fat": 8,
-        "caffeine": 75
+        "caffeine": 95,
+        "description":"진한 에스프레소와 초콜릿 맛이 어우러진 휘핑크림으로 마무리한 커피입니다.",
+        "imgurl": "https://res.cloudinary.com/dnjjlp2uy/image/upload/v1696566510/Coffee/%EC%B9%B4%ED%8E%98%EB%AA%A8%EC%B9%B4_feau5n.png"
     },
     {
         "name": "카페 모카",
@@ -259,16 +183,20 @@
         "protein": 10,
         "sodium": 105,
         "sat_fat": 9,
-        "caffeine": 95
+        "caffeine": 95,
+        "description":"진한 에스프레소와 초콜릿 맛이 어우러진 휘핑크림으로 마무리한 커피입니다.",
+        "imgurl": "https://res.cloudinary.com/dnjjlp2uy/image/upload/v1696566510/Coffee/%EC%B9%B4%ED%8E%98%EB%AA%A8%EC%B9%B4_feau5n.png"
     },
     {
-        "name": "클래식 민트 모카",
+        "name": "아이스 화이트 초콜릿 모카",
         "calory": 335,
-        "sugar": 43,
-        "protein": 4,
-        "sodium": 200,
-        "sat_fat": 0.7,
-        "caffeine": 210
+        "sugar": 41,
+        "protein": 8,
+        "sodium": 160,
+        "sat_fat": 8,
+        "caffeine": 75,
+        "description": "화이트 초콜릿 시럽과 에스프레소를 신선한 우유와 섞어 휘핑크림으로 마무리한 커피입니다.",
+        "imgurl": "https://res.cloudinary.com/dnjjlp2uy/image/upload/v1696566650/Coffee/%ED%99%94%EC%9D%B4%ED%8A%B8%EC%B4%88%EC%BD%9C%EB%A6%BF%EB%AA%A8%EC%B9%B4_sloozn.png"
     },
     {
         "name": "화이트 초콜릿 모카",
@@ -277,61 +205,9 @@
         "protein": 12,
         "sodium": 230,
         "sat_fat": 11,
-        "caffeine": 75
-    },
-    {
-        "name": "바닐라 플랫 화이트",
-        "calory": 220,
-        "sugar": 23,
-        "protein": 9,
-        "sodium": 130,
-        "sat_fat": 5,
-        "caffeine": 260
-    },
-    {
-        "name": "바닐라 스타벅스 더블 샷",
-        "calory": 125,
-        "sugar": 14,
-        "protein": 2,
-        "sodium": 30,
-        "sat_fat": 4.5,
-        "caffeine": 150
-    },
-    {
-        "name": "블론드 바닐라 더블 샷 마키아또",
-        "calory": 315,
-        "sugar": 31,
-        "protein": 8,
-        "sodium": 130,
-        "sat_fat": 12,
-        "caffeine": 170
-    },
-    {
-        "name": "사케라또 아포가토",
-        "calory": 290,
-        "sugar": 30,
-        "protein": 4,
-        "sodium": 70,
-        "sat_fat": 10,
-        "caffeine": 210
-    },
-    {
-        "name": "스파클링 시트러스 에스프레소",
-        "calory": 65,
-        "sugar": 15,
-        "protein": 0,
-        "sodium": 5,
-        "sat_fat": 0,
-        "caffeine": 105
-    },
-    {
-        "name": "아이스 블론드 바닐라 더블 샷 마키아또",
-        "calory": 195,
-        "sugar": 22,
-        "protein": 5,
-        "sodium": 65,
-        "sat_fat": 6,
-        "caffeine": 170
+        "caffeine": 75,
+        "description": "화이트 초콜릿 시럽과 에스프레소를 신선한 우유와 섞어 휘핑크림으로 마무리한 커피입니다.",
+        "imgurl":"https://res.cloudinary.com/dnjjlp2uy/image/upload/v1696566650/Coffee/%ED%99%94%EC%9D%B4%ED%8A%B8%EC%B4%88%EC%BD%9C%EB%A6%BF%EB%AA%A8%EC%B9%B4_sloozn.png"
     },
     {
         "name": "에스프레소",
@@ -340,16 +216,9 @@
         "protein": 0,
         "sodium": 0,
         "sat_fat": 0,
-        "caffeine": 75
-    },
-    {
-        "name": "커피 스타벅스 더블 샷",
-        "calory": 125,
-        "sugar": 14,
-        "protein": 3,
-        "sodium": 28.5,
-        "sat_fat": 5,
-        "caffeine": 150
+        "caffeine": 75,
+        "description":"고압,고온의 물로 커피를 추출하는 가장 기본적인 커피입니다.",
+        "imgurl":"https://res.cloudinary.com/dnjjlp2uy/image/upload/v1696566936/Coffee/%EC%97%90%EC%8A%A4%ED%94%84%EB%A0%88%EC%86%8C_e4zzqh.png"
     },
     {
         "name": "클래식 아포가토",
@@ -358,28 +227,20 @@
         "protein": 4,
         "sodium": 70,
         "sat_fat": 10,
-        "caffeine": 210
+        "caffeine": 210,
+        "description":"에스프레소 투 샷이 바닐라 아이스크림과 진하게 어우러진 커피입니다.",
+        "imgurl":"https://res.cloudinary.com/dnjjlp2uy/image/upload/v1696566939/Coffee/%EC%95%84%ED%8F%AC%EC%B9%B4%ED%86%A0_etdk9x.png"
     },
     {
-        "name": "헤이즐넛 스타벅스 더블 샷",
+        "name": "헤이즐넛 라떼",
         "calory": 125,
         "sugar": 14,
         "protein": 3,
         "sodium": 28.5,
         "sat_fat": 5,
-        "caffeine": 150
-    }
-  ],
-
-  "coldBlue" : [
-    {
-        "name": "미키 딜라이트 콜드 브루",
-        "calory": 170,
-        "sugar": 11,
-        "protein": 1,
-        "sodium": 50,
-        "sat_fat": 10,
-        "caffeine": 138
+        "caffeine": 150,
+        "description":"진하고 풍부한 에스프레소에 달달한 헤이즐넛 파우더를 첨가한 커피입니다.",
+        "imgurl":"https://res.cloudinary.com/dnjjlp2uy/image/upload/v1696567007/Coffee/%ED%97%A4%EC%9D%B4%EC%A6%90%EB%84%9B%EB%9D%BC%EB%96%BC_g1cr3j.png"
     },
     {
         "name": "콜드 브루",
@@ -388,25 +249,20 @@
         "protein": 0,
         "sodium": 25,
         "sat_fat": 0,
-        "caffeine": 360
+        "caffeine": 360,
+        "description":"찬물로 우려내는 커피입니다.",
+        "imgurl":"https://res.cloudinary.com/dnjjlp2uy/image/upload/v1696567297/Coffee/%EC%BD%9C%EB%93%9C%EB%B8%94%EB%A3%A8_zplsj8.png"
     },
     {
-        "name": "나이트로 바닐라 크림",
-        "calory": 80,
-        "sugar": 10,
-        "protein": 1,
-        "sodium": 40,
-        "sat_fat": 2,
-        "caffeine": 232
-    },
-    {
-        "name": "나이트로 콜드 브루",
-        "calory": 5,
-        "sugar": 0,
-        "protein": 0,
-        "sodium": 5,
-        "sat_fat": 0,
-        "caffeine": 245
+        "name": "콜드 브루 라떼",
+        "calory": 110,
+        "sugar": 8,
+        "protein": 6,
+        "sodium": 75,
+        "sat_fat": 3.5,
+        "caffeine": 75,
+        "description":"찬물로 우려내는 콜드 블루에 고소한 우유를 곁들인 커피입니다.",
+        "imgurl":"https://res.cloudinary.com/dnjjlp2uy/image/upload/v1696567294/Coffee/%EC%BD%9C%EB%93%9C%EB%B8%94%EB%A3%A8%EB%9D%BC%EB%96%BC_jcl7tz.png"
     },
     {
         "name": "돌체 콜드 브루",
@@ -415,97 +271,9 @@
         "protein": 8,
         "sodium": 130,
         "sat_fat": 9,
-        "caffeine": 155
-    },
-    {
-        "name": "리저브 나이트로",
-        "calory": 5,
-        "sugar": 0,
-        "protein": 0,
-        "sodium": 0,
-        "sat_fat": 0,
-        "caffeine": 190
-    },
-    {
-        "name": "리저브 콜드 브루",
-        "calory": 5,
-        "sugar": 0,
-        "protein": 0,
-        "sodium": 0,
-        "sat_fat": 0,
-        "caffeine": 190
-    },
-    {
-        "name": "민트 콜드 브루",
-        "calory": 100,
-        "sugar": 23,
-        "protein": 0,
-        "sodium": 0,
-        "sat_fat": 0,
-        "caffeine": 415
-    },
-    {
-        "name": "바닐라 크림 콜드 브루",
-        "calory": 125,
-        "sugar": 11,
-        "protein": 3,
-        "sodium": 58,
-        "sat_fat": 6,
-        "caffeine": 155
-    },
-    {
-        "name": "시그니처 더 블랙 콜드 브루",
-        "calory": 25,
-        "sugar": 0,
-        "protein": 0,
-        "sodium": 50,
-        "sat_fat": 0,
-        "caffeine": 680
-    },
-    {
-        "name": "여수 윤슬 헤이즐넛 콜드브루",
-        "calory": 245,
-        "sugar": 27,
-        "protein": 5,
-        "sodium": 85,
-        "sat_fat": 9,
-        "caffeine": 53
-    },
-    {
-        "name": "오트 콜드 브루",
-        "calory": 120,
-        "sugar": 14,
-        "protein": 1,
-        "sodium": 95,
-        "sat_fat": 0.3,
-        "caffeine": 65
-    },
-    {
-        "name": "제주 비자림 콜드 브루",
-        "calory": 360,
-        "sugar": 39,
-        "protein": 11,
-        "sodium": 140,
-        "sat_fat": 8,
-        "caffeine": 305
-    },
-    {
-        "name": "콜드 브루 몰트",
-        "calory": 505,
-        "sugar": 41,
-        "protein": 7,
-        "sodium": 150,
-        "sat_fat": 20,
-        "caffeine": 190
-    },
-    {
-        "name": "콜드 브루 플로트",
-        "calory": 225,
-        "sugar": 18,
-        "protein": 3,
-        "sodium": 70,
-        "sat_fat": 10,
-        "caffeine": 190
+        "caffeine": 155,
+        "description":"찬물로 우려내는 콜드 블루에 고소한 우유를 곁들인 커피입니다.",
+        "imgurl":"https://res.cloudinary.com/dnjjlp2uy/image/upload/v1696568547/Coffee/%EB%8F%8C%EC%B2%B4%EC%BD%9C%EB%93%9C%EB%B8%94%EB%A3%A8_ixhfsn.png"
     }
   ]
 }

@@ -24,7 +24,8 @@ mongoose.connect(dbUrl)
     caffeine:Number,
     sat_fat: Number,
     price: Number,
-    description: String
+    description: String,
+    imgurl: String
 })
 
 const Coffee = mongoose.model('Coffee', CoffeeSchema);
@@ -32,9 +33,10 @@ const Coffee = mongoose.model('Coffee', CoffeeSchema);
 
 const coffeeDB = async () => {
   await Coffee.deleteMany({});
-  for(let i = 0; i < 10; i++) {
+  const Espressolength = coffeeDetail.Espresso.length;
+  for(let i = 0; i < Espressolength; i++) {
+    
     const Espresso = coffeeDetail.Espresso[i];
-
     const coffee = new Coffee({
       name: Espresso.name,
       calory: Espresso.calory,
@@ -43,7 +45,8 @@ const coffeeDB = async () => {
       sugar: Espresso.sugar,
       caffeine: Espresso.caffeine,
       sat_fat:Espresso.sat_fat,
-      description: '아메리카노는 에스프레소의 진한 풍미를 잘 느낄 수 있는 음료입니다.'
+      description: Espresso.description,
+      imgurl: Espresso.imgurl
     })
     await coffee.save();
   }

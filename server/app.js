@@ -33,16 +33,6 @@ app.get('/api/coffeeName', async (req,res) => {
   res.json(coffee)
 })
 
-app.post('/api/coffee', (req,res) => {
-  const {text, done} = req.body;
-  todoList.push({
-    id: id++,
-    text,
-    done
-  });
-  return res.send('success')
-})
-
 app.listen('4000', () => {
   console.log('서버 실행')
 })
