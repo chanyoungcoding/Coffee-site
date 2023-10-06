@@ -67,14 +67,15 @@ ul.pagination li a.active {
   }
   .menu__center { 
     display: flex;
+    justify-content: space-between;
     .menumain__detail {
       display: flex;
       flex-direction: column;
       align-items: center;
       img {
         background-color: #F9F5EA;
-        width: 80%;
-        height: 70%;
+        width: 400px;
+        height: 600px;
         object-fit: cover;
       }
       p {

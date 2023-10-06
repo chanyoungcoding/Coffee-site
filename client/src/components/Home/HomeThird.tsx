@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import coffeeBox from "../../assets/coffeebox.jpeg"
 
 import { Imgbox } from "../../models/coffee";
 import { Data } from '../../models/coffee';
@@ -70,7 +69,7 @@ const HomeThird: React.FC = () => {
         >
           {data.map((item) => (
             <SwiperSlide key={item._id}>
-              <ImgBox imghref={`/menuDetail/${item.name}`} imgintro={item.name} imgsrc={coffeeBox}/>
+              <ImgBox imghref={`/menuDetail/${item.name}`} imgintro={item.name} imgsrc={item.imgurl}/>
             </SwiperSlide>
           ))}
         </Swiper>

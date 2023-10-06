@@ -190,7 +190,9 @@
       img {
         width: 440px;
         height: 440px;
-        object-fit: cover;
+        background-color: #986C4A;
+        border-radius: 15px;
+        object-fit: contain;
       }
       p {
         padding: 20px;

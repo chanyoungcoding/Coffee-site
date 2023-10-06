@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import '../../styles/menu.scss';
-import coffeeCup from '../../assets/coffeecup.png'
 
 import Button from '../Button';
 
@@ -54,7 +53,7 @@ const MenuMain: React.FC = () => {
       <div className="menu__center">
       {currentData.map((item) => (
         <div key={item._id} className='menumain__detail'>
-          <img src={coffeeCup} alt="#" />
+          <img src={item.imgurl} alt="#" />
           <p>{item.name}</p>
           <Button href={`/menuDetail/${item.name}`}>자세한 정보</Button>
         </div>

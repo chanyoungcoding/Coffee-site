@@ -14,6 +14,7 @@ export interface Data {
   caffeine: number;
   sat_fat: number;
   description: string;
+  imgurl:string;
 }
 
 export interface DetailItem {
