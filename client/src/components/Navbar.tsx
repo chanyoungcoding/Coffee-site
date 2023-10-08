@@ -21,7 +21,7 @@ const Navbar:React.FC = () => {
           <div className={`li__left ${visible ? "visible" : ""}`}>
             <Link to='/'><li>HOME</li></Link>
             <Link to='/menu'><li>MENU</li></Link>
-            <Link to='/menu'><li>RECIPE</li></Link>
+            <Link to='/recipe'><li>RECIPE</li></Link>
           </div>
         </div>
         <div className="li__inner">
