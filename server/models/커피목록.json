@@ -9,7 +9,8 @@
         "sat_fat": 14,
         "caffeine": 75,
         "description": "짙고 풍부한 커피와 달콤하고 부드러운 글레이즈드 폼의 조화를 느낄 수 있습니다.",
-        "imgurl": "https://res.cloudinary.com/dnjjlp2uy/image/upload/v1696577522/Coffee/%EB%B8%94%EB%9E%99%EA%B8%80%EB%A0%88%EC%9D%B4%EC%A6%88%EB%93%9C%EB%9D%BC%EB%96%BC_afx9oq.png"
+        "imgurl": "https://res.cloudinary.com/dnjjlp2uy/image/upload/v1696577522/Coffee/%EB%B8%94%EB%9E%99%EA%B8%80%EB%A0%88%EC%9D%B4%EC%A6%88%EB%93%9C%EB%9D%BC%EB%96%BC_afx9oq.png",
+        "materials": ["에스프레소", "우유", "얼음", "크림치즈", "생크림", "설탕", "카라멜 시럽", "초콜릿 시럽", "코코아 파우더"]
     },
     {
         "name": "에스프레소 마키아또",
@@ -31,7 +32,9 @@
         "sat_fat": 0,
         "caffeine": 150,
         "description": "아메리카노는 에스프레소의 진한 풍미를 잘 느낄 수 있는 커피입니다.",
-        "imgurl": "https://res.cloudinary.com/dnjjlp2uy/image/upload/v1696577523/Coffee/%EC%95%84%EC%9D%B4%EC%8A%A4%EC%95%84%EB%A9%94%EB%A6%AC%EC%B9%B4%EB%85%B8_cja3t3.png"
+        "imgurl": "https://res.cloudinary.com/dnjjlp2uy/image/upload/v1696577523/Coffee/%EC%95%84%EC%9D%B4%EC%8A%A4%EC%95%84%EB%A9%94%EB%A6%AC%EC%B9%B4%EB%85%B8_cja3t3.png",
+        "materials": ["에스프레소", "물"],
+        "howToMake": ["에스프레소를 준비한다.", "물을 60~70도까지 가열한다.", "뜨거운 물에 에스프레소를 부어서 1 : 2 비율로 섞는다."]
     },
     {
         "name": "아이스 카라멜 마키아또",

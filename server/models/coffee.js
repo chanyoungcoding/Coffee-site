@@ -13,7 +13,15 @@ const CoffeeSchema = new Schema({
   caffeine:Number,
   sat_fat: Number,
   price: Number,
-  description: String
+  description: String,
+  materials: {
+    type: [String],
+    default: []
+  },
+  howToMake: {
+    type: [String],
+    default: []
+  }
 })
 
 const Coffee = mongoose.model('Coffee', CoffeeSchema);

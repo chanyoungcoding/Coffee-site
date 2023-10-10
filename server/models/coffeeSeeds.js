@@ -25,7 +25,15 @@ mongoose.connect(dbUrl)
     sat_fat: Number,
     price: Number,
     description: String,
-    imgurl: String
+    imgurl: String,
+    materials: {
+      type: [String],
+      default: []
+    },
+    howToMake: {
+      type: [String],
+      default: []
+    }
 })
 
 const Coffee = mongoose.model('Coffee', CoffeeSchema);
@@ -46,7 +54,9 @@ const coffeeDB = async () => {
       caffeine: Espresso.caffeine,
       sat_fat:Espresso.sat_fat,
       description: Espresso.description,
-      imgurl: Espresso.imgurl
+      imgurl: Espresso.imgurl,
+      materials: Espresso.materials,
+      howToMake: Espresso.howToMake
     })
     await coffee.save();
   }
