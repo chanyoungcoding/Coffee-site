@@ -3,7 +3,7 @@ import coffeecup from "../../assets/coffeecup1.png";
 import coffeecup1 from "../../assets/coffeecup2.png";
 import Button from "../Button";
 
-import { useSpring, animated } from 'react-spring';
+import { useSpring, animated, useTrail } from 'react-spring';
 
 const HomeFirst:React.FC = () => {
 
@@ -13,17 +13,13 @@ const HomeFirst:React.FC = () => {
     config: { duration: 500}
   })
 
-  const springPropsRight1 = useSpring({
-    from: {opacity: 0},
-    to: {opacity: 1},
-    delay: 500,
-  })
+  const items = [coffeecup, coffeecup1]; 
 
-  const springPropsRight2 = useSpring({
+  const trail = useTrail(items.length, {
     from: {opacity: 0},
     to: {opacity: 1},
-    delay: 1000
-  })
+    config: { mass: 2, tension: 80, friction: 20, delay: 5000 },
+  });
 
   return ( 
     <div className="homeFirst">
@@ -38,8 +34,15 @@ const HomeFirst:React.FC = () => {
       </animated.div>
       <div className="firstRight">
         <div className="right__box">
-          <animated.img style={springPropsRight1} className="box__img1" src={coffeecup} alt="#"></animated.img>
-          <animated.img style={springPropsRight2} className="box__img2" src={coffeecup1} alt="#"></animated.img>
+          {trail.map((styles, index) => (
+            <animated.img 
+              key={index} 
+              style={styles} 
+              className={`box__img${index + 1}`} 
+              src={items[index]} 
+              alt="#" 
+            />
+          ))}
         </div>
       </div>
 
