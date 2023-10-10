@@ -19,7 +19,7 @@ const App:React.FC = () => {
         <Route path='/menuDetail/:name' element={<MenuDetail/>}/>
         <Route path='/menu' element={<MenuMain/>}/>
         <Route path='/country' element={<Country/>}/>
-        <Route path='/recipe' element={<Recipe/>}/>
+        <Route path='/recipe/:name' element={<Recipe/>}/>
       </Route>
     </Routes>
   )

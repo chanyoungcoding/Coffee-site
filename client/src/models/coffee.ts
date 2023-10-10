@@ -15,6 +15,8 @@ export interface Data {
   sat_fat: number;
   description: string;
   imgurl:string;
+  materials: string[];
+  howToMake: string[];
 }
 
 export interface DetailItem {

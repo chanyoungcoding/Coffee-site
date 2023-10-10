@@ -1,5 +1,6 @@
 import '../../styles/menudetail.scss'
 
+import Button from '../Button';
 import { Data, DetailItem } from '../../models/coffee';
 
 import React, { useEffect, useState } from 'react';
@@ -35,7 +36,7 @@ const MenuDetail:React.FC = () => {
     }
   }
   
-  useEffect(() => { fetchData() });
+  useEffect(() => { fetchData() }, []);
   
   if(error) return <div>{error ? error.message : null}</div>
 
@@ -59,10 +60,8 @@ const MenuDetail:React.FC = () => {
         </div>
       </div>
       <div className="menu__detailintro">
-      {data.length > 0 ? (<h3>{data[0].description}</h3>) : (<h1>Loading...</h1>)}
-        
-        <h4>
-          아메라카노는 에스프레소 샷 두개를 추출하여 바로 컵에 붓고, 그 위에 뜨거운 물을 재빠르게 부어 얇은 크레마 층이 형성되는 음료입니다. 갓 분쇄된 에스프레소만이 깊은 풍미를 가진 아메리카노를 만들 수 있습니다.</h4>
+        {data.length > 0 ? (<h3>{data[0].description}</h3>) : (<h1>Loading...</h1>)}
+        <Button href={data.length > 0 ?`/recipe/${data[0].name}` : ''}>레시피 보러가기</Button>
       </div>
       
     </div>
