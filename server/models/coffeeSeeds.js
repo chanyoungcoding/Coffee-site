@@ -2,9 +2,9 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const coffeeDetail = require('./커피목록.json');
 
-const dbUrl = "mongodb://127.0.0.1:27017/coffeeDB"
+require("dotenv").config();
 
-mongoose.connect(dbUrl)
+mongoose.connect(process.env.DB)
   .then(() => {
     console.log("CoffeeDB 연결");
   })

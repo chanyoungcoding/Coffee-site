@@ -1,14 +1,14 @@
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
+require("dotenv").config();
 
 const Coffee = require('./models/coffee');
 
 //MongoDB 연결
 // const dbUrl = process.env.DB_URL;
-const dbUrl = "mongodb://127.0.0.1:27017/coffeeDB"
 
-mongoose.connect(dbUrl)
+mongoose.connect(process.env.DB)
   .then(() => {
     console.log("CoffeeDB 연결");
   })
@@ -33,7 +33,7 @@ app.get('/api/coffeeName', async (req,res) => {
   res.json(coffee)
 })
 
-app.listen('4000', () => {
+app.listen(process.env.PORT, () => {
   console.log('서버 실행')
 })
 
