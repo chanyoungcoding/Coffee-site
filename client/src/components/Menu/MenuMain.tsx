@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import '../../styles/menu.scss';
 
 import Button from '../Button';
@@ -25,7 +25,7 @@ const MenuMain: React.FC = () => {
 
   const coffeeDB = 'http://localhost:4000/api/coffee'
 
-  const fetchData =  async () => {
+  const fetchData = useCallback(async () => {
     try {
       const response = await axios.get(coffeeDB);
       setData(response.data);
@@ -33,9 +33,9 @@ const MenuMain: React.FC = () => {
     } catch(e:unknown) {
       if(e instanceof AxiosError) setError(e);
     }
-  }
+  } ,[]) 
 
-  useEffect(() => { fetchData() },[]);
+  useEffect(() => { fetchData() },[fetchData]);
 
   // 페이지가 변경될 때마다 보여줄 데이터 변경
   useEffect(() => {

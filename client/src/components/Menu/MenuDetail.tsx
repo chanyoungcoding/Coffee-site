@@ -3,7 +3,7 @@ import '../../styles/menudetail.scss'
 import Button from '../Button';
 import { Data, DetailItem } from '../../models/coffee';
 
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios, { AxiosError } from 'axios';
 
@@ -26,7 +26,7 @@ const MenuDetail:React.FC = () => {
 
   const coffeeDB = 'http://localhost:4000/api/coffeeName'
 
-  const fetchData = async () => {
+  const fetchData = useCallback( async () => {
     try {
       const response = await axios.get(`${coffeeDB}?name=${name}`);
       setData(response.data);
@@ -34,9 +34,9 @@ const MenuDetail:React.FC = () => {
       if(e instanceof AxiosError)
       setError(e);
     }
-  }
+  } ,[name])
   
-  useEffect(() => { fetchData() }, []);
+  useEffect(() => { fetchData() }, [fetchData]);
   
   if(error) return <div>{error ? error.message : null}</div>
 

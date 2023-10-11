@@ -1,4 +1,4 @@
-import React ,{ useEffect, useState } from "react";
+import React ,{ useCallback, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios, { AxiosError } from 'axios';
 
@@ -14,16 +14,16 @@ const Recipe:React.FC = () => {
   
   const coffeeDB = 'http://localhost:4000/api/coffeeName'
   
-  const fetchData = async () => {
+  const fetchData = useCallback(async () => {
     try {
       const response = await axios.get(`${coffeeDB}?name=${name}`);
       setData(response.data);
     } catch(e:unknown) {
       if(e instanceof AxiosError) setError(e);
     }
-  }
+  },[name]) 
   
-  useEffect(() => { fetchData() }, []);
+  useEffect(() => { fetchData() }, [fetchData]);
   if(error) return <div>{error ? error.message : null}</div>
   
   const checkData = data.length > 0;
