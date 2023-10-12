@@ -1,0 +1,42 @@
+@import './variable.scss';
+
+.recipehome {
+  border-top: 20px solid #E9E9E9;
+  .recipehome__banner {
+    background: linear-gradient(90deg, rgba(76,29,21,1) 0%, rgba(132,77,68,1) 48%, rgba(178,145,143,1) 100%);
+    display: flex;
+    justify-content: space-around;
+    .banner__left {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      gap: 20px;
+      p {
+        color: $basic-color;
+        font-size: 2rem;
+      }
+      h1 {
+        color: white;
+        font-size: 3rem;
+      }
+      a {
+        width: 205px;
+      }
+    }
+
+    .banner__right {
+      img {
+        width: 400px;
+
+      }
+    }
+  }
+
+  .recipehome__recommend {
+
+  }
+
+  .recipehome__populate {
+
+  }
+}

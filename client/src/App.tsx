@@ -9,6 +9,7 @@ import MenuMain from './components/Menu/MenuMain'
 import Test from './components/Test'
 import Country from './components/Country/Country'
 import Recipe from './components/Recipe/Recipe'
+import RecipeHome from './components/Recipe/RecipeHome'
 
 const App:React.FC = () => {
   return (
@@ -20,6 +21,7 @@ const App:React.FC = () => {
         <Route path='/menu' element={<MenuMain/>}/>
         <Route path='/country' element={<Country/>}/>
         <Route path='/recipe/:name' element={<Recipe/>}/>
+        <Route path='/recipeHome' element={<RecipeHome/>}/>
       </Route>
     </Routes>
   )
