@@ -1,10 +1,31 @@
-import React from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import Button from '../Button';
 import '../../styles/recipehome.scss';
 
+import { Data } from '../../models/coffee';
+
 import backBanner from '../../assets/coffeebackground3.png'
+import axios, { AxiosError } from 'axios';
 
 const RecipeHome:React.FC = () => {
+  const [data, setData] = useState<Data[]>([]);
+  const [error, setError] = useState<AxiosError | null>(null);
+
+  const coffeeDB = 'http://localhost:4000/api/coffee';
+
+  const fetchData = useCallback( async() => {
+    try {
+      const response = await axios.get(coffeeDB);
+      setData(response.data);
+    } catch(e:unknown) {
+      if(e instanceof AxiosError) setError(e);
+    }
+  }, [])
+
+  useEffect(() => { fetchData() }, [fetchData]);
+
+  if(error) return <div className='mainmenu__error'>{error ? error.message : null}</div>
+
   return ( 
     <div className="recipehome">
       <div className="recipehome__banner">
@@ -18,8 +39,19 @@ const RecipeHome:React.FC = () => {
         </div>
       </div>
 
-      <div className="recipehome__recommend"></div>
-      <div className="recipehome__populate"></div>
+      <div className="recipehome__recommend">
+        <h1 className='recommendrecipe'>레시피</h1>
+        <div className="recommend__inner">
+          {data.map(item => (
+            <div key={item._id} className="inner__box">
+              <img src={data.length > 0 ? item.imgurl : ''} alt="#"/>
+              <h1>{data.length > 0 ? item.name : ''}</h1>
+              <p>{data.length > 0 ? item.description : ''}</p>
+              <Button href={data.length > 0 ? `/recipe/${item.name}` : ''}>보러 가기</Button>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }

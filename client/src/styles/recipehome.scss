@@ -33,7 +33,34 @@
   }
 
   .recipehome__recommend {
+    .recommendrecipe {
+      margin-bottom: 50px;
+      padding: 50px 0px;
+      font-size: 3rem;
+      border-bottom: 1px solid #6b3939;
+    }
+    .recommend__inner {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      .inner__box {
+        width: 550px;
+        text-align: center;
+        h1 {
+          font-size: 2.5rem;
+          color: $basic-color;
+        }
 
+        p {
+          margin: 15px;
+        }
+        
+        a {
+          display: flex;
+          justify-content: center;
+        }
+      }
+    }
   }
 
   .recipehome__populate {
