@@ -8,21 +8,26 @@ import backBanner from '../../assets/coffeebackground3.png'
 import axios, { AxiosError } from 'axios';
 
 const RecipeHome:React.FC = () => {
+  const [num, setNum] = useState<number>(3);
   const [data, setData] = useState<Data[]>([]);
   const [error, setError] = useState<AxiosError | null>(null);
 
-  const coffeeDB = 'http://localhost:4000/api/coffee';
+  const coffeeDB = 'http://localhost:4000/api/coffeeNumber';
 
   const fetchData = useCallback( async() => {
     try {
-      const response = await axios.get(coffeeDB);
+      const response = await axios.get(`${coffeeDB}?number=${num}`);
       setData(response.data);
     } catch(e:unknown) {
       if(e instanceof AxiosError) setError(e);
     }
-  }, [])
+  }, [num])
 
   useEffect(() => { fetchData() }, [fetchData]);
+
+  const changeNumber = () => {
+    setNum(num => num + 3);
+  }
 
   if(error) return <div className='mainmenu__error'>{error ? error.message : null}</div>
 
@@ -51,6 +56,7 @@ const RecipeHome:React.FC = () => {
             </div>
           ))}
         </div>
+        <button className='button-74' role="button" onClick={changeNumber}>더보기</button>
       </div>
     </div>
   );
