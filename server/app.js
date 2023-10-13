@@ -27,6 +27,12 @@ app.get('/api/coffee', async (req,res) => {
   res.json(coffee);
 })
 
+app.get('/api/coffeeNumber', async(req,res) => {
+  let number = req.query.number;
+  const coffee = await Coffee.find({}).limit(number);
+  res.json(coffee);
+})
+
 app.get('/api/coffeeName', async (req,res) => {
   const coffeeName = req.query.name
   const coffee = await Coffee.find({name : coffeeName});
