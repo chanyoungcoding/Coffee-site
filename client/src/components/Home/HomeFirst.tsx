@@ -14,13 +14,14 @@ const HomeFirst:React.FC = () => {
   })
 
   const items = [coffeecup, coffeecup1]; 
-
-  const trail = useTrail(items.length, {
+  
+  const springPropsRight = useTrail(items.length, {
     from: {opacity: 0},
     to: {opacity: 1},
     config: { mass: 2, tension: 80, friction: 20, delay: 5000 },
   });
-
+  
+  
   return ( 
     <div className="homeFirst">
       <animated.div style={springPropsLeft} className="firstLeft">
@@ -34,7 +35,7 @@ const HomeFirst:React.FC = () => {
       </animated.div>
       <div className="firstRight">
         <div className="right__box">
-          {trail.map((styles, index) => (
+          {springPropsRight.map((styles, index) => (
             <animated.img 
               key={index} 
               style={styles} 

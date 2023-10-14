@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Zeyada&display=swap');
 
-
+@import './variable.scss';
 // homeFirst 
 
 
@@ -21,12 +21,12 @@
     }
     h2 {
       margin:35px 0px;
-      color: #361306;
+      color: $basic-dark-color;
       font-size: 70px;
     }
     p {
       font-size: 20px;
-      color: #B2918F;
+      color: $basic-color;
     }
     .leftButton {
       display: flex;
@@ -61,8 +61,6 @@
       width: 700px;
       height: 700px;
       margin: 50px 0px;
-      background-color: #E1D9D6;
-      border-radius: 80px 0px 0px 80px;
       img {
         width: 500px;
         height: 500px;
@@ -174,7 +172,7 @@
       margin-right: 30px;
       font-size: 25px;
       padding-bottom: 10px;
-      border-bottom: 2px solid #361306;
+      border-bottom: 2px solid $basic-dark-color;
       &:nth-child(4) {
         margin-right: 0;
       }
@@ -190,7 +188,7 @@
       img {
         width: 440px;
         height: 440px;
-        background-color: #986C4A;
+        background-color: $basic-color;
         border-radius: 15px;
         object-fit: contain;
       }
@@ -254,10 +252,10 @@
             font-size: 30px;
             padding-bottom: 3px;
             margin-bottom: 10px;
-            border-bottom: 1px solid #B2918F;
+            border-bottom: 1px solid $basic-color;
           }
           p {
-            color: #B2918F;
+            color: $basic-color;
           }
         }
         .container__right {

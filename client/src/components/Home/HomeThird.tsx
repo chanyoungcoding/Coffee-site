@@ -1,49 +1,22 @@
-import React, { useEffect, useState } from "react";
 
-import { Imgbox } from "../../models/coffee";
-import { Data } from '../../models/coffee';
+//components, ts
+import ImgBox from "./components/ImgBox";
 
-import Button from "../Button";
-
+import { useApiData } from "../../services/api";
 
 // swiper 라이브러리
 import { Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
-
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
-import axios, { AxiosError } from "axios";
-
-const ImgBox: React.FC<Imgbox> = ({imgsrc, imgintro, imghref}) => {
-  return (
-    <div className="carousel-slide">
-      <img src={imgsrc} alt="#" />
-      <p>{imgintro}</p>
-      <Button href={imghref}>보러가기</Button>
-    </div>
-  );
-}
 
 const navbarLists:string[] = ['COFFEE','COFFEE','COFFEE',"COFFEE"]
 
 const HomeThird: React.FC = () => {
-  const [data, setData] = useState<Data[]>([]);
-  const [error, setError] = useState<AxiosError | null>(null);
-
   const coffeeDB = 'http://localhost:4000/api/coffee'
-
-  const fetchData = async () => {
-    try {
-      const response = await axios.get(coffeeDB);
-      setData(response.data);
-    } catch(e:unknown) {
-      if(e instanceof AxiosError) setError(e);
-    }
-  }
-
-  useEffect(() => { fetchData()},[]);
+  const {data, error} = useApiData(coffeeDB);
 
   if(error) return <div className='mainmenu__error'>{error ? error.message : null}</div>
 
@@ -69,7 +42,11 @@ const HomeThird: React.FC = () => {
         >
           {data.map((item) => (
             <SwiperSlide key={item._id}>
-              <ImgBox imghref={`/menuDetail/${item.name}`} imgintro={item.name} imgsrc={item.imgurl}/>
+              <ImgBox 
+                imghref={`/menuDetail/${item.name}`} 
+                imgintro={item.name} 
+                imgsrc={item.imgurl}
+              />
             </SwiperSlide>
           ))}
         </Swiper>
