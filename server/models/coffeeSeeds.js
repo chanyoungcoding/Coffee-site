@@ -4,40 +4,39 @@ const coffeeDetail = require('./커피목록.json');
 
 require("dotenv").config();
 
-mongoose.connect(process.env.DB)
+mongoose.connect("mongodb://127.0.0.1:27017/coffeeDB")
   .then(() => {
     console.log("CoffeeDB 연결");
   })
   .catch((e) => {
     console.log(e);
   });
-
-  const CoffeeSchema = new Schema({
-    name: {
-      type: String,
-      required: [true, '커피 이름이 필요합니다.']
-    },
-    calory:Number,
-    sodium:Number,
-    protein:Number, 
-    sugar:Number,
-    caffeine:Number,
-    sat_fat: Number,
-    price: Number,
-    description: String,
-    imgurl: String,
-    materials: {
-      type: [String],
-      default: []
-    },
-    howToMake: {
-      type: [String],
-      default: []
-    }
+  
+const CoffeeSchema = new Schema({
+  name: {
+    type: String,
+    required: [true, '커피 이름이 필요합니다.']
+  },
+  calory:Number,
+  sodium:Number,
+  protein:Number, 
+  sugar:Number,
+  caffeine:Number,
+  sat_fat: Number,
+  price: Number,
+  description: String,
+  imgurl: String,
+  materials: {
+    type: [String],
+    default: []
+  },
+  howToMake: {
+    type: [String],
+    default: []
+  }
 })
 
 const Coffee = mongoose.model('Coffee', CoffeeSchema);
-
 
 const coffeeDB = async () => {
   await Coffee.deleteMany({});
