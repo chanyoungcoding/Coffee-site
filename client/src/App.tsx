@@ -10,6 +10,7 @@ import Test from './components/Test'
 import Country from './components/Country/Country'
 import Recipe from './components/Recipe/Recipe'
 import RecipeHome from './components/Recipe/RecipeHome'
+import ErrorPage from './pages/ErrorPage'
 
 const App:React.FC = () => {
   return (
@@ -22,6 +23,7 @@ const App:React.FC = () => {
         <Route path='/country' element={<Country/>}/>
         <Route path='/recipe/:name' element={<Recipe/>}/>
         <Route path='/recipeHome' element={<RecipeHome/>}/>
+        <Route path='*' element={<ErrorPage/>}/>
       </Route>
     </Routes>
   )

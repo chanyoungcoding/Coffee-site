@@ -12,14 +12,16 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 
-const navbarLists:string[] = ['COFFEE','COFFEE','COFFEE',"COFFEE"]
 
 const HomeThird: React.FC = () => {
+
+  const navbarLists = ['COFFEE','TASTE','COUNTRY',"SMELL"]
   const coffeeDB = 'http://localhost:4000/api/coffee'
+
   const {data, error} = useApiData(coffeeDB);
-
+  
   if(error) return <div className='mainmenu__error'>{error ? error.message : null}</div>
-
+  
   return (
     <div className="homethird">
       <h1>MENU</h1>
