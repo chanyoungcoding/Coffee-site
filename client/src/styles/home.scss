@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Zeyada&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap');
 
 @import './variable.scss';
 // homeFirst 
@@ -270,5 +271,36 @@
       flex-direction: column;
       align-items: center;
     }
+  }
+}
+
+
+
+
+// homeFifth
+
+.homefifth {
+  position: relative;
+  margin-top: 150px;
+  .homefifth__line {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 1920px;
+    position: absolute;
+    top: -40px;
+    height: 100px;
+    background-color: $basic-dark-color;
+    transform: rotate(-2deg);
+
+    p {
+      color: $basic-text-color;
+      font-size: 3rem;
+      font-family: 'Dancing Script', cursive;
+    }
+  }
+  .homefifth__inner {
+    height: 500px;
+    background: url('../assets/coffeebackground4.jpg') no-repeat center/cover;
   }
 }
