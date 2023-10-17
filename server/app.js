@@ -39,6 +39,21 @@ app.get('/api/coffeeName', async (req,res) => {
   res.json(coffee)
 })
 
+let user = [
+  {name: 'chan', age: 26},
+  {name: 'kim', age: 25},
+]
+
+app.get('/api/test', async(req,res) => {
+  res.json(user);
+})
+
+app.post('/api/test', async(req,res) => {
+  const name = req.body
+  user.push(name);
+  res.json(user);
+})
+
 app.listen(process.env.PORT, () => {
   console.log('서버 실행')
 })
