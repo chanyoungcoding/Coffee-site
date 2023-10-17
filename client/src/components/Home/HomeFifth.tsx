@@ -8,7 +8,7 @@ const HomeFifth:React.FC = () => {
   return ( 
     <div className="homefifth">
       <div className="homefifth__line">
-        {lineText.map(text => (<p>{text}</p>))}
+        {lineText.map((text,index) => (<p key={index}>{text}</p>))}
       </div>
       <div className="homefifth__inner">
         
