@@ -4,46 +4,31 @@ import { Data } from '../models/coffee';
 // useApiData.js
 import { useState, useEffect, useCallback } from 'react';
 
+// react-query
+import { useQuery } from 'react-query';
 
-// coffee API
+// coffee API 
 export function useApiData(url:string) {
-  const [data, setData] = useState<Data[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<AxiosError | null>(null);
-
-  const fetchData = useCallback(async () => {
-    try {
+  const {data, isLoading, isError} = useQuery<Data[]>({ 
+    queryKey: ['coffeeData'], 
+    queryFn: async () => {
       const response = await axios.get(url);
-      setData(response.data);
-    } catch(e:unknown) {
-      if(e instanceof AxiosError) setError(e)
-    } finally {
-      setLoading(false);
-    }
-  }, [url]);
-
-  useEffect(() => { fetchData()}, [fetchData]);
-  return { data, loading, error };
+      return response.data;
+  }})
+  return {data, isLoading, isError }
 }
 
-
 // coffeeName API
-export function useApiDataName(url:string, name:string | undefined) {
-  const [data, setData] = useState<Data[]>([]);
-  const [error, setError] = useState<AxiosError | null>(null);
 
-  const fetchData = useCallback(async () => {
-    try {
+export function useApiDataName(url: string, name : string | undefined) {
+  const { data, isLoading, isError} = useQuery<Data[]>({
+    queryKey: ['coffeeName'],
+    queryFn: async () => {
       const response = await axios.get(`${url}?name=${name}`);
-      setData(response.data);
-    } catch(e:unknown) {
-      if(e instanceof AxiosError)
-      setError(e);
+      return response.data;
     }
-  } ,[url, name])
-  
-  useEffect(() => { fetchData() }, [fetchData]);
-  return {data, error}
+  })
+  return {data, isLoading, isError}
 }
 
 export function useApiDataSlice(url:string, itemsPerPage:number) {

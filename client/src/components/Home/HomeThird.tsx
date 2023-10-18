@@ -14,13 +14,17 @@ import 'swiper/css/scrollbar';
 
 
 const HomeThird: React.FC = () => {
-
   const navbarLists = ['COFFEE','TASTE','COUNTRY',"SMELL"]
   const coffeeDB = 'http://localhost:4000/api/coffee'
 
-  const {data, error} = useApiData(coffeeDB);
+  const {data, isLoading, isError} = useApiData(coffeeDB);
   
-  if(error) return <div className='mainmenu__error'>{error ? error.message : null}</div>
+  if(isError) return 
+  <div className='mainmenu__error'>
+    <p>무엇인가 에러가 발생했습니다.</p>
+  </div>
+
+  if(isLoading) return <p>로딩중입니다..</p>
   
   return (
     <div className="homethird">
@@ -42,7 +46,7 @@ const HomeThird: React.FC = () => {
             disableOnInteraction: false,
           }}
         >
-          {data.map((item) => (
+          {data?.map((item) => (
             <SwiperSlide key={item._id}>
               <ImgBox 
                 imghref={`/menuDetail/${item.name}`} 
