@@ -300,7 +300,25 @@
     }
   }
   .homefifth__inner {
-    height: 500px;
-    background: url('../assets/coffeebackground4.jpg') no-repeat center/cover;
+    height: 700px;
+    background: url('../assets/coffeebackground6.jpg') no-repeat center/cover;
+    .inner__box {
+      position: relative;
+      top: 300px;
+      left: 10%;
+      h1 { 
+        font-size: 3rem;
+      }
+      h2 {
+        margin: 10px 0px 30px;
+        font-size: 2rem;
+      }
+    }
+    .inner__img {
+      position: absolute;
+      right: 500px;
+      top: 500px;
+      width: 250px;
+    }
   }
 }

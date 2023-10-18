@@ -5,9 +5,7 @@ import { Link } from 'react-router-dom';
 // Button components
 const StyledButton = styled.button`
   /* 공통 스타일 */
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: inline-block;
   margin: 0 5px;
   padding: 1rem 2rem;
   border: 2px solid #986C4A;
