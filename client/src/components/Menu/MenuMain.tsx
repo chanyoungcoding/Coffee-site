@@ -16,7 +16,7 @@ const MenuMain: React.FC = () => {
 
   const coffeeDB = 'http://localhost:4000/api/coffee'
 
-  const {data,currentData, error, setCurrentData} = useApiDataSlice(coffeeDB, itemsPerPage);
+  const {data, currentData, isError, setCurrentData} = useApiDataSlice(coffeeDB, itemsPerPage);
 
   // 페이지가 변경될 때마다 보여줄 데이터 변경
   useEffect(() => {
@@ -26,7 +26,7 @@ const MenuMain: React.FC = () => {
   }, [page, data, setCurrentData]);
 
   //에러 발생시 출력
-  if(error) return <div className='mainmenu__error'>{error ? error.message : null}</div>
+  if(isError) return <div className='mainmenu__error'><p>에러가 발생했습니다.</p></div>
 
   return (
     <div className='menumain'>

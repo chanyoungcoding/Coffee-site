@@ -1,8 +1,8 @@
-import axios,{ AxiosError } from 'axios';
+import axios from 'axios';
 import { Data } from '../models/coffee';
 
 // useApiData.js
-import { useState, useEffect, useCallback } from 'react';
+import { useState} from 'react';
 
 // react-query
 import { useQuery } from 'react-query';
@@ -19,7 +19,6 @@ export function useApiData(url:string) {
 }
 
 // coffeeName API
-
 export function useApiDataName(url: string, name : string | undefined) {
   const { data, isLoading, isError} = useQuery<Data[]>({
     queryKey: ['coffeeName'],
@@ -31,21 +30,20 @@ export function useApiDataName(url: string, name : string | undefined) {
   return {data, isLoading, isError}
 }
 
+//coffeeSlice
 export function useApiDataSlice(url:string, itemsPerPage:number) {
   const [data, setData] = useState<Data[]>([]);
   const [currentData, setCurrentData] = useState<Data[]>([]);
-  const [error, setError] = useState<AxiosError | null>(null);
 
-  const fetchData = useCallback(async () => {
-    try {
+  const {isLoading, isError} = useQuery<Data[]>({
+    queryKey: ['coffeeSlice'],
+    queryFn: async () => {
       const response = await axios.get(url);
       setData(response.data);
-      setCurrentData(response.data.slice(0, itemsPerPage)); // 초기 데이터 설정
-    } catch(e:unknown) {
-      if(e instanceof AxiosError) setError(e);
+      setCurrentData(response.data.slice(0, itemsPerPage));
+      return response.data
     }
-  } ,[url,itemsPerPage]) 
-
-  useEffect(() => { fetchData() },[fetchData]);
-  return {data, currentData, error, setCurrentData};
+  })
+  return {data, currentData, isLoading, isError, setCurrentData};
 }
+
