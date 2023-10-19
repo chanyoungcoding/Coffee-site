@@ -1,35 +1,20 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React from 'react';
 import Button from '../Button';
 import '../../styles/recipehome.scss';
 
-import { Data } from '../../models/coffee';
-
 import backBanner from '../../assets/coffeebackground3.png'
-import axios, { AxiosError } from 'axios';
+import { useApiDataNumber } from '../../services/api';
 
 const RecipeHome:React.FC = () => {
-  const [num, setNum] = useState<number>(3);
-  const [data, setData] = useState<Data[]>([]);
-  const [error, setError] = useState<AxiosError | null>(null);
 
   const coffeeDB = 'http://localhost:4000/api/coffeeNumber';
 
-  const fetchData = useCallback( async() => {
-    try {
-      const response = await axios.get(`${coffeeDB}?number=${num}`);
-      setData(response.data);
-    } catch(e:unknown) {
-      if(e instanceof AxiosError) setError(e);
-    }
-  }, [num])
+  const {data, isLoading, isError, changeNumber } = useApiDataNumber(coffeeDB);
 
-  useEffect(() => { fetchData() }, [fetchData]);
 
-  const changeNumber = () => {
-    setNum(num => num + 3);
-  }
 
-  if(error) return <div className='mainmenu__error'>{error ? error.message : null}</div>
+  if(isError) return <div className='mainmenu__error'><p>에러가 발생했습니다..</p></div>
+  if(isLoading) return <p>로딩중입니다..</p>
 
   return ( 
     <div className="recipehome">
@@ -47,7 +32,7 @@ const RecipeHome:React.FC = () => {
       <div className="recipehome__recommend">
         <h1 className='recommendrecipe'>레시피</h1>
         <div className="recommend__inner">
-          {data.map(item => (
+          {data?.map(item => (
             <div key={item._id} className="inner__box">
               <img src={data.length > 0 ? item.imgurl : ''} alt="#"/>
               <h1>{data.length > 0 ? item.name : ''}</h1>

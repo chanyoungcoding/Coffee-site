@@ -2,7 +2,7 @@ import axios from 'axios';
 import { Data } from '../models/coffee';
 
 // useApiData.js
-import { useState} from 'react';
+import { useCallback, useState } from 'react';
 
 // react-query
 import { useQuery } from 'react-query';
@@ -45,5 +45,23 @@ export function useApiDataSlice(url:string, itemsPerPage:number) {
     }
   })
   return {data, currentData, isLoading, isError, setCurrentData};
+}
+
+//coffeeSlice 
+export function useApiDataNumber(url:string) {
+  const [num, setNum] = useState<number>(3);
+  const {data, isLoading, isError} = useQuery<Data[]>({
+    queryKey: ['coffeeNumber', num],
+    queryFn: async () => {
+      const response = await axios.get(`${url}?number=${num}`)
+      return  response.data
+    }
+  })
+
+  const changeNumber = useCallback(() => {
+    setNum(num => num + 3);
+  },[])
+  
+  return {data, isLoading, isError, changeNumber}
 }
 
