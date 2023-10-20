@@ -2,6 +2,7 @@ import {atom, selector} from 'recoil';
 import data from '../services/test.json';
 
 interface ShoppingItem {
+  id: number;
   name: string;
   price: number;
 }
