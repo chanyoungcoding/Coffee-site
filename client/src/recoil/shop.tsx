@@ -12,10 +12,23 @@ export const shoppingList = atom<ShoppingItem[]>({
   default: data
 })
 
+export const shoppingBasket = atom<ShoppingItem[]>({
+  key: 'shoppingBasket',
+  default: []
+})
+
 export const shoppingLength = selector({
   key: 'shppingLength',
   get: ({get}) => {
-    const data = get(shoppingList);
+    const data = get(shoppingBasket);
     return data.length
+  }
+})
+
+export const shoppingPrice = selector({
+  key: 'shppingPrice',
+  get: ({get}) => {
+    const data = get(shoppingBasket);
+    return data.reduce((prev, cur) =>  prev + cur.price, 0)
   }
 })
