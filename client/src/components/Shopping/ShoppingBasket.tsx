@@ -1,14 +1,16 @@
-import { useRecoilValue } from "recoil";
-import { shoppingBasket } from "../../recoil/shop";
-import React from "react";
+import React, { useState } from "react";
 
 
 const ShoppingBasket:React.FC = () => {
-  const basket = useRecoilValue(shoppingBasket);
-  console.log(basket)
+
+  const getItem = localStorage.getItem('shoppingBasket')
+  const initialState = getItem ? JSON.parse(getItem) : [];
+  const [state, setState] = useState(initialState);
+  console.log(state)
 
   return ( 
     <div className="shoppingbasket">
+      <p>{state.length > 0 ? state[0].name : 'Shopping Basket is empty'}</p>
     </div>
   );
 }
