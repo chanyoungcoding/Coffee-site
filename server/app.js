@@ -39,6 +39,12 @@ app.get('/api/coffeeName', async (req,res) => {
   res.json(coffee)
 })
 
+app.post('/api/login', async (req,res) => {
+  res.json(req.body)
+})
+
+//test
+
 let user = [
   {name: 'chan', age: 26},
   {name: 'kim', age: 25},
