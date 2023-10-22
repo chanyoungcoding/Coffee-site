@@ -1,11 +1,14 @@
 import axios from 'axios';
-import { Data } from '../models/coffee';
+import { Data, LoginData } from '../models/coffee';
+import { useNavigate } from "react-router-dom";
 
 // useApiData.js
 import { useCallback, useState } from 'react';
 
 // react-query
-import { useQuery } from 'react-query';
+import { useMutation, useQuery } from 'react-query';
+
+
 
 // coffee API 
 export function useApiData(url:string) {
@@ -65,3 +68,16 @@ export function useApiDataNumber(url:string) {
   return {data, isLoading, isError, changeNumber}
 }
 
+//login
+export const useLoginMutation = () => {
+  const navigate = useNavigate();
+  return useMutation({
+    mutationFn : async (data:LoginData) => await axios.post('http://localhost:4000/api/login', data),
+    mutationKey: 'login',
+    onSuccess: (e) => {
+      console.log(e.data)
+      navigate('/')
+    },
+    onError: e => console.log(e)
+  });
+};

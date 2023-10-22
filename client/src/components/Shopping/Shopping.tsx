@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-import { useRecoilValue, useSetRecoilState } from "recoil";
+import React from "react";
+import { useRecoilValue, useRecoilState } from "recoil";
 import { shoppingBasket, shoppingLength, shoppingList, shoppingPrice } from "../../recoil/shop";
 
 interface ShoppingItem {
@@ -8,29 +8,16 @@ interface ShoppingItem {
   price: number;
 }
 
-const saveStateToLocalState = (key:string, value:ShoppingItem[]):void => {
-  try {
-    localStorage.setItem(key, JSON.stringify(value));
-  } catch(e:unknown) {
-    console.log('error : ', e)
-  }
-}
-
 const Shopping:React.FC = () => {
   const data = useRecoilValue(shoppingList);
-  const setBasket = useSetRecoilState(shoppingBasket);
+  const [basket, setBasket] = useRecoilState(shoppingBasket);
 
-  const basket = useRecoilValue(shoppingBasket);
   const basketLength = useRecoilValue(shoppingLength);
   const basketPrice = useRecoilValue(shoppingPrice);
 
-  useEffect(() => {
-    saveStateToLocalState("shoppingBasket",basket)
-  },[basket])
-
-  const onClick = (item:number,e:React.MouseEvent<HTMLButtonElement>) => {
+  const onClick = (item:ShoppingItem,e:React.MouseEvent<HTMLButtonElement>) => {
     e.currentTarget.disabled = true;
-    setBasket(x => [...x, data[item]])
+    setBasket([...basket, item])
   }
 
   return ( 
@@ -38,7 +25,7 @@ const Shopping:React.FC = () => {
       {data.map(item => (
         <div key={item.id}>
           <p>{item.name} - {item.price}</p>
-          <button onClick={(e) => onClick(item.id ,e)}>장바구니</button>
+          <button onClick={(e) => onClick(item ,e)}>장바구니</button>
         </div>
       ))}
 

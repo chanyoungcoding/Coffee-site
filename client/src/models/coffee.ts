@@ -30,3 +30,8 @@ export interface MenuDetail {
   coffeeIntro:string;
   coffeePrice:string;
 }
+
+export interface LoginData {
+  username: string;
+  password: string;
+}
