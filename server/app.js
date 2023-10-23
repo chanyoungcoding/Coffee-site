@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 require("dotenv").config();
 
 const Coffee = require('./models/coffee');
+const User = require('./models/users');
 
 //MongoDB 연결
 // const dbUrl = process.env.DB_URL;
@@ -40,7 +41,13 @@ app.get('/api/coffeeName', async (req,res) => {
 })
 
 app.post('/api/login', async (req,res) => {
-  res.json(req.body)
+  const {username, password} = req.body
+  try {
+    const newUser = await User.find({username: username, password: password})
+    if(newUser[0].username === username && newUser[0].password === password) res.json(req.body);
+  } catch(e) {
+    res.json('실패');
+  }
 })
 
 //test
