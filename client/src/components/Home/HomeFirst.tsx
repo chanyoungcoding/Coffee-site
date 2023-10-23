@@ -30,7 +30,7 @@ const HomeFirst:React.FC = () => {
         <p>Learn more about coffee, and learn more about its types and recipes.</p>
         <div className="leftButton">
           <Button href={'/test'}>Explore our products</Button>
-          <Button href={'/test'}>Log in / Sign up</Button>
+          <Button href={'/login'}>Log in / Sign up</Button>
         </div>
       </animated.div>
       <div className="firstRight">

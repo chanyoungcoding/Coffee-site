@@ -2,6 +2,8 @@ import axios from 'axios';
 import { Data, LoginData } from '../models/coffee';
 import { useNavigate } from "react-router-dom";
 
+import Cookies from 'js-cookie';
+
 // useApiData.js
 import { useCallback, useState } from 'react';
 
@@ -75,7 +77,10 @@ export const useLoginMutation = () => {
     mutationFn : async (data:LoginData) => await axios.post('http://localhost:4000/api/login', data),
     mutationKey: 'login',
     onSuccess: (e) => {
-      console.log(e.data)
+      const {username} = e.data;
+      Cookies.set('사용자명',username, {expires:1})
+      const users = Cookies.get('사용자명');
+      console.log(users);
       navigate('/')
     },
     onError: e => console.log(e)

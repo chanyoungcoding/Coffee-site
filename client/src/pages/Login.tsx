@@ -3,6 +3,10 @@ import { useLoginMutation } from "../services/api";
 
 import { LoginData } from "../models/coffee";
 
+import Button from "../components/Button";
+
+import '../styles/login.scss';
+
 const Login = () => {
   const [username, setUsername] = useState<string>('');
   const [password, setPassword] = useState<string>('');
@@ -21,22 +25,26 @@ const Login = () => {
 
   return ( 
     <div className="login">
-      <form>
+      <form className="login__form">
         <input 
           type="text" 
           value={username} 
-          placeholder="이름"  
+          placeholder="Username"  
           onChange={e => setUsername(e.target.value)}
         />
         <input 
           type="password" 
           value={password} 
-          placeholder="비밀번호"
+          placeholder="Password"
           onChange={e => setPassword(e.target.value)}
         />
+        {error && <p className="login__error">{error}</p>}
         <button type="button" onClick={handleLogin}>로그인</button>
+        <div className="login__signup">
+          <p>Don't have an account?</p>
+          <Button href="/">Sign up</Button>
+        </div>
       </form>
-      {error && <p>{error}</p>}
     </div>
   );
 }

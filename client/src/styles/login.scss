@@ -1,0 +1,48 @@
+@import './variable.scss';
+
+.login {
+  .login__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    input {
+      width: 25%;
+      margin-bottom: 10px;
+      padding: 20px 10px;
+      background-color: #E1DED9;
+      border-radius: 5px;
+      border: none;
+      outline: none;
+    }
+    button {
+      width: 26%;
+      padding: 15px 10px;
+      background-color: $basic-color;
+      border-radius: 10px;
+      border: none;
+      outline: none;
+      cursor: pointer;
+    }
+    .login__error {
+      margin: 10px 0px;
+      color: $line-color;
+      text-align: center;
+    }
+    .login__signup {
+      display: flex;
+      align-items: center;
+      margin-top: 30px;
+      p {
+        margin-right: 20px;
+      }
+      a {
+        button {
+          width: 110px;
+          color: white;
+        }
+      }
+    }
+  }
+}
