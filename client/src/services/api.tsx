@@ -77,11 +77,14 @@ export const useLoginMutation = () => {
     mutationFn : async (data:LoginData) => await axios.post('http://localhost:4000/api/login', data),
     mutationKey: 'login',
     onSuccess: (e) => {
-      const {username} = e.data;
-      Cookies.set('사용자명',username, {expires:1})
-      const users = Cookies.get('사용자명');
-      console.log(users);
-      navigate('/')
+      if(e.data == '실패') {
+        alert('아이디 또는 비밀번호가 잘못됐습니다.');
+        navigate('/login');
+      } else {
+        const {username} = e.data;
+        Cookies.set('사용자명',username, {expires:1})
+        navigate('/')
+      }
     },
     onError: e => console.log(e)
   });
