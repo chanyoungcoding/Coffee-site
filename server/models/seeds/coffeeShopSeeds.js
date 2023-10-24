@@ -10,6 +10,7 @@ mongoose.connect("mongodb://127.0.0.1:27017/coffeeDB")
   });
 
 const coffeeShopSchema = new mongoose.Schema({
+  coffeeNumber: Number,
   name: String,
   imgurl: String
 })
@@ -20,6 +21,7 @@ const shopDB = async () => {
   await CoffeeShop.deleteMany({});
   for(let list of coffeeShopList) {
     const coffeeShop = new CoffeeShop({
+      coffeeNumber: list.coffeeNumber,
       name: list.name,
       imgurl: list.imgurl
     })

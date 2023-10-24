@@ -10,9 +10,9 @@ const UserSchema = new Schema({
     type: String,
     required: [true, '패스워드가 없습니다.']
   },
-  basket: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'CoffeeShop'
+  shoppingBasket:{
+    type: [Number],
+    default: []
   }
 })
 

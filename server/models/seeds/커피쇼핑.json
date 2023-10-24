@@ -1,25 +1,31 @@
 [
   {
+    "coffeeNumber" : 1,
     "name" : "아메리카노",
     "imgurl": "https://res.cloudinary.com/dnjjlp2uy/image/upload/v1696577523/Coffee/%EC%95%84%EC%9D%B4%EC%8A%A4%EC%95%84%EB%A9%94%EB%A6%AC%EC%B9%B4%EB%85%B8_cja3t3.png"
   },
   {
+    "coffeeNumber" : 2,
     "name":"아이스 카라멜 마키아또",
     "imgurl": "https://res.cloudinary.com/dnjjlp2uy/image/upload/v1696578106/Coffee/%EC%95%84%EC%9D%B4%EC%8A%A4%EC%B9%B4%EB%9D%BC%EB%A9%9C%EB%A7%88%ED%82%A4%EC%95%84%EB%98%90_ymr8nv.png"
   },
   {
+    "coffeeNumber" : 3,
     "name": "카푸치노",        
     "imgurl":"https://res.cloudinary.com/dnjjlp2uy/image/upload/v1696577523/Coffee/%EC%B9%B4%ED%91%B8%EC%B9%98%EB%85%B8_fmfi7y.png"
   },
   {
+    "coffeeNumber" : 4,
     "name": "돌체 라떼",
     "imgurl": "https://res.cloudinary.com/dnjjlp2uy/image/upload/v1696577522/Coffee/%EB%8F%8C%EC%B2%B4%EB%9D%BC%EB%96%BC_na8jvx.png"
   },
   {
+    "coffeeNumber" : 5,
     "name": "카페 라떼",
     "imgurl": "https://res.cloudinary.com/dnjjlp2uy/image/upload/v1696577523/Coffee/%EC%B9%B4%ED%8E%98%EB%9D%BC%EB%96%BC_koaxit.png"
   },
   {
+    "coffeeNumber" : 6,
     "name": "에스프레소",
     "imgurl":"https://res.cloudinary.com/dnjjlp2uy/image/upload/v1696577983/Coffee/%EC%97%90%EC%8A%A4%ED%94%84%EB%A0%88%EC%86%8C_q9djlh.png"
   }
