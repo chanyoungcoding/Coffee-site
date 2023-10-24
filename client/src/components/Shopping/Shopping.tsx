@@ -1,7 +1,9 @@
 import React, { useEffect } from "react";
-import { useApiDataShop } from "../../services/api";
+import { useApiDataShop, useBasketMutation } from "../../services/api";
 import { useRecoilState } from "recoil";
 import { shoppingList } from "../../recoil/shop";
+
+import Cookies from "js-cookie";
 
 const Shopping:React.FC = () => {
 
@@ -9,23 +11,34 @@ const Shopping:React.FC = () => {
   const {data, isError, isLoading} = useApiDataShop(coffeeShopUrl);
   const [shop, setShop] = useRecoilState(shoppingList)
 
+  const { mutate } = useBasketMutation();
+
   useEffect(() => {
-    if(data) {
-      setShop([...data]);
-    }
-    console.log(data);
+    if(data) setShop([...data]);
   },[data,setShop])
 
-  if(isError) return 
-  <div className='mainmenu__error'>
-    <p>무엇인가 에러가 발생했습니다.</p>
-  </div>
+  const onClick = (e:React.MouseEvent<HTMLButtonElement>, coffeeNumber:number) => {
+    const userName = Cookies.get('사용자명')
+    e.currentTarget.disabled = true;
+    mutate({coffeeNumber, userName});
+  }
+
+  if(isError) return (
+    <div className='mainmenu__error'>
+      <p>무엇인가 에러가 발생했습니다.</p>
+    </div>
+  )
 
   if(isLoading) return <p>로딩중입니다..</p>
 
   return ( 
     <div className="shopping">
-      {shop.map((item,index) => (<p key={index}>{item.name}</p>))}
+      {shop.map((item,index) => (
+        <div key={index}>
+          <p>{item.name}</p>
+          <button onClick={(e) => onClick(e, item.coffeeNumber)}>장바구니 추가하기</button>
+        </div>
+      ))}
     </div>
   );
 }

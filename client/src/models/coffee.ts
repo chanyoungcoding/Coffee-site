@@ -37,6 +37,7 @@ export interface LoginData {
 }
 
 export interface CoffeeShop {
+  coffeeNumber: number;
   name: string;
   imgurl: string;
 }

@@ -80,6 +80,19 @@ export function useApiDataShop(url:string) {
   return {data, isLoading, isError }
 }
 
+//basket API
+
+export const useBasketMutation = () => {
+  return useMutation<number, string, unknown, { coffeeNumber: number, userName: string}>({
+    mutationFn: async (data) =>  await axios.post('http://localhost:4000/api/coffeeBasket', data),
+    mutationKey: 'basket',
+    onSuccess: () => {
+      alert('장바구니에 추가하였습니다.');
+    },
+    onError: () => alert('로그인하세요.')
+  })
+}
+
 //login API
 export const useLoginMutation = () => {
   const navigate = useNavigate();
