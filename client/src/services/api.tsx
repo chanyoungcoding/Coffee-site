@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { Data, LoginData } from '../models/coffee';
+import { Data, LoginData, CoffeeShop } from '../models/coffee';
 import { useNavigate } from "react-router-dom";
 
 import Cookies from 'js-cookie';
@@ -9,8 +9,6 @@ import { useCallback, useState } from 'react';
 
 // react-query
 import { useMutation, useQuery } from 'react-query';
-
-
 
 // coffee API 
 export function useApiData(url:string) {
@@ -35,7 +33,7 @@ export function useApiDataName(url: string, name : string | undefined) {
   return {data, isLoading, isError}
 }
 
-//coffeeSlice
+// coffeeSlice API
 export function useApiDataSlice(url:string, itemsPerPage:number) {
   const [data, setData] = useState<Data[]>([]);
   const [currentData, setCurrentData] = useState<Data[]>([]);
@@ -52,7 +50,7 @@ export function useApiDataSlice(url:string, itemsPerPage:number) {
   return {data, currentData, isLoading, isError, setCurrentData};
 }
 
-//coffeeSlice 
+// coffeeNumber API
 export function useApiDataNumber(url:string) {
   const [num, setNum] = useState<number>(3);
   const {data, isLoading, isError} = useQuery<Data[]>({
@@ -70,7 +68,19 @@ export function useApiDataNumber(url:string) {
   return {data, isLoading, isError, changeNumber}
 }
 
-//login
+// coffeeShop API
+
+export function useApiDataShop(url:string) {
+  const {data, isLoading, isError} = useQuery<CoffeeShop[]>({ 
+    queryKey: ['coffeeShop'], 
+    queryFn: async () => {
+      const response = await axios.get(url);
+      return response.data;
+  }})
+  return {data, isLoading, isError }
+}
+
+//login API
 export const useLoginMutation = () => {
   const navigate = useNavigate();
   return useMutation({

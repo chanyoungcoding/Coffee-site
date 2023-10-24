@@ -1,38 +1,31 @@
-import React from "react";
-import { useRecoilValue, useRecoilState } from "recoil";
-import { shoppingBasket, shoppingLength, shoppingList, shoppingPrice } from "../../recoil/shop";
-
-interface ShoppingItem {
-  id: number;
-  name: string;
-  price: number;
-}
+import React, { useEffect } from "react";
+import { useApiDataShop } from "../../services/api";
+import { useRecoilState } from "recoil";
+import { shoppingList } from "../../recoil/shop";
 
 const Shopping:React.FC = () => {
-  const data = useRecoilValue(shoppingList);
-  const [basket, setBasket] = useRecoilState(shoppingBasket);
 
-  const basketLength = useRecoilValue(shoppingLength);
-  const basketPrice = useRecoilValue(shoppingPrice);
+  const coffeeShopUrl = 'http://localhost:4000/api/coffeeShop'
+  const {data, isError, isLoading} = useApiDataShop(coffeeShopUrl);
+  const [shop, setShop] = useRecoilState(shoppingList)
 
-  const onClick = (item:ShoppingItem,e:React.MouseEvent<HTMLButtonElement>) => {
-    e.currentTarget.disabled = true;
-    setBasket([...basket, item])
-  }
+  useEffect(() => {
+    if(data) {
+      setShop([...data]);
+    }
+    console.log(data);
+  },[data,setShop])
+
+  if(isError) return 
+  <div className='mainmenu__error'>
+    <p>무엇인가 에러가 발생했습니다.</p>
+  </div>
+
+  if(isLoading) return <p>로딩중입니다..</p>
 
   return ( 
     <div className="shopping">
-      {data.map(item => (
-        <div key={item.id}>
-          <p>{item.name} - {item.price}</p>
-          <button onClick={(e) => onClick(item ,e)}>장바구니</button>
-        </div>
-      ))}
-
-      <h1>장바구니에 추가된 목록</h1>
-      {basket.map(x => (<p key={x.id}>{x.name} - {x.price}</p>))}
-      <h2>장바구니 목록 개수 - {basketLength}</h2>
-      <h3>장바구니 목록 총 가격 - {basketPrice}</h3>
+      {shop.map((item,index) => (<p key={index}>{item.name}</p>))}
     </div>
   );
 }
