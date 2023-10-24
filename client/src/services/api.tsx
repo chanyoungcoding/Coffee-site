@@ -93,6 +93,19 @@ export const useBasketMutation = () => {
   })
 }
 
+//user API 
+
+
+export function useApiUser(url:string, userName:string | undefined) {
+  const {data, isLoading, isError} = useQuery({ 
+    queryKey: ['User'], 
+    queryFn: async () => {
+      const response = await axios.get(`${url}?user=${userName}`);
+      return response.data;
+  }})
+  return {data, isLoading, isError }
+}
+
 //login API
 export const useLoginMutation = () => {
   const navigate = useNavigate();
