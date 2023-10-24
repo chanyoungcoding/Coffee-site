@@ -62,6 +62,13 @@ app.post('/api/coffeeBasket', async (req,res) => {
   }
 })
 
+app.get('/api/user', async (req,res) => {
+  const userName  = req.query.user
+  const user = await User.findOne({username:userName});
+  const basket = user.shoppingBasket;
+  res.json(basket);
+})
+
 app.post('/api/login', async (req,res) => {
   const {username, password} = req.body
   try {
