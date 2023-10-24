@@ -5,6 +5,7 @@ require("dotenv").config();
 
 const Coffee = require('./models/coffee');
 const User = require('./models/users');
+const CoffeeShop = require('./models/coffeeShop');
 
 //MongoDB 연결
 // const dbUrl = process.env.DB_URL;
@@ -38,6 +39,11 @@ app.get('/api/coffeeName', async (req,res) => {
   const coffeeName = req.query.name
   const coffee = await Coffee.find({name : coffeeName});
   res.json(coffee)
+})
+
+app.get('/api/coffeeShop', async (req,res) => {
+  const coffeeShop = await CoffeeShop.find({});
+  res.json(coffeeShop);
 })
 
 app.post('/api/login', async (req,res) => {
