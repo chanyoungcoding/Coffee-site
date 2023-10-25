@@ -83,7 +83,7 @@ export function useApiDataShop(url:string) {
 //basket API
 
 export const useBasketMutation = () => {
-  return useMutation<number, string, unknown, { coffeeNumber: number, userName: string}>({
+  return useMutation<number, string, unknown, { coffeeName: string, coffeeUrl:string ,userName: string}>({
     mutationFn: async (data) =>  await axios.post('http://localhost:4000/api/coffeeBasket', data),
     mutationKey: 'basket',
     onSuccess: () => {

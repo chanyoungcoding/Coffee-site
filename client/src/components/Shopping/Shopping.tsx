@@ -17,10 +17,10 @@ const Shopping:React.FC = () => {
     if(data) setShop([...data]);
   },[data,setShop])
 
-  const onClick = (e:React.MouseEvent<HTMLButtonElement>, coffeeNumber:number) => {
+  const onClick = (e:React.MouseEvent<HTMLButtonElement>, coffeeName:string, coffeeUrl:string) => {
     const userName = Cookies.get('사용자명')
     e.currentTarget.disabled = true;
-    mutate({coffeeNumber, userName});
+    mutate({coffeeName, coffeeUrl ,userName});
   }
 
   if(isError) return (
@@ -36,7 +36,7 @@ const Shopping:React.FC = () => {
       {shop.map((item,index) => (
         <div key={index}>
           <p>{item.name}</p>
-          <button onClick={(e) => onClick(e, item.coffeeNumber)}>장바구니 추가하기</button>
+          <button onClick={(e) => onClick(e, item.name, item.imgurl)}>장바구니 추가하기</button>
         </div>
       ))}
     </div>
