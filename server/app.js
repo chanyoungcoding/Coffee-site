@@ -47,13 +47,13 @@ app.get('/api/coffeeShop', async (req,res) => {
 })
 
 app.post('/api/coffeeBasket', async (req,res) => {
-  const { coffeeNumber, userName } = req.body;
+  const { coffeeName, coffeeUrl ,userName } = req.body;
   try {
     const user = await User.findOne({username: userName});
     if(!user) {
       return res.status(404).json({error});
     }
-    user.shoppingBasket.push(coffeeNumber);
+    user.shoppingBasket.push(req.body);
     await user.save();
     res.json('succeess');
   } catch(e) {
