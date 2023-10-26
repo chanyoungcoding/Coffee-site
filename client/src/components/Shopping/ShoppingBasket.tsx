@@ -29,8 +29,18 @@ const ShoppingBasket:React.FC = () => {
 
   return ( 
     <div className="shoppingbasket">
-      {coffee?.map((item,index) => (<p key={index}>{item.coffeeName}</p>))}
-      <p>장바구니 개수 : {basketLength}</p>
+      <div className="basket__save">
+        <div className="save__top">
+        <p>저장한 커피들</p>
+        <p>장바구니 개수 : {basketLength}</p>
+        </div>
+        <div className="save__inner">
+          {coffee?.map((item,index) => (<p key={index}>{item.coffeeName}</p>))}
+        </div>
+      </div>
+      <div className="basket__profile">
+        <p>사용자 이름 : {userName}</p>
+      </div>
     </div>
   );
 }
