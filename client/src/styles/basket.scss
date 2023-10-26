@@ -1,0 +1,53 @@
+@import './variable.scss';
+
+.shoppingbasket {
+  display: flex;
+  .basket__save {
+    width: 65%;
+    margin-right: 15px;
+    background-color: aqua;
+    .save__top {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0px 30px;
+      border-bottom: 1px solid $basic-color;
+      p {
+        font-size: 2rem;
+      }
+    }
+    .save__inner {
+      display: flex;
+      flex-direction: column;
+      .inner__box {
+        display: flex;
+        padding: 20px 0px;
+        background-color: aliceblue;
+        border-bottom: 1px solid $basic-color;
+        .inner__img {
+          img {
+            width: 200px;
+            object-fit: cover;
+            background-color: $basic-text-color;
+          }
+        }
+        .inner__intro {
+          padding-left: 45px;
+          p {
+            margin-top: 30px;
+            font-size: 2rem;
+          }
+        }
+      }
+    }
+  }
+  .basket__profile {
+    width: 35%;
+    margin-left: 15px;
+    background-color: aquamarine;
+    h1 {
+      font-size: 2rem;
+      padding: 10px 0px 30px;
+      border-bottom: 1px solid $basic-color;
+    }
+  }
+}

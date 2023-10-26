@@ -5,6 +5,8 @@ import Cookies from 'js-cookie';
 import { useRecoilState, useRecoilValue } from "recoil";
 import { shoppingBasket, shoppingLength } from "../../recoil/shop";
 
+import '../../styles/basket.scss';
+
 const ShoppingBasket:React.FC = () => {
 
   const [coffee, setCoffee] = useRecoilState(shoppingBasket);
@@ -35,10 +37,20 @@ const ShoppingBasket:React.FC = () => {
         <p>장바구니 개수 : {basketLength}</p>
         </div>
         <div className="save__inner">
-          {coffee?.map((item,index) => (<p key={index}>{item.coffeeName}</p>))}
+            {coffee?.map((item,index) => (
+              <div className="inner__box">
+                <div className="inner__img">
+                  <img key={index} src={item.coffeeUrl}></img>
+                </div>
+                <div className="inner__intro">
+                  <p key={index}>{item.coffeeName}</p>
+                </div>
+              </div>
+            ))}
         </div>
       </div>
       <div className="basket__profile">
+        <h1>내 정보</h1>
         <p>사용자 이름 : {userName}</p>
       </div>
     </div>
