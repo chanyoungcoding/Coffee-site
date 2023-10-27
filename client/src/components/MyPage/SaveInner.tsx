@@ -1,16 +1,14 @@
 import React, { useEffect } from "react";
-import { useApiUser } from "../../../services/api";
+import { useApiUser } from "../../services/api";
 
-import Button from "../../Button";
+import Button from "../Button";
 
 import { useRecoilState, useRecoilValue } from "recoil";
-import { shoppingBasket, userName } from "../../../recoil/shop";
+import { shoppingBasket, userName } from "../../recoil/shop";
 
 
 const SaveInner:React.FC = () => {
-
   const userDB = 'http://localhost:4000/api/user';
-
   const username = useRecoilValue(userName);
 
   const { data, isError, isLoading } = useApiUser(userDB, username);

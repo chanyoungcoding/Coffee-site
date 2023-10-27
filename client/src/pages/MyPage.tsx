@@ -1,10 +1,10 @@
 import React from "react";
 
-import '../../styles/basket.scss';
-import BasketProfile from "./components/BasketProfile";
-import BasketSave from "./components/BasketSave";
+import '../styles/basket.scss';
+import BasketProfile from "../components/MyPage/BasketProfile";
+import BasketSave from "../components/MyPage/BasketSave";
 
-const ShoppingBasket:React.FC = () => {
+const MyPage:React.FC = () => {
   
   return ( 
     <div className="shoppingbasket">
@@ -18,4 +18,4 @@ const ShoppingBasket:React.FC = () => {
   );
 }
 
-export default ShoppingBasket;
+export default MyPage;

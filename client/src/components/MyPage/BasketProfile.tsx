@@ -1,6 +1,6 @@
 import React from "react";
 import { useRecoilValue } from "recoil";
-import { userName } from "../../../recoil/shop";
+import { userName } from "../../recoil/shop";
 
 const BasketProfile:React.FC= () => {
   const username = useRecoilValue(userName);
