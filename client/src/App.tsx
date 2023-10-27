@@ -10,8 +10,8 @@ import MenuDetail from './components/Menu/MenuDetail'
 import MenuMain from './components/Menu/MenuMain'
 import Test from './components/Test'
 import Country from './components/Country/Country'
-import Recipe from './components/Recipe/Recipe'
-import RecipeHome from './components/Recipe/RecipeHome'
+import Recipe from './pages/RecipeDetail'
+import RecipeHome from './pages/Recipe'
 import ErrorPage from './pages/ErrorPage'
 import { RecoilRoot } from 'recoil';
 import Shopping from './components/Shopping/Shopping';

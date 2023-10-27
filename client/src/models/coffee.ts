@@ -31,6 +31,10 @@ export interface MenuDetail {
   coffeePrice:string;
 }
 
+export interface RecipeData {
+  data : Data[] | undefined
+}
+
 export interface LoginData {
   username: string;
   password: string;

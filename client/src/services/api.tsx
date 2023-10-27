@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { Data, LoginData, CoffeeShop } from '../models/coffee';
+import { Data, LoginData, CoffeeShopData } from '../models/coffee';
 import { useNavigate } from "react-router-dom";
 
 import Cookies from 'js-cookie';
@@ -71,7 +71,7 @@ export function useApiDataNumber(url:string) {
 // coffeeShop API
 
 export function useApiDataShop(url:string) {
-  const {data, isLoading, isError} = useQuery<CoffeeShop[]>({ 
+  const {data, isLoading, isError} = useQuery<CoffeeShopData[]>({ 
     queryKey: ['coffeeShop'], 
     queryFn: async () => {
       const response = await axios.get(url);
