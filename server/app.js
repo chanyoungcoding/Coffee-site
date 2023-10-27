@@ -64,9 +64,13 @@ app.post('/api/coffeeBasket', async (req,res) => {
 
 app.get('/api/user', async (req,res) => {
   const userName  = req.query.user
-  const user = await User.findOne({username:userName});
-  const basket = user.shoppingBasket;
-  res.json(basket);
+  try {
+    const user = await User.findOne({username:userName});
+    const basket = user.shoppingBasket
+    res.json(basket);
+  } catch(e) {
+    res.json(e);
+  }
 })
 
 app.post('/api/login', async (req,res) => {
