@@ -51,7 +51,10 @@ const ShoppingBasket:React.FC = () => {
       </div>
       <div className="basket__profile">
         <h1>내 정보</h1>
-        <p>사용자 이름 : {userName}</p>
+        <div className="profile__name">
+          <p>사용자</p>
+          <p>{userName}</p>
+        </div>
       </div>
     </div>
   );

@@ -2,10 +2,10 @@
 
 .shoppingbasket {
   display: flex;
+  background-color: #D1CBC5;
   .basket__save {
     width: 65%;
     margin-right: 15px;
-    background-color: aqua;
     .save__top {
       display: flex;
       justify-content: space-between;
@@ -21,7 +21,6 @@
       .inner__box {
         display: flex;
         padding: 20px 0px;
-        background-color: aliceblue;
         border-bottom: 1px solid $basic-color;
         .inner__img {
           img {
@@ -43,11 +42,18 @@
   .basket__profile {
     width: 35%;
     margin-left: 15px;
-    background-color: aquamarine;
     h1 {
       font-size: 2rem;
       padding: 10px 0px 30px;
       border-bottom: 1px solid $basic-color;
+    }
+    .profile__name {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 30px;
+      p {
+        font-size: 24px;
+      }
     }
   }
 }
