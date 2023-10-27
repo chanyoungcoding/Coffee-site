@@ -2,14 +2,17 @@ import React, { useEffect } from "react";
 import { useApiUser } from "../../services/api";
 
 import Cookies from 'js-cookie';
-import { useRecoilState, useRecoilValue } from "recoil";
+import { useRecoilValue, useSetRecoilState } from "recoil";
 import { shoppingBasket, shoppingLength } from "../../recoil/shop";
 
+import SaveInner from "./components/SaveInner";
+
 import '../../styles/basket.scss';
+import BasketProfile from "./components/BasketProfile";
 
 const ShoppingBasket:React.FC = () => {
 
-  const [coffee, setCoffee] = useRecoilState(shoppingBasket);
+  const setCoffee = useSetRecoilState(shoppingBasket);
   const basketLength = useRecoilValue(shoppingLength);
 
   const userName = Cookies.get('사용자명');
@@ -31,29 +34,16 @@ const ShoppingBasket:React.FC = () => {
 
   return ( 
     <div className="shoppingbasket">
+      <div className="basket__profile">
+        <BasketProfile userName={userName}/>
+      </div>
       <div className="basket__save">
         <div className="save__top">
         <p>저장한 커피들</p>
         <p>장바구니 개수 : {basketLength}</p>
         </div>
         <div className="save__inner">
-            {coffee?.map((item,index) => (
-              <div className="inner__box">
-                <div className="inner__img">
-                  <img key={index} src={item.coffeeUrl}></img>
-                </div>
-                <div className="inner__intro">
-                  <p key={index}>{item.coffeeName}</p>
-                </div>
-              </div>
-            ))}
-        </div>
-      </div>
-      <div className="basket__profile">
-        <h1>내 정보</h1>
-        <div className="profile__name">
-          <p>사용자</p>
-          <p>{userName}</p>
+          <SaveInner userName={userName}/>
         </div>
       </div>
     </div>
