@@ -36,8 +36,13 @@ export interface LoginData {
   password: string;
 }
 
-export interface CoffeeShop {
+export interface CoffeeShopData {
   coffeeNumber: number;
   name: string;
   imgurl: string;
+}
+
+export interface shoppingBasketData {
+  coffeeName: string;
+  coffeeUrl: string;
 }

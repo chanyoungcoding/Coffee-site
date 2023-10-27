@@ -3,18 +3,17 @@ import { useApiUser } from "../../../services/api";
 
 import Button from "../../Button";
 
-import { useRecoilState } from "recoil";
-import { shoppingBasket } from "../../../recoil/shop";
+import { useRecoilState, useRecoilValue } from "recoil";
+import { shoppingBasket, userName } from "../../../recoil/shop";
 
-interface BasketProfile {
-  userName: string | undefined;
-}
 
-const SaveInner:React.FC<BasketProfile> = ({userName}) => {
+const SaveInner:React.FC = () => {
 
   const userDB = 'http://localhost:4000/api/user';
 
-  const { data, isError, isLoading } = useApiUser(userDB, userName);
+  const username = useRecoilValue(userName);
+
+  const { data, isError, isLoading } = useApiUser(userDB, username);
   const [coffee, setCoffee] = useRecoilState(shoppingBasket);
 
   useEffect(() => {

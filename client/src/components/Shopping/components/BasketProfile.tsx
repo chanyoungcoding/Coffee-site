@@ -1,16 +1,16 @@
 import React from "react";
+import { useRecoilValue } from "recoil";
+import { userName } from "../../../recoil/shop";
 
-interface BasketProfile {
-  userName: string | undefined;
-}
-
-const BasketProfile:React.FC<BasketProfile> = ({userName}) => {
+const BasketProfile:React.FC= () => {
+  const username = useRecoilValue(userName);
+  
   return ( 
     <>
       <h1>내 정보</h1>
       <div className="profile__name">
         <p>사용자</p>
-        <p>{userName}</p>
+        <p>{username}</p>
       </div>
     </>
   );

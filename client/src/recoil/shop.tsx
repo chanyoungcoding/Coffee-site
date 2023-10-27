@@ -1,18 +1,21 @@
 import { atom, selector} from 'recoil';
+import Cookies from 'js-cookie';
 
-import { CoffeeShop } from '../models/coffee';
+import { CoffeeShopData,shoppingBasketData } from '../models/coffee';
 
-export const shoppingList = atom<CoffeeShop[]>({
+const username = Cookies.get('사용자명')
+
+export const userName = atom({
+  key: 'userName',
+  default: username
+})
+
+export const shoppingList = atom<CoffeeShopData[]>({
   key: 'shoppingList',
   default: []
 })
 
-interface data {
-  coffeeName: string;
-  coffeeUrl: string;
-}
-
-export const shoppingBasket = atom<data[]>({
+export const shoppingBasket = atom<shoppingBasketData[]>({
   key: 'shoppingBasket',
   default: []
 })
