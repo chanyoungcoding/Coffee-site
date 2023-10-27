@@ -1,8 +1,10 @@
 import { atom, selector} from 'recoil';
 import Cookies from 'js-cookie';
 
+// TS
 import { CoffeeShopData,shoppingBasketData } from '../models/coffee';
 
+// 쿠키 가져오기
 const username = Cookies.get('사용자명')
 
 export const userName = atom({
@@ -28,10 +30,3 @@ export const shoppingLength = selector({
   }
 })
 
-// export const shoppingPrice = selector({
-//   key: 'shppingPrice',
-//   get: ({get}) => {
-//     const data = get(shoppingBasket);
-//     return data.reduce((prev, cur) =>  prev + cur.price, 0)
-//   }
-// })
