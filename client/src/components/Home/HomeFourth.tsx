@@ -1,42 +1,30 @@
-import React, { useState } from "react";
+import React from "react";
 import { useSpring, animated } from 'react-spring'
-import _ from 'lodash';
+import { useInView } from "react-intersection-observer";
 
 import MenuDetail from "./components/Menudetail";
 
 const HomeFourth:React.FC = () => {
 
-  const [isVisible, setIsVisible] = useState<boolean>(false);
-
-  const handleScroll = _.throttle(() => {
-    const scrollY = window.scrollY;
-    const windowHeight = window.innerHeight;
-    const scrollPositionToShow = windowHeight * 1.5;
-
-    if(scrollY > scrollPositionToShow) {
-      setIsVisible(true)
-    } else {
-      setIsVisible(false);
-    }
-  }, 300)
-  
-  window.addEventListener('scroll', handleScroll);
+  const [ref, inView] = useInView({
+    threshold: 0.8
+  })
 
   const springPropsLeft = useSpring({
-    opacity: isVisible ? 1 : 0,
-    transform: isVisible ? 'translateX(0)' : 'translateX(-100%)',
+    opacity: inView ? 1 : 0,
+    transform: inView ? 'translateX(0)' : 'translateX(-100%)',
   });
 
   const springPropsRight = useSpring({
-    opacity: isVisible ? 1 : 0,
-    transform: isVisible ? 'translateX(0)' : 'translateX(100%)',
+    opacity: inView ? 1 : 0,
+    transform: inView ? 'translateX(0)' : 'translateX(100%)',
   });
 
   return ( 
     <div className="homefourth">
       <h2>What Happens Here</h2>
       <h1>요즘 커피 가격</h1>
-      <div className="homefourth__container">
+      <div ref={ref} className="homefourth__container">
         <animated.div style={springPropsLeft} className="fourth__left">
           <MenuDetail coffeeIntro="원두가루에 뜨거운 물을 고압으로 통과시켜 뽑아낸 커피" coffeeName="에스프레소" coffeePrice="4000"/>
           <MenuDetail coffeeIntro="에스프레소에 뜨거운 물을 희석시켜 만든 음료" coffeeName="아메리카노" coffeePrice="4500"/>
