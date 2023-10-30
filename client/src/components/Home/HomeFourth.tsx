@@ -19,7 +19,7 @@ const HomeFourth:React.FC = () => {
       setIsVisible(false);
     }
   }, 300)
-
+  
   window.addEventListener('scroll', handleScroll);
 
   const springPropsLeft = useSpring({
