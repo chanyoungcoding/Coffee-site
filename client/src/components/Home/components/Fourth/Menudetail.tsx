@@ -1,5 +1,5 @@
 import React from "react";
-import { MenuDetail } from "../../../models/coffee";
+import { MenuDetail } from "../../../../models/coffee";
 
 const MenuDetail:React.FC<MenuDetail> = React.memo(({coffeeName, coffeeIntro, coffeePrice}) => {
   return (
