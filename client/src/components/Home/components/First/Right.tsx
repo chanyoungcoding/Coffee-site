@@ -1,9 +1,9 @@
 import React from "react";
+import { animated, useTrail } from 'react-spring';
 
 import coffeecup from "../../../../assets/coffeecup1.png";
 import coffeecup1 from "../../../../assets/coffeecup2.png";
 
-import { animated, useTrail } from 'react-spring';
 
 const Right:React.FC = () => {
   const items = [coffeecup, coffeecup1]; 
