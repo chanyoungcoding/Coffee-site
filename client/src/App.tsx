@@ -17,6 +17,7 @@ import { RecoilRoot } from 'recoil';
 import Shopping from './components/Shopping/Shopping';
 import Login from './pages/Login';
 import MyPage from './pages/MyPage';
+import ShopDetail from './components/Shopping/ShopDetail';
 
 const queryClient = new QueryClient();
 
@@ -33,7 +34,8 @@ const App:React.FC = () => {
             <Route path='/recipe/:name' element={<Recipe/>}/>
             <Route path='/recipeHome' element={<RecipeHome/>}/>
             <Route path='/shop' element={<Shopping/>}/>
-            <Route path='/shopBasket' element={<MyPage/>}/>
+            <Route path='/shopdetail' element={<ShopDetail/>}/>
+            <Route path='/mypage' element={<MyPage/>}/>
             <Route path='/login' element={<Login/>}/>
             <Route path='*' element={<ErrorPage/>}/>
           </Route>

@@ -4,6 +4,7 @@ import '../../styles/country.scss';
 import kena from '../../assets/케냐.png';
 import kenaflaver from '../../assets/케냐커피맛.jpg';
 import kenacoffee from '../../assets/케냐커피.jpg';
+import CountryTop from "./CountryTop";
 
 interface introBox {
   imgsrc: string;
@@ -22,14 +23,7 @@ const IntroBox:React.FC<introBox> = React.memo(({imgsrc, intro}) => {
 const Country:React.FC = () => {
   return ( 
     <div className="country">
-      <div className="country__top">
-        <h1>SINGLE ORIGIN COFFEE</h1>
-        <h2>Which country's coffee beans do you want?</h2>
-      </div>
-      <div className="country__banner">
-        <h1>the bean country</h1>
-      </div>
-      <div className="country__map"></div>
+      <CountryTop/>
       <div className="country__inner">
         <p>
           커피는 나라마다 품종이 다르고, 맛도 너무나도 다르며 Roast 즉 구운 정도에 따라서
@@ -49,7 +43,7 @@ const Country:React.FC = () => {
           </div>
           <div className="type__intro"></div>
         </div>
-      </div>
+      C</div>
     </div>
   );
 }
