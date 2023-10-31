@@ -1,32 +1,38 @@
 [
   {
     "coffeeNumber" : 1,
-    "name" : "아메리카노",
-    "imgurl": "https://res.cloudinary.com/dnjjlp2uy/image/upload/v1696577523/Coffee/%EC%95%84%EC%9D%B4%EC%8A%A4%EC%95%84%EB%A9%94%EB%A6%AC%EC%B9%B4%EB%85%B8_cja3t3.png"
+    "name" : "동진시장 블렌드",
+    "price" : 15000,
+    "imgurl": "https://res.cloudinary.com/dnjjlp2uy/image/upload/v1698762932/CoffeeShop/3D6AF8E0-A2D8-4671-9872-7A2AD7C6E843_jqbpdw.jpg"
   },
   {
     "coffeeNumber" : 2,
-    "name":"아이스 카라멜 마키아또",
-    "imgurl": "https://res.cloudinary.com/dnjjlp2uy/image/upload/v1696578106/Coffee/%EC%95%84%EC%9D%B4%EC%8A%A4%EC%B9%B4%EB%9D%BC%EB%A9%9C%EB%A7%88%ED%82%A4%EC%95%84%EB%98%90_ymr8nv.png"
+    "name":"울서울서울서",
+    "price": 24000,
+    "imgurl": "https://res.cloudinary.com/dnjjlp2uy/image/upload/v1698762931/CoffeeShop/03B1BF4D-4646-43CB-8ED3-7190ABEEE0F9_rh7zm3.jpg"
   },
   {
     "coffeeNumber" : 3,
-    "name": "카푸치노",        
-    "imgurl":"https://res.cloudinary.com/dnjjlp2uy/image/upload/v1696577523/Coffee/%EC%B9%B4%ED%91%B8%EC%B9%98%EB%85%B8_fmfi7y.png"
+    "name": "배드블러드",
+    "price": 19000,
+    "imgurl":"https://res.cloudinary.com/dnjjlp2uy/image/upload/v1698762932/CoffeeShop/19B9DC2F-9453-4EB2-B2E7-292A173EAC13_cho5by.jpg"
   },
   {
     "coffeeNumber" : 4,
-    "name": "돌체 라떼",
-    "imgurl": "https://res.cloudinary.com/dnjjlp2uy/image/upload/v1696577522/Coffee/%EB%8F%8C%EC%B2%B4%EB%9D%BC%EB%96%BC_na8jvx.png"
+    "name": "나이트호크",
+    "price": 30000,
+    "imgurl": "https://res.cloudinary.com/dnjjlp2uy/image/upload/v1698762932/CoffeeShop/582B2A4F-EEED-407E-9C0E-1EE1F941D94C_pvx9ov.jpg"
   },
   {
     "coffeeNumber" : 5,
-    "name": "카페 라떼",
-    "imgurl": "https://res.cloudinary.com/dnjjlp2uy/image/upload/v1696577523/Coffee/%EC%B9%B4%ED%8E%98%EB%9D%BC%EB%96%BC_koaxit.png"
+    "name": "블랙커피",
+    "price": 16000,
+    "imgurl": "https://res.cloudinary.com/dnjjlp2uy/image/upload/v1698762932/CoffeeShop/0B1EDCD7-E73E-49F9-8F4B-AB5E16ACD4DB_m8sv7e.png"
   },
   {
     "coffeeNumber" : 6,
-    "name": "에스프레소",
-    "imgurl":"https://res.cloudinary.com/dnjjlp2uy/image/upload/v1696577983/Coffee/%EC%97%90%EC%8A%A4%ED%94%84%EB%A0%88%EC%86%8C_q9djlh.png"
+    "name": "친환경포장용기",
+    "price": 4000,
+    "imgurl":"https://res.cloudinary.com/dnjjlp2uy/image/upload/v1698762932/CoffeeShop/157FB8A5-E56B-4CE5-AC17-151E9267602D_txy9im.png"
   }
 ]
