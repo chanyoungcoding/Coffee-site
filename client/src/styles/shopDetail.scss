@@ -1,12 +1,9 @@
 .shopdetail {
   .detail__shop {
     display: flex;
-    .detail__img {
-      margin: 0 150px;
-    }
+    justify-content: space-around;
+    margin: 150px;
     .detail__intro {
-      flex-grow: 1;
-      margin-left: 125px;
       h1,h2 {
         margin-bottom: 30px;
         font-size: 2rem;
@@ -72,6 +69,7 @@
           margin-right: 10px;
           outline: none;
           border: none;
+          cursor: pointer;
         }
         .button_2 {
           background-color: white;

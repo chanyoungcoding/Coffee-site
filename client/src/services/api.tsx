@@ -80,6 +80,19 @@ export function useApiDataShop(url:string) {
   return {data, isLoading, isError }
 }
 
+//coffeeShopDetail API
+
+export function useApiDataShopDetail(url:string, name:string | undefined) {
+  const {data, isLoading, isError} = useQuery<CoffeeShopData[]>({
+    queryKey: ['coffeeShopDetail'],
+    queryFn: async () => {
+      const response = await axios.get(`${url}?name=${name}`);
+      return response.data
+    }
+  })
+  return {data, isLoading, isError}
+}
+
 //basket API
 
 export const useBasketMutation = () => {

@@ -1,11 +1,11 @@
-import '../../styles/menudetail.scss'
-import MenuDetailItem from './components/MenuDetailItem';
-import Button from '../Button';
+import React from 'react';
+import { useParams } from 'react-router-dom';
 
 import { useApiDataName } from '../../services/api';
+import MenuDetailItem from './components/MenuDetailItem';
+import Button from '../Button';
+import '../../styles/menudetail.scss'
 
-
-import { useParams } from 'react-router-dom';
 
 const MenuDetail:React.FC = () => {
   const {name} = useParams();

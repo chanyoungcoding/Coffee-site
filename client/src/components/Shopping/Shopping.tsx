@@ -1,9 +1,12 @@
 import React, { useEffect } from "react";
-import { useApiDataShop, useBasketMutation } from "../../services/api";
 import { useRecoilState } from "recoil";
-import { shoppingList } from "../../recoil/shop";
-
 import Cookies from "js-cookie";
+import { Link } from "react-router-dom";
+
+import { useApiDataShop, useBasketMutation } from "../../services/api";
+import { shoppingList } from "../../recoil/shop";
+import '../../styles/shopping.scss';
+
 
 const Shopping:React.FC = () => {
 
@@ -33,9 +36,14 @@ const Shopping:React.FC = () => {
 
   return ( 
     <div className="shopping">
-      {shop.map((item,index) => (
-        <div key={index}>
-          <p>{item.name}</p>
+      {shop.map(item => (
+        <div key={item.coffeeNumber} className="shopping__inner">
+          <Link to={`/shopdetail/${item.name}`}>
+            <img src={item.imgurl} alt="#"/>
+            <p>{item.name}</p>
+          </Link>
+          <p className="shopping__date">제조일 2023.04.25</p>
+          <p className="shopping__price">{item.price} 원</p>
           <button onClick={(e) => onClick(e, item.name, item.imgurl)}>장바구니 추가하기</button>
         </div>
       ))}

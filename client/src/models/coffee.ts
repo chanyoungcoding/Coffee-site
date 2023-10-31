@@ -43,6 +43,7 @@ export interface LoginData {
 export interface CoffeeShopData {
   coffeeNumber: number;
   name: string;
+  price: number;
   imgurl: string;
 }
 

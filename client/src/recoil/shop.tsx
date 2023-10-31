@@ -34,7 +34,7 @@ export const shoppingLength = selector({
 
 export const orderPrice = atom({
   key: 'orderPrice',
-  default: 15000
+  default: 0
 })
 
 

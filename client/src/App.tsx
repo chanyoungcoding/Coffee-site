@@ -34,7 +34,7 @@ const App:React.FC = () => {
             <Route path='/recipe/:name' element={<Recipe/>}/>
             <Route path='/recipeHome' element={<RecipeHome/>}/>
             <Route path='/shop' element={<Shopping/>}/>
-            <Route path='/shopdetail' element={<ShopDetail/>}/>
+            <Route path='/shopdetail/:name' element={<ShopDetail/>}/>
             <Route path='/mypage' element={<MyPage/>}/>
             <Route path='/login' element={<Login/>}/>
             <Route path='*' element={<ErrorPage/>}/>
