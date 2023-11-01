@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import styled from 'styled-components';
+import Cookies from "js-cookie";
 
 import '../../styles/shopDetail.scss';
-import { useParams } from "react-router-dom";
-import { useApiDataShopDetail } from "../../services/api";
+import { useApiDataShopDetail, useBasketMutation } from "../../services/api";
+import { BasketData } from "../../models/coffee";
 
 const ShopImg = styled.img`
   width: 550px;
@@ -12,11 +14,15 @@ const ShopImg = styled.img`
 `
 
 const ShopDetail:React.FC = () => {
+
   const {name} = useParams();
+  const userName = Cookies.get('사용자명');
   const coffeeShopDetailDB = 'http://localhost:4000/api/coffeeShopDetail';
   const {data, isError, isLoading} = useApiDataShopDetail(coffeeShopDetailDB, name);
 
-  const [num, setNum] = useState(1);
+  const { mutate } = useBasketMutation();
+
+  const [count, setCount] = useState(1);
   const [price, setPrice] = useState(0);
 
   useEffect(() => {
@@ -26,20 +32,26 @@ const ShopDetail:React.FC = () => {
   }, [data])
 
   const onClickPlus = () => {
-    setNum(num => num + 1);
+    setCount(num => num + 1);
     if(data) {
       setPrice(price => price + data[0].price)
     }
   }
 
   const onClickMinus = () => {
-    if(num === 1) {
+    if(count === 1) {
       return alert('최소 1개 이상 주문해야 합니다.');
     }
-    setNum(num => num - 1);
+    setCount(num => num - 1);
     if(data) {
       setPrice(price => price - data[0].price)
     }
+  }
+
+
+  const onClickBasket = (name:string, price:number, count:number, userName:string | undefined) => {
+    const data: BasketData = { name, price, count, userName };
+    mutate(data);
   }
 
   if(isError) return <p>에러가 발생했습니다.</p>
@@ -72,7 +84,7 @@ const ShopDetail:React.FC = () => {
             <p>동진시장 블렌드</p>
             <div className="order__calculate">
               <button onClick={onClickMinus}>-</button>
-              <p>{num}</p>
+              <p>{count}</p>
               <button onClick={onClickPlus}>+</button>
             </div>
           </div>
@@ -81,7 +93,15 @@ const ShopDetail:React.FC = () => {
 
           <div className="intro__button">
             <button>바로 구매하기</button>
-            <button className="button_2">장바구니 담기</button>
+            {data?.map(item => (
+              <button 
+                key={item.coffeeNumber} 
+                className="button_2" 
+                onClick={() => onClickBasket(item.name, price, count, userName)}
+              >
+                장바구니 담기
+              </button>
+            ))}
           </div>
         </div>
       </div>

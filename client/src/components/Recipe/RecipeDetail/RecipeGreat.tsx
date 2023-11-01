@@ -3,12 +3,12 @@ import Cookies from "js-cookie";
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 
 import { RecipeData } from "../../../models/coffee";
-import { useBasketMutation } from "../../../services/api";
+import { useGreatMutation } from "../../../services/api";
 
 const RecipeGreat:React.FC<RecipeData> = ({data}) => {
 
   const [disabled, setDisabled] = useState(false);
-  const { mutate } = useBasketMutation();
+  const { mutate } = useGreatMutation();
 
   const onClick = (e:React.MouseEvent<HTMLButtonElement>, coffeeName:string, coffeeUrl:string) => {
     const userName = Cookies.get('사용자명')

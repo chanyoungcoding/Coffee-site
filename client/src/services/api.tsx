@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { Data, LoginData, CoffeeShopData } from '../models/coffee';
+import { Data, LoginData, CoffeeShopData, BasketData } from '../models/coffee';
 import { useNavigate } from "react-router-dom";
 
 import Cookies from 'js-cookie';
@@ -8,7 +8,7 @@ import Cookies from 'js-cookie';
 import { useCallback, useState } from 'react';
 
 // react-query
-import { useMutation, useQuery } from 'react-query';
+import { useMutation, useQuery, UseMutationResult } from 'react-query';
 
 // coffee API 
 export function useApiData(url:string) {
@@ -68,6 +68,7 @@ export function useApiDataNumber(url:string) {
   return {data, isLoading, isError, changeNumber}
 }
 
+
 // coffeeShop API
 
 export function useApiDataShop(url:string) {
@@ -93,14 +94,29 @@ export function useApiDataShopDetail(url:string, name:string | undefined) {
   return {data, isLoading, isError}
 }
 
-//basket API
+// coffeeBasket API
 
-export const useBasketMutation = () => {
-  return useMutation<number, string, unknown, { coffeeName: string, coffeeUrl:string ,userName: string}>({
-    mutationFn: async (data) =>  await axios.post('http://localhost:4000/api/coffeeBasket', data),
+type BasketMutationResult = UseMutationResult<void, Error, BasketData>;
+
+export const useBasketMutation = (): BasketMutationResult => {
+  return useMutation({
+    mutationFn: async (data: BasketData) => await axios.post('http://localhost:4000/api/coffeeBasket', data),
     mutationKey: 'basket',
     onSuccess: () => {
-      alert('장바구니에 추가하였습니다.');
+      alert('장바구니에 추가했습니다.');
+    },
+    onError: () => alert('문제가 발생했습니다..')
+  });
+};
+
+// coffeeGreat API
+
+export const useGreatMutation = () => {
+  return useMutation<number, string, unknown, { coffeeName: string, coffeeUrl:string ,userName: string}>({
+    mutationFn: async (data) =>  await axios.post('http://localhost:4000/api/coffeeGreat', data),
+    mutationKey: 'great',
+    onSuccess: () => {
+      alert('좋아요 등록했습니다.');
     },
     onError: () => alert('로그인하세요.')
   })

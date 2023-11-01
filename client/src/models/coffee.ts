@@ -47,6 +47,13 @@ export interface CoffeeShopData {
   imgurl: string;
 }
 
+export interface BasketData {
+  name: string;
+  price: number;
+  count: number;
+  userName: string | undefined;
+}
+
 export interface shoppingBasketData {
   coffeeName: string;
   coffeeUrl: string;
