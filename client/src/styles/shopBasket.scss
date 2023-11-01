@@ -59,7 +59,30 @@
     text-align: center;
   }
   .basket__inner {
+    display: flex;
+    justify-content: center;
+    width: 70%;
+    margin: 0 auto;
+    .inner__left {
+      flex-grow: 1;
+      background-color: antiquewhite;
+      .left__top {
 
+      }
+      .left__bottom {
+
+      }
+    }
+    .inner__right {
+      background-color: azure;
+      .right__top {
+        display: flex;
+      }
+      .right__bottom {
+        display: flex;
+      }
+
+    }
   }
   .basket__total {
 

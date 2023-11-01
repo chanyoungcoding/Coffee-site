@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
-import { useApiBaket} from "../../services/api";
+import { useApiBaket } from "../../services/api";
 import '../../styles/shopBasket.scss';
 
 import { useRecoilState, useRecoilValue } from "recoil";
-import { shoppingBasket, userName } from "../../recoil/shop";
+import { shopBaket, userName } from "../../recoil/shop";
 
 
 const ShopBasket:React.FC = () => {
@@ -12,11 +12,12 @@ const ShopBasket:React.FC = () => {
   const username = useRecoilValue(userName);
 
   const { data, isError, isLoading } = useApiBaket(userDB, username);
-  const [coffee, setCoffee] = useRecoilState(shoppingBasket);
+  const [coffee, setCoffee] = useRecoilState(shopBaket);
+  console.log(coffee)
 
   useEffect(() => {
     setCoffee(data);
-  },[setCoffee, data])
+  },[setCoffee,data])
 
   if(isError) return (
     <div className='mainmenu__error'>
@@ -46,7 +47,32 @@ const ShopBasket:React.FC = () => {
         </div>
       </div>
       <h3>장바구니에 담긴 상품은 2일 동안 보관됩니다.</h3>
-      <div className="basket__inner"></div>
+
+      {coffee?.map(item=> (
+        <div key={item.name} className="basket__inner">
+          <div className="inner__left">
+            <div className="left__top">
+              <p>상품명</p>
+            </div>
+            <div className="left__bottom">
+            <p>{item.name}</p>
+            </div>
+          </div>
+          <div className="inner__right">
+            <div className="right__top">
+              <p>수량</p>
+              <p>판매가</p>
+              <p>배송비</p>
+            </div>
+            <div className="right__bottom">
+              <p>{item.count}</p>
+              <p>{item.price}</p>
+              <p>무료</p>
+            </div>
+          </div>
+        </div>
+      ))}
+
       <div className="basket__total"></div>
     </div>
   );

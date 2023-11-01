@@ -2,7 +2,7 @@ import { atom, selector} from 'recoil';
 import Cookies from 'js-cookie';
 
 // TS
-import { CoffeeShopData,shoppingBasketData } from '../models/coffee';
+import { BasketData, CoffeeGreat, CoffeeShopData } from '../models/coffee';
 
 // 쿠키 가져오기
 const username = Cookies.get('사용자명')
@@ -17,15 +17,20 @@ export const shoppingList = atom<CoffeeShopData[]>({
   default: []
 })
 
-export const shoppingBasket = atom<shoppingBasketData[]>({
-  key: 'shoppingBasket',
+export const coffeeGreat = atom<CoffeeGreat[]>({
+  key: 'coffeeGreat',
+  default: []
+})
+
+export const shopBaket = atom<BasketData[]>({
+  key: 'shopBasket',
   default: []
 })
 
 export const shoppingLength = selector({
   key: 'shppingLength',
   get: ({get}) => {
-    const data = get(shoppingBasket);
+    const data = get(coffeeGreat);
     return data ? data.length : 0;
   }
 })

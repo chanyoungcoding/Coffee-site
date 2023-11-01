@@ -54,7 +54,7 @@ export interface BasketData {
   userName: string | undefined;
 }
 
-export interface shoppingBasketData {
+export interface CoffeeGreat {
   coffeeName: string;
   coffeeUrl: string;
 }

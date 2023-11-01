@@ -4,7 +4,7 @@ import { useApiUser } from "../../services/api";
 import Button from "../Button";
 
 import { useRecoilState, useRecoilValue } from "recoil";
-import { shoppingBasket, userName } from "../../recoil/shop";
+import { coffeeGreat, userName } from "../../recoil/shop";
 
 
 const SaveInner:React.FC = () => {
@@ -12,7 +12,7 @@ const SaveInner:React.FC = () => {
   const username = useRecoilValue(userName);
 
   const { data, isError, isLoading } = useApiUser(userDB, username);
-  const [coffee, setCoffee] = useRecoilState(shoppingBasket);
+  const [coffee, setCoffee] = useRecoilState(coffeeGreat);
 
   useEffect(() => {
     setCoffee(data);
