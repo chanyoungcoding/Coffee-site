@@ -1,8 +1,8 @@
 import React from "react";
 
 import '../styles/basket.scss';
-import BasketProfile from "../components/MyPage/BasketProfile";
-import BasketSave from "../components/MyPage/BasketSave";
+import BasketProfile from "../components/MyPage/MyPageProfile";
+import BasketSave from "../components/MyPage/MyPageSave";
 
 const MyPage:React.FC = () => {
   

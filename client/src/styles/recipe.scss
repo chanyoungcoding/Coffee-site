@@ -19,10 +19,21 @@
       font-size: 3rem;
       font-weight: bold;
     }
-    h1 {
-      color: #4281C1;
-      text-align: center;
-      font-size: 2rem;
+    .intro__good {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      h1 {
+        color: #4281C1;
+        text-align: center;
+        font-size: 2rem;
+      }
+      .good__button {
+        outline: none;
+        border: none;
+        background-color: white;
+        color: red;
+      }
     }
     .intro__box {
       margin: 80px 150px; 
