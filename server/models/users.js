@@ -10,12 +10,22 @@ const UserSchema = new Schema({
     type: String,
     required: [true, '패스워드가 없습니다.']
   },
-  shoppingBasket: {
+  coffeeGreat: {
     type: [
       {
         coffeeName: String,
         coffeeUrl: String,
         userName: String
+      }
+    ],
+    default: []
+  },
+  shoppingBasket: {
+    type: [
+      {
+        name: String,
+        count: Number,
+        price: Number
       }
     ],
     default: []

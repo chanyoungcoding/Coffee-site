@@ -52,14 +52,35 @@ app.get('/api/coffeeShopDetail', async (req,res) => {
   res.json(coffeeShopDetail);
 })
 
-app.post('/api/coffeeBasket', async (req,res) => {
+app.post('/api/coffeeBasket', async(req,res) => {
+  const {price, count, name, userName} = req.body;
+  try {
+    const user = await User.findOne({username: userName});
+    const foundItem = user.shoppingBasket.find(item => item.name === name);
+    if(foundItem) {
+      foundItem.count += count
+      foundItem.price += price
+      await user.save();
+      res.json('good');
+    } else {
+      user.shoppingBasket.push({name, count, price});
+      await user.save();
+      res.json('good');
+    }
+  } catch(e) {
+    console.log(e)
+    res.status(500).json(e)
+  }
+})
+
+app.post('/api/coffeeGreat', async (req,res) => {
   const { userName } = req.body;
   try {
     const user = await User.findOne({username: userName});
     if(!user) {
       return res.status(404).json({error});
     }
-    user.shoppingBasket.push(req.body);
+    user.coffeeGreat.push(req.body);
     await user.save();
     res.json('succeess');
   } catch(e) {
@@ -72,8 +93,8 @@ app.get('/api/user', async (req,res) => {
   const userName  = req.query.user
   try {
     const user = await User.findOne({username:userName});
-    const basket = user.shoppingBasket
-    res.json(basket);
+    const great = user.coffeeGreat;
+    res.json(great);
   } catch(e) {
     res.json(e);
   }
@@ -87,6 +108,13 @@ app.post('/api/login', async (req,res) => {
   } catch(e) {
     res.json('실패');
   }
+})
+
+app.post('/api/signin', async (req,res) => {
+  const {username, password} = req.body
+  const newUser = new User(req.body);
+  await newUser.save();
+  res.json('success');
 })
 
 //test
