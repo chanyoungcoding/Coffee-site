@@ -94,7 +94,7 @@ export function useApiDataShopDetail(url:string, name:string | undefined) {
   return {data, isLoading, isError}
 }
 
-// coffeeBasket API
+// 장바구니 추가 API
 
 type BasketMutationResult = UseMutationResult<void, Error, BasketData>;
 
@@ -109,7 +109,7 @@ export const useBasketMutation = (): BasketMutationResult => {
   });
 };
 
-// coffeeGreat API
+// 좋아요 추가 API
 
 export const useGreatMutation = () => {
   return useMutation<number, string, unknown, { coffeeName: string, coffeeUrl:string ,userName: string}>({
@@ -122,8 +122,19 @@ export const useGreatMutation = () => {
   })
 }
 
-//user API 
+// 장바구니 API
 
+export function useApiBaket(url:string, userName:string | undefined) {
+  const {data, isLoading, isError} = useQuery({ 
+    queryKey: ['User'], 
+    queryFn: async () => {
+      const response = await axios.get(`${url}?user=${userName}`);
+      return response.data;
+  }})
+  return {data, isLoading, isError }
+}
+
+//유저 API 
 
 export function useApiUser(url:string, userName:string | undefined) {
   const {data, isLoading, isError} = useQuery({ 

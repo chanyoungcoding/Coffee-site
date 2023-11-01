@@ -18,6 +18,7 @@ import Shopping from './components/Shopping/Shopping';
 import Login from './pages/Login';
 import MyPage from './pages/MyPage';
 import ShopDetail from './components/Shopping/ShopDetail';
+import ShopBasket from './components/Shopping/ShopBasket';
 
 const queryClient = new QueryClient();
 
@@ -35,6 +36,7 @@ const App:React.FC = () => {
             <Route path='/recipeHome' element={<RecipeHome/>}/>
             <Route path='/shop' element={<Shopping/>}/>
             <Route path='/shopdetail/:name' element={<ShopDetail/>}/>
+            <Route path='/shopbasket' element={<ShopBasket/>}/>
             <Route path='/mypage' element={<MyPage/>}/>
             <Route path='/login' element={<Login/>}/>
             <Route path='*' element={<ErrorPage/>}/>

@@ -1,0 +1,67 @@
+.shopbasket {
+  h1 {
+    margin: 150px 0px 100px;
+    color: #353535;
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 600;
+  }
+  .basket__progress {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .progress__line {
+      width: 10%;
+      height: 2px;
+      margin: 0px 20px;
+      background-color: #cccccc;
+    }
+
+    .progress__basket,
+    .progress__order,
+    .progress__complete {
+      display: flex;
+      align-items: center;
+      .basket__procedure {
+        padding: 20px;
+        border-radius: 50px;
+        font-size: 20px;
+        font-weight: bold;
+        color: white;
+      }
+      .basket__procedurename {
+        margin-left: 20px;
+        font-size: 20px;
+        font-weight: bold;
+      }
+    }
+
+    .progress__basket {
+      .basket__procedure {
+        background-color: #333333;
+      }
+    }
+
+    .progress__order,
+    .progress__complete {
+      .basket__procedure {
+        background-color: #cccccc;
+      }
+      .basket__procedurename {
+        color: #cccccc;
+      }
+    }
+  }
+  h3 {
+    margin: 100px 0px 50px;
+    font-size: 20px;
+    text-align: center;
+  }
+  .basket__inner {
+
+  }
+  .basket__total {
+
+  }
+}
