@@ -1,9 +1,12 @@
 import React, { useEffect } from "react";
+import { useRecoilState, useRecoilValue } from "recoil";
+
 import { useApiBaket } from "../../services/api";
+import { shopBaket, userName } from "../../recoil/shop";
 import '../../styles/shopBasket.scss';
 
-import { useRecoilState, useRecoilValue } from "recoil";
-import { shopBaket, userName } from "../../recoil/shop";
+import { AiOutlinePlus  } from "react-icons/ai";
+import {LuEqual} from "react-icons/lu";
 
 
 const ShopBasket:React.FC = () => {
@@ -13,11 +16,15 @@ const ShopBasket:React.FC = () => {
 
   const { data, isError, isLoading } = useApiBaket(userDB, username);
   const [coffee, setCoffee] = useRecoilState(shopBaket);
-  console.log(coffee)
 
   useEffect(() => {
     setCoffee(data);
   },[setCoffee,data])
+
+  const totalPrice = React.useMemo(() => {
+    const total =  coffee?.reduce((prev, cur) => prev + cur.price, 0);
+    return total
+  }, [coffee])
 
   if(isError) return (
     <div className='mainmenu__error'>
@@ -66,14 +73,36 @@ const ShopBasket:React.FC = () => {
             </div>
             <div className="right__bottom">
               <p>{item.count}</p>
-              <p>{item.price}</p>
+              <p>{item.price}원</p>
               <p>무료</p>
             </div>
           </div>
         </div>
       ))}
 
-      <div className="basket__total"></div>
+      <div className="basket__total">
+        <div className="equal__product">
+          <p className="equal__name">총 상품금액</p>
+          <p className="equal__price">{totalPrice}</p>
+        </div>
+        <div className="total__plus">
+          <AiOutlinePlus size="30"/>
+        </div>
+        <div className="equal__product">
+          <p className="equal__name">총 배송비</p>
+          <p className="equal__price">0원</p>
+        </div>
+        <div className="total__equal">
+          <LuEqual size="30"/>
+        </div>
+        <div className="equal__product">
+          <p className="equal__name">결제예정금액</p>
+          <p className="equal__price">{totalPrice}</p>
+        </div>
+      </div>
+      <div className="basket__order">
+        <button>주문하기</button>
+      </div>
     </div>
   );
 }
