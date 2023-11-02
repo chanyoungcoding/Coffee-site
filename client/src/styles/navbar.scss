@@ -9,10 +9,14 @@ $coffee-backgroundColor: #313131;
   margin: 50px auto;
   position: relative;
 
-  .navbar__basket {
+  .navbar__side {
+    display: flex;
     position: absolute;
-    right: -10%;
+    right: -8%;
     top: -30px;
+    .inner__login {
+      margin-right: 40px;
+    }
   }
 
   .navbar__logo {
@@ -35,7 +39,7 @@ $coffee-backgroundColor: #313131;
     font-family: 'Roboto Mono', monospace;
 
     .li__inner {
-      width: 50%;
+      width: 48%;
       overflow-x: hidden;
 
       .li__left,

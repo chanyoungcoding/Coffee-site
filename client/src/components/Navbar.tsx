@@ -4,7 +4,6 @@ import coffeeIcon from '../assets/coffeeicon.png'
 import { Link } from "react-router-dom";
 
 import { SlBasket, SlLogin } from "react-icons/sl";
-
 const Navbar:React.FC = () => {
 
   const [visible, setVisible] = useState(false);
@@ -15,12 +14,12 @@ const Navbar:React.FC = () => {
 
   return (
     <div className="navbar">
-      <div className="navbar__basket">
-        <Link to='/login'>
-          <SlLogin size="40"/>
+      <div className="navbar__side">
+        <Link to='/login' className="inner__login">
+          <SlLogin size="30"/>
         </Link>
-        <Link to='/shopbasket'>
-          <SlBasket size="40"/>
+        <Link to='/shopbasket' className="inner__basket">
+          <SlBasket size="30"/>
         </Link>
       </div>
       <div className="navbar__logo" onClick={toggleNavVisible}>
