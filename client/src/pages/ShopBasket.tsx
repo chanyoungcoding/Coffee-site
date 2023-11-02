@@ -1,10 +1,10 @@
 import React from "react";
 
-import '../../styles/shopBasket.scss';
+import '../styles/shopBasket.scss';
 
-import ShopProgress from "./ShopBasket/ShopProgress";
-import ShopItem from "./ShopBasket/ShopItem";
-import ShopTotal from "./ShopBasket/ShopTotal";
+import ShopProgress from "../components/Shopping/ShopBasket/ShopProgress";
+import ShopItem from "../components/Shopping/ShopBasket/ShopItem";
+import ShopTotal from "../components/Shopping/ShopBasket/ShopTotal";
 
 
 const ShopBasket:React.FC = () => {

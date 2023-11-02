@@ -14,11 +14,11 @@ import Recipe from './pages/RecipeDetail'
 import RecipeHome from './pages/Recipe'
 import ErrorPage from './pages/ErrorPage'
 import { RecoilRoot } from 'recoil';
-import Shopping from './components/Shopping/Shopping';
+import Shopping from './pages/Shop';
 import Login from './pages/Login';
 import MyPage from './pages/MyPage';
-import ShopDetail from './components/Shopping/ShopDetail';
-import ShopBasket from './components/Shopping/ShopBasket';
+import ShopDetail from './pages/ShopDetail';
+import ShopBasket from './pages/ShopBasket';
 
 const queryClient = new QueryClient();
 

@@ -9,6 +9,12 @@ $coffee-backgroundColor: #313131;
   margin: 50px auto;
   position: relative;
 
+  .navbar__basket {
+    position: absolute;
+    right: -10%;
+    top: -30px;
+  }
+
   .navbar__logo {
     position: absolute;
     top: -30px;

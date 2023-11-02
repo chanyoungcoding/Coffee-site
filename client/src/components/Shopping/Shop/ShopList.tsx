@@ -1,18 +1,15 @@
-import React, { useEffect } from "react";
+import React,{useEffect} from "react";
 import { useRecoilState } from "recoil";
 import { Link } from "react-router-dom";
 
-import { useApiDataShop } from "../../services/api";
-import { shoppingList } from "../../recoil/shop";
-import '../../styles/shopping.scss';
+import { shoppingList } from "../../../recoil/shop";
+import { useApiDataShop } from "../../../services/api";
 
-
-const Shopping:React.FC = () => {
+const ShopList:React.FC = () => {
 
   const coffeeShopUrl = 'http://localhost:4000/api/coffeeShop'
   const {data, isError, isLoading} = useApiDataShop(coffeeShopUrl);
   const [shop, setShop] = useRecoilState(shoppingList)
-
 
   useEffect(() => {
     if(data) setShop([...data]);
@@ -27,7 +24,7 @@ const Shopping:React.FC = () => {
   if(isLoading) return <p>로딩중입니다..</p>
 
   return ( 
-    <div className="shopping">
+    <>
       {shop.map(item => (
         <div key={item.coffeeNumber} className="shopping__inner">
           <Link to={`/shopdetail/${item.name}`}>
@@ -38,7 +35,7 @@ const Shopping:React.FC = () => {
           <p className="shopping__price">{item.price} 원</p>
         </div>
       ))}
-    </div>
+    </>
   );
 }
-export default Shopping;
+export default ShopList;

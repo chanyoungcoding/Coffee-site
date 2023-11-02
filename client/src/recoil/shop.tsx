@@ -7,16 +7,19 @@ import { BasketData, CoffeeGreat, CoffeeShopData } from '../models/coffee';
 // 쿠키 가져오기
 const username = Cookies.get('사용자명')
 
+// 유저 이름 데이터
 export const userName = atom({
   key: 'userName',
   default: username
 })
 
+// 커피숍 데이터
 export const shoppingList = atom<CoffeeShopData[]>({
   key: 'shoppingList',
   default: []
 })
 
+// 커피 좋아요 데이터
 export const coffeeGreat = atom<CoffeeGreat[]>({
   key: 'coffeeGreat',
   default: []
@@ -28,7 +31,7 @@ export const shopBaket = atom<BasketData[]>({
   default: []
 })
 
-// 커피 저장 갯수
+// 커피 저장 갯수 데이터
 export const shoppingLength = selector({
   key: 'shppingLength',
   get: ({get}) => {
