@@ -5,6 +5,7 @@ import '../styles/shopBasket.scss';
 import ShopProgress from "../components/Shopping/ShopBasket/ShopProgress";
 import ShopItem from "../components/Shopping/ShopBasket/ShopItem";
 import ShopTotal from "../components/Shopping/ShopBasket/ShopTotal";
+import { Link } from "react-router-dom";
 
 
 const ShopBasket:React.FC = () => {
@@ -17,7 +18,7 @@ const ShopBasket:React.FC = () => {
       <ShopItem/>
       <ShopTotal/>
       <div className="basket__order">
-        <button>주문하기</button>
+        <Link to={'/shoporder'} className="order__button">주문하기</Link>
       </div>
     </div>
   );

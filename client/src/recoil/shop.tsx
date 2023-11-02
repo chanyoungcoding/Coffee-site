@@ -40,6 +40,16 @@ export const shoppingLength = selector({
   }
 })
 
+// 배송 정보 데이터
+export const shopOrder = atom({
+  key: 'shoporder',
+  default: {
+    name: '',
+    address: '',
+    paymentMethod: '신용카드',
+  }
+})
+
 //ShopDetail
 
 export const orderPrice = atom({
