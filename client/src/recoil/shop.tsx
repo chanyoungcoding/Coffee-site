@@ -22,11 +22,13 @@ export const coffeeGreat = atom<CoffeeGreat[]>({
   default: []
 })
 
+// 장바구니 데이터 
 export const shopBaket = atom<BasketData[]>({
   key: 'shopBasket',
   default: []
 })
 
+// 커피 저장 갯수
 export const shoppingLength = selector({
   key: 'shppingLength',
   get: ({get}) => {
