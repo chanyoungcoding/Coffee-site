@@ -10,10 +10,6 @@ const ShopDetail:React.FC = () => {
       <div className="detail__shop">
         <DetailOrderSection/>
       </div>
-
-      <div className="detail__shopdetail">
-
-      </div>
     </div>
   );
 }

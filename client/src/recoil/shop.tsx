@@ -31,6 +31,15 @@ export const shopBaket = atom<BasketData[]>({
   default: []
 })
 
+//장바구니 가격? 
+export const shopBaketPrice = selector({
+  key: 'basketPrice',
+  get: ({get}) => {
+    const data = get(shopBaket);
+    return data ? data?.reduce((prev, cur) => prev + cur.price, 0) : 0;
+  }
+})
+
 // 커피 저장 갯수 데이터
 export const shoppingLength = selector({
   key: 'shppingLength',
@@ -56,5 +65,9 @@ export const orderPrice = atom({
   key: 'orderPrice',
   default: 0
 })
+
+
+//test 
+
 
 

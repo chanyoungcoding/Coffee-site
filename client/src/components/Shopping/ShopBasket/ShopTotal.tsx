@@ -3,16 +3,11 @@ import { AiOutlinePlus  } from "react-icons/ai";
 import {LuEqual} from "react-icons/lu";
 import { useRecoilValue } from "recoil";
 
-import { shopBaket } from "../../../recoil/shop";
+import { shopBaketPrice } from "../../../recoil/shop";
 
 const ShopTotal:React.FC = () => {
 
-  const coffee = useRecoilValue(shopBaket);
-
-  const totalPrice = React.useMemo(() => {
-    const total =  coffee?.reduce((prev, cur) => prev + cur.price, 0);
-    return total
-  }, [coffee])
+  const totalPrice = useRecoilValue(shopBaketPrice);
 
   return ( 
     <div className="basket__total">

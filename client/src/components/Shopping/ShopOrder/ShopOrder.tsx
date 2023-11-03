@@ -3,7 +3,7 @@ import React, {useEffect} from 'react';
 import { useRecoilState, useRecoilValue } from 'recoil';
 
 
-import { shopOrder } from '../../../recoil/shop';
+import { shopBaketPrice, shopOrder } from '../../../recoil/shop';
 import { useNavigate } from 'react-router-dom';
 import ShopProgress from '../ShopBasket/ShopProgress';
 import { userName } from '../../../recoil/shop';
@@ -22,15 +22,12 @@ const ShopOrder = () => {
   const { data, isError, isLoading } = useApiBaket(userDB, username);
   const [coffee, setCoffee] = useRecoilState(shopBaket);
 
+  const totalPrice = useRecoilValue(shopBaketPrice);
+
   console.log(coffee)
   useEffect(() => {
     setCoffee(data);
   },[setCoffee,data])
-
-  const totalPrice = React.useMemo(() => {
-    const total =  coffee?.reduce((prev, cur) => prev + cur.price, 0);
-    return total
-  }, [coffee])
 
   const totalCount = React.useMemo(() => {
     const total =  coffee?.reduce((prev, cur) => prev + cur.count, 0);

@@ -1,19 +1,12 @@
-import React,{useEffect} from "react";
-import { useRecoilState } from "recoil";
+import React from "react";
 import { Link } from "react-router-dom";
 
-import { shoppingList } from "../../../recoil/shop";
 import { useApiDataShop } from "../../../services/api";
 
 const ShopList:React.FC = () => {
 
   const coffeeShopUrl = 'http://localhost:4000/api/coffeeShop'
   const {data, isError, isLoading} = useApiDataShop(coffeeShopUrl);
-  const [shop, setShop] = useRecoilState(shoppingList)
-
-  useEffect(() => {
-    if(data) setShop([...data]);
-  },[data,setShop])
 
   if(isError) return (
     <div className='mainmenu__error'>
@@ -25,7 +18,7 @@ const ShopList:React.FC = () => {
 
   return ( 
     <>
-      {shop.map(item => (
+      {data?.map(item => (
         <div key={item.coffeeNumber} className="shopping__inner">
           <Link to={`/shopdetail/${item.name}`}>
             <img src={item.imgurl} alt="#"/>
