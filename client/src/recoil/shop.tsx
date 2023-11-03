@@ -46,7 +46,7 @@ export const shopOrder = atom({
   default: {
     name: '',
     address: '',
-    paymentMethod: '신용카드',
+    phoneNumber: '',
   }
 })
 
