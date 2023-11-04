@@ -5,15 +5,16 @@ import { useApiDataName } from '../../services/api';
 import MenuDetailItem from './components/MenuDetailItem';
 import Button from '../Button';
 import '../../styles/menudetail.scss'
+import Loading from '../Loading/Loading';
 
 
 const MenuDetail:React.FC = () => {
   const {name} = useParams();
   const coffeeDB = 'http://localhost:4000/api/coffeeName'
   const {data, isError, isLoading} = useApiDataName(coffeeDB, name);
-
+  
   if(isError) return <p>에러가 발생했습니다.</p>
-  if(isLoading) return <p>로딩중입니다..</p>
+  if(isLoading) return <Loading/>
 
   return ( 
     <>
