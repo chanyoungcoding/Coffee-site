@@ -41,6 +41,16 @@ const Country:React.FC = () => {
             <IntroBox imgsrc={kenaflaver} intro="apple"/>
             <IntroBox imgsrc={kenacoffee} intro="dark"/>
           </div>
+          <div className="type__intro">
+            <IntroBox imgsrc={kena} intro="케냐"/>
+            <IntroBox imgsrc={kenaflaver} intro="apple"/>
+            <IntroBox imgsrc={kenacoffee} intro="dark"/>
+          </div>
+          <div className="type__intro">
+            <IntroBox imgsrc={kena} intro="케냐"/>
+            <IntroBox imgsrc={kenaflaver} intro="apple"/>
+            <IntroBox imgsrc={kenacoffee} intro="dark"/>
+          </div>
           <div className="type__intro"></div>
         </div>
       C</div>

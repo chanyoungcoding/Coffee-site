@@ -1,0 +1,117 @@
+.coffeestory {
+  h1 {
+    margin: 90px;
+    font-size: 3rem;
+    text-align: center;
+  }
+  
+  h2 {
+    display: inline-block;
+    margin: 40px 0px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #444444;
+    font-size: 30px;
+  }
+
+  .article__a {
+    color: #337AB7;
+  }
+
+  // 커피 스토리 navbar
+  .storylink {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0px;
+    padding: 60px 0px 15px;
+    border-bottom: 1px solid #CDCDCD;
+    li {
+      a {
+        margin: 0px 40px;
+        padding: 10px 0px;
+        font-size: 20px;
+        font-weight: bold;
+      }
+      a.active {
+        color: red;
+        border-bottom: 4px solid #464646;
+      }
+    }
+  }
+
+  .coffeestory__inner {
+    // 공통 부분
+    width: 70%;
+    margin: 0 auto;
+    line-height: 32px;
+
+    // 커피 재배와 생산 과정
+    .coffeeproductionprocess {
+      .productionprocess__inner {
+        p {
+          font-size: 24px;
+          font-weight: 200;
+          color: #444444;
+        }
+        .inner__step {
+          
+        }
+      }
+    }
+  
+    //커피의 역사
+    .coffeehistory {
+      .history__inner {
+        display: flex;
+        p {
+          font-size: 20px;
+          color: #444444;
+        }
+        img {
+          width: 500px;
+          height: 400px;
+          object-fit: cover;
+        }
+        .img1_3 {
+          margin-right: 30px;
+        }
+        .img_2 {
+          margin-left: 30px;
+        }
+      }
+    }
+
+    //커피와 건강
+    .coffeehealth {
+      .health__inner {
+        display: flex;
+        margin: 70px 0px;
+        h3 {
+          font-size: 22px;
+          font-weight: bold;
+          color: #44507A;
+        }
+        p {
+          margin: 20px 0px;
+          font-size: 18px;
+        }
+        span {
+          display: block;
+          margin: 10px 0px;
+          font-size: 19px;
+          font-weight: bolder;
+        }
+        img {
+          width: 492px;
+          height: 362px;
+          object-fit: cover;
+        }
+        .img1_3 {
+          margin-left: 30px;
+        }
+        .img_2 {
+          margin-right: 30px;
+        }
+      }
+    }
+  }
+}
