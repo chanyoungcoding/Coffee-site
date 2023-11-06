@@ -1,5 +1,39 @@
+import ProductionProcessStep from "./components/ProductionProcessStep";
 
+import process1 from '../../assets/process-1.jpeg';
+import process2 from '../../assets/process-2.jpeg';
+import process3 from '../../assets/process-3.jpeg';
+import process4 from '../../assets/process-4.jpeg';
+import process5 from '../../assets/process-5.jpeg';
+import process6 from '../../assets/process-6.jpeg';
+import process7 from '../../assets/process-7.jpeg';
+import process8 from '../../assets/process-8.jpeg';
+import process9 from '../../assets/process-9.jpeg';
+import process10 from '../../assets/process-10.jpeg';
+import process11 from '../../assets/process-11.jpeg';
+import process12 from '../../assets/process-12.jpeg';
+import process13 from '../../assets/process-13.jpeg';
+import process14 from '../../assets/process-14.jpeg';
+import { useMemo } from "react";
 const CoffeeProductionProcess = () => {
+
+  const productionStep = useMemo(() => [
+    {img: process1, step: '커피모종'},
+    {img: process2, step: '커피나무'},
+    {img: process3, step: '커피나무 꽃'},
+    {img: process4, step: '커피나무 그린 열매'},
+    {img: process5, step: '커피나무 엘로우 열매'},
+    {img: process6, step: '커피나무 레드 열매'},
+    {img: process7, step: '커피 열매 수확'},
+    {img: process8, step: '커피 열매 수확 후 선별'},
+    {img: process9, step: '선별된 열매 탈피 후 1차 세척'},
+    {img: process10, step: '발효 및 2차 세척'},
+    {img: process11, step: '세척 후 건조'},
+    {img: process12, step: '건조 후 불량 콩 선별'},
+    {img: process13, step: '선별 후 포장'},
+    {img: process14, step: '포장 후 창고 보관'},
+  ],[])
+
   return ( 
     <div className="coffeeproductionprocess">
       <h1>커피재배와 생산과정</h1>
@@ -16,8 +50,9 @@ const CoffeeProductionProcess = () => {
           수확은 일반적으로 1년에 1~2회 정도 합니다
         </p>
         <div className="inner__step">
-          <div className="step">
-          </div>
+          {productionStep.map((item, index) => (
+            <ProductionProcessStep key={index} num={index} step={item}/>
+          ))}
         </div>
       </div>
     </div>

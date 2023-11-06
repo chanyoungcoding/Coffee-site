@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { Data, LoginData, CoffeeShopData, BasketData } from '../models/coffee';
+import { Data, LoginData, CoffeeShopData, BasketData, CoffeeTypes } from '../models/coffee';
 import { useNavigate } from "react-router-dom";
 
 import Cookies from 'js-cookie';
@@ -92,6 +92,18 @@ export function useApiDataShopDetail(url:string, name:string | undefined) {
     }
   })
   return {data, isLoading, isError}
+}
+
+// 커피 종류 API
+
+export function useApiCoffeeTypes(url:string) {
+  const {data, isLoading, isError} = useQuery<CoffeeTypes[]>({ 
+    queryKey: ['coffeeTypes'], 
+    queryFn: async () => {
+      const response = await axios.get(url);
+      return response.data;
+  }})
+  return {data, isLoading, isError }
 }
 
 // 장바구니 추가 API

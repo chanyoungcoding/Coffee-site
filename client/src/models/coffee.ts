@@ -58,3 +58,10 @@ export interface CoffeeGreat {
   coffeeName: string;
   coffeeUrl: string;
 }
+
+export interface CoffeeTypes {
+  countryImage: string;
+  countryNationalFlag: string;
+  countryIntroduce: string;
+  countryCoffeeName: string;
+}

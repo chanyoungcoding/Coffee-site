@@ -9,7 +9,6 @@ const StoryLink:React.FC = () => {
       <li><NavLink to={'/coffeehistory'}>커피의 역사</NavLink></li>
       <li><NavLink to={'/coffeetypes'}>커피의 종류</NavLink></li>
       <li><NavLink to={'/coffeehealth'}>커피의 건강</NavLink></li>
-      <li><NavLink to={'/coffeeclassification'}>커피의 건강</NavLink></li>
     </div>
   );
 }

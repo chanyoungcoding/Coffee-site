@@ -25,7 +25,6 @@ import CoffeeHistory from './components/CoffeeStory/CoffeeHistory';
 import CoffeeHealth from './components/CoffeeStory/CoffeeHealth';
 import CoffeeProductionProcess from './components/CoffeeStory/CoffeeProductionProcess';
 import CoffeeTypes from './components/CoffeeStory/CoffeeTypes';
-import CoffeeClassification from './components/CoffeeStory/CoffeeClassification';
 import CoffeeStoryCommon from './pages/CoffeeStoryCommon';
 
 const queryClient = new QueryClient();
@@ -52,7 +51,6 @@ const App:React.FC = () => {
               <Route path='/coffeehistory' element={<CoffeeHistory/>}/>
               <Route path='/coffeetypes' element={<CoffeeTypes/>}/>
               <Route path='/coffeehealth' element={<CoffeeHealth/>}/>
-              <Route path='/coffeeclassification' element={<CoffeeClassification/>}/>
             </Route>
             <Route path='/mypage' element={<MyPage/>}/>
             <Route path='/login' element={<Login/>}/>
