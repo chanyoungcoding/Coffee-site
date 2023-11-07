@@ -19,6 +19,7 @@ export const shoppingList = atom<CoffeeShopData[]>({
   default: []
 })
 
+
 // 커피 좋아요 데이터
 export const coffeeGreat = atom<CoffeeGreat[]>({
   key: 'coffeeGreat',
