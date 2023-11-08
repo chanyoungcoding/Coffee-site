@@ -13,7 +13,9 @@ const coffeeCountrySchema = new mongoose.Schema({
   name: String,
   country: String,
   taste: String,
-  beans:String
+  tasteName: String,
+  beans:String,
+  beansName: String
 })
 
 const CoffeeCountry = mongoose.model('CoffeeCountry', coffeeCountrySchema);
@@ -25,7 +27,9 @@ const countryDB = async () => {
       name: list.name,
       country: list.country,
       taste: list.taste,
-      beans: list.baens
+      tasteName: list.tasteName,
+      beans: list.baens,
+      beansName: list.beansName
     })
     await coffeeCountry.save();
   }
