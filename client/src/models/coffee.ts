@@ -65,3 +65,10 @@ export interface CoffeeTypes {
   countryIntroduce: string;
   countryCoffeeName: string;
 }
+
+export interface CoffeeCountry {
+  name: string;
+  country: string;
+  taste: string;
+  beans: string;
+}

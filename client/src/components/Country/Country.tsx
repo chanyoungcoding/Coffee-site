@@ -1,26 +1,22 @@
 import React from "react";
 import '../../styles/country.scss';
 
-import kena from '../../assets/케냐.png';
-import kenaflaver from '../../assets/케냐커피맛.jpg';
-import kenacoffee from '../../assets/케냐커피.jpg';
 import CountryTop from "./CountryTop";
-
-interface introBox {
-  imgsrc: string;
-  intro: string;
-}
-
-const IntroBox:React.FC<introBox> = React.memo(({imgsrc, intro}) => {
-  return (
-    <div className="intro__box">
-      <img src={imgsrc} alt="" />
-      <p>{intro}</p>
-    </div>
-  )
-})
+import { useApiCoffeeCountry } from "../../services/api";
 
 const Country:React.FC = () => {
+
+  const coffeeCountryDB = 'http://localhost:4000/api/coffeeCountry';
+  const {data, isLoading, isError} =  useApiCoffeeCountry(coffeeCountryDB);
+
+  if(isError) return (
+    <div className='mainmenu__error'>
+      <p>무엇인가 에러가 발생했습니다.</p>
+    </div>
+  )
+
+  if(isLoading) return <p>로딩중입니다..</p>
+
   return ( 
     <div className="country">
       <CountryTop/>
@@ -36,24 +32,18 @@ const Country:React.FC = () => {
             <p>Taste</p>
             <p>Roast</p>
           </div>
+
           <div className="type__intro">
-            <IntroBox imgsrc={kena} intro="케냐"/>
-            <IntroBox imgsrc={kenaflaver} intro="apple"/>
-            <IntroBox imgsrc={kenacoffee} intro="dark"/>
+            {data?.map(item => (
+              <div key={item.name} className="intro__inner">
+                <img src={item.country} alt="#" />
+                <img src={item.taste} alt="#" />
+                <img src={item.beans} alt="#" />
+              </div>
+            ))}
           </div>
-          <div className="type__intro">
-            <IntroBox imgsrc={kena} intro="케냐"/>
-            <IntroBox imgsrc={kenaflaver} intro="apple"/>
-            <IntroBox imgsrc={kenacoffee} intro="dark"/>
-          </div>
-          <div className="type__intro">
-            <IntroBox imgsrc={kena} intro="케냐"/>
-            <IntroBox imgsrc={kenaflaver} intro="apple"/>
-            <IntroBox imgsrc={kenacoffee} intro="dark"/>
-          </div>
-          <div className="type__intro"></div>
         </div>
-      C</div>
+      </div>
     </div>
   );
 }
