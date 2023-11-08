@@ -36,9 +36,18 @@ const Country:React.FC = () => {
           <div className="type__intro">
             {data?.map(item => (
               <div key={item.name} className="intro__inner">
-                <img src={item.country} alt="#" />
-                <img src={item.taste} alt="#" />
-                <img src={item.beans} alt="#" />
+                <div className="inner__img">
+                  <img src={item.country} alt="#" />
+                  <p>{item.name}</p>
+                </div>
+                <div className="inner__img">
+                  <img src={item.taste} alt="#" />
+                  <p>{item.tasteName}</p>
+                </div>
+                <div className="inner__img">
+                  <img src={item.beans} alt="#" />
+                  <p>{item.beansName}</p>
+                </div>
               </div>
             ))}
           </div>

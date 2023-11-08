@@ -70,5 +70,7 @@ export interface CoffeeCountry {
   name: string;
   country: string;
   taste: string;
+  tasteName: string;
   beans: string;
+  beansName: string;
 }
