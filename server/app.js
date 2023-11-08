@@ -7,6 +7,8 @@ const Coffee = require('./models/coffee');
 const User = require('./models/users');
 const CoffeeShop = require('./models/coffeeShop');
 const CoffeeType = require('./models/coffeeType');
+const CoffeeCountry = require('./models/coffeeCountry');
+
 
 //MongoDB 연결
 // const dbUrl = process.env.DB_URL;
@@ -53,6 +55,16 @@ app.get('/api/coffeeShopDetail', async (req,res) => {
   res.json(coffeeShopDetail);
 })
 
+app.get('/api/coffeeTypes', async (req,res) => {
+  const coffeeTypes = await CoffeeType.find({})
+  res.json(coffeeTypes);
+})
+
+app.get('/api/coffeeCountry', async(req,res) => {
+  const coffeeCountry = await CoffeeCountry.find({});
+  res.json(coffeeCountry);
+})
+
 app.post('/api/coffeeBasket', async(req,res) => {
   const {price, count, name, userName} = req.body;
   try {
@@ -88,11 +100,6 @@ app.post('/api/coffeeGreat', async (req,res) => {
     console.log(e);
     res.status(500).json(e);
   }
-})
-
-app.get('/api/coffeeTypes', async (req,res) => {
-  const coffeeTypes = await CoffeeType.find({})
-  res.json(coffeeTypes);
 })
 
 app.get('/api/user', async (req,res) => {
