@@ -7,6 +7,7 @@ import RecipeOrder from "../components/Recipe/RecipeDetail/RecipeOrder";
 import RecipeMaterials from "../components/Recipe/RecipeDetail/RecipeMaterials";
 import RecipeImage from "../components/Recipe/RecipeDetail/RecipeImage";
 import RecipeGreat from "../components/Recipe/RecipeDetail/RecipeGreat";
+import RecipeYoutube from "../components/Recipe/RecipeDetail/RecipeYoutube";
 
 const Recipe:React.FC = () => {
   const {name} = useParams();
@@ -28,6 +29,7 @@ const Recipe:React.FC = () => {
         </div>
         <RecipeMaterials data={data}/>
         <RecipeOrder data={data} />
+        <RecipeYoutube/>
       </div>
     </div>
   );
