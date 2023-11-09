@@ -33,7 +33,8 @@ const CoffeeSchema = new Schema({
   howToMake: {
     type: [String],
     default: []
-  }
+  },
+  youtube: String
 })
 
 const Coffee = mongoose.model('Coffee', CoffeeSchema);
@@ -55,7 +56,8 @@ const coffeeDB = async () => {
       description: Espresso.description,
       imgurl: Espresso.imgurl,
       materials: Espresso.materials,
-      howToMake: Espresso.howToMake
+      howToMake: Espresso.howToMake,
+      youtube: Espresso.youtube
     })
     await coffee.save();
   }

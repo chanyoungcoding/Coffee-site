@@ -21,7 +21,8 @@ const CoffeeSchema = new Schema({
   howToMake: {
     type: [String],
     default: []
-  }
+  },
+  youtube: String
 })
 
 const Coffee = mongoose.model('Coffee', CoffeeSchema);
