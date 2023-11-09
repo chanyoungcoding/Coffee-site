@@ -54,6 +54,13 @@ const CoffeeProductionProcess = () => {
             <ProductionProcessStep key={index} num={index} step={item}/>
           ))}
         </div>
+        <div className="inner__link">
+          <h5>추가적인 정보</h5>
+          <a target="_blank" href="https://mr-right.tistory.com/20">아재아재 바른아재 - 커피의 생산 과정</a>
+          <a target="_blank" href="https://dayloglab.com/entry/%EC%BB%A4%ED%94%BC%EC%9D%98-%EC%9E%AC%EB%B0%B0-%EA%B3%BC%EC%A0%95">day, log, lab - 커피의 재배 과정</a>
+          <a target="_blank" href="https://m.blog.naver.com/jazzyoulove/220476464053">양두마리 - 한잔의 커피가 되기까지 10단계 과정</a>
+          <a target="_blank" href="https://m.blog.naver.com/mortareg/220907551379">고미리레 - 커피 재배 과정 원두 수확 방법</a>
+        </div>
       </div>
     </div>
   );

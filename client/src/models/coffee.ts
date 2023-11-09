@@ -17,6 +17,7 @@ export interface Data {
   imgurl:string;
   materials: string[];
   howToMake: string[];
+  youtube: string
 }
 
 export interface DetailItem {

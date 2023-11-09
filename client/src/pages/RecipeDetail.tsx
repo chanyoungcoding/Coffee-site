@@ -29,7 +29,7 @@ const Recipe:React.FC = () => {
         </div>
         <RecipeMaterials data={data}/>
         <RecipeOrder data={data} />
-        <RecipeYoutube/>
+        <RecipeYoutube data={data}/>
       </div>
     </div>
   );

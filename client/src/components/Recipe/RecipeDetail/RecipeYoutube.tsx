@@ -1,15 +1,20 @@
 import React from "react";
 import YouTube from "react-youtube";
+import { Data } from "../../../models/coffee";
 
-const RecipeYoutube:React.FC = () => {
+interface YoutubeData {
+  data: Data[] | undefined
+}
 
-  const options = {width : "1000px", height: "500px", playerVars: { autoplay: 1, modestbranding: 1, playlist: "auAQ_A--c5I"}}
+const RecipeYoutube:React.FC<YoutubeData> = ({data}) => {
+  const youtubeUrl = data?.map(item => item.youtube).toString();
+  const options = {width : "1000px", height: "500px" }
 
   return ( 
     <div className="recipeyoutube">
       <YouTube 
         className="youtube"
-        videoId="auAQ_A--c5I" //동영상 주소
+        videoId={youtubeUrl}//동영상 주소
         opts={options}
       />
     </div>

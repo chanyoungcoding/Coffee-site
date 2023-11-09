@@ -32,6 +32,12 @@ const CoffeeTypes = () => {
       <div className="coffeetypes__inner">
         <CoffeeTypesIntroduce data={data}/>
       </div>
+      <div className="inner__link">
+        <h5>추가적인 정보</h5>
+        <a href="https://knowledge-container.tistory.com/entry/%EC%BB%A4%ED%94%BC%EC%9D%98-%EC%A2%85%EB%A5%98%EC%99%80-%ED%8A%B9%EC%A7%95ft-%EB%82%98%EB%9D%BC%EB%B3%84-%EC%BB%A4%ED%94%BC">티스토리 - 커피의 종류와 특징</a>
+        <a href="https://lovinegar.com/entry/%EC%BB%A4%ED%94%BC-%EC%9B%90%EB%91%90%EC%9D%98-%EC%A2%85%EB%A5%98-%EC%BB%A4%ED%94%BC-%ED%9A%A8%EB%8A%A5%EA%B3%BC-%EB%82%B4-%EB%AA%B8%EC%97%90-%EB%A7%9E%EB%8A%94-%EC%BB%A4%ED%94%BC-%EC%84%AD%EC%B7%A8%EB%B2%95">동그라미정보 - 원두커피 종류</a>
+        <a href="https://100479story.tistory.com/56">오지라퍼의 세상 - 나라별 즐겨 마시는 커피의 정류</a>
+      </div>
     </div>
   );
 }

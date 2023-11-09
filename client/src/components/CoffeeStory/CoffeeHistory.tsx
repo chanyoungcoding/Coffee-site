@@ -46,6 +46,13 @@ const CoffeeHistory:React.FC = () => {
           그 뒤 8.15해방과 6.25전쟁을 거치면서 미군부대에서 원두커피와 1회용 인스턴트 커피들이 대량 공급되어 대중들이 즐기는 기호음료가 되었고 1970년 우리나라 최초로 인스턴트 커피를 생산하게 되었다.<br/>
         </p>
       </div>
+      <div className="inner__link">
+        <h5>추가적인 정보</h5>
+        <a href="https://ko.wikipedia.org/wiki/%EC%BB%A4%ED%94%BC%EC%9D%98_%EC%97%AD%EC%82%AC">위키피디아 - 커피의 역사</a>
+        <a href="http://www.seehint.com/word.asp?no=11018">최낙언의 자료보관소 - 커피의 기원</a>
+        <a href="https://www.dongsuh.co.kr/2017/03_mediaCenter/06_coffeeClass_step1_view3.asp">동서식품 - 커피의 역사</a>
+        <a href="https://www.wbckorea.com/%EC%BB%A4%ED%94%BC%EC%9D%98-%EC%97%AD%EC%82%AC/">월드베스트커피 - 커피의 역사</a>
+      </div>
     </div>
   );
 }
