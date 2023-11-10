@@ -134,29 +134,16 @@ app.post('/api/login', async (req,res) => {
   }
 })
 
-app.post('/api/signin', async (req,res) => {
-  const {username, password} = req.body
+app.post('/api/signin', async (req, res) => {
+  const { username } = req.body;
+  const existingUser = await User.findOne({ username });
+  if (existingUser) {
+    return res.json('existed username');
+  }
   const newUser = new User(req.body);
   await newUser.save();
   res.json('success');
-})
-
-//test
-
-let user = [
-  {name: 'chan', age: 26},
-  {name: 'kim', age: 25},
-]
-
-app.get('/api/test', async(req,res) => {
-  res.json(user);
-})
-
-app.post('/api/test', async(req,res) => {
-  const name = req.body
-  user.push(name);
-  res.json(user);
-})
+});
 
 app.listen(process.env.PORT, () => {
   console.log('서버 실행')
