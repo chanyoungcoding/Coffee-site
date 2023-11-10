@@ -184,6 +184,7 @@ export const useLoginMutation = () => {
         const {username} = e.data;
         Cookies.set('사용자명',username, {expires:1})
         navigate('/')
+        window.location.reload();
       }
     },
     onError: e => console.log(e)

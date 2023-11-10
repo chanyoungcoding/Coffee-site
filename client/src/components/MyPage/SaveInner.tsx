@@ -29,12 +29,12 @@ const SaveInner:React.FC = () => {
   return ( 
     <>
       {coffee?.map((item,index) => (
-        <div className="inner__box">
+        <div key={index} className="inner__box">
           <div className="inner__img">
-            <img key={index} src={item.coffeeUrl}></img>
+            <img src={item.coffeeUrl}></img>
           </div>
           <div className="inner__intro">
-            <p key={index}>{item.coffeeName}</p>
+            <p>{item.coffeeName}</p>
             <Button href={`/menuDetail/${item.coffeeName}`}>자세한 정보</Button>
           </div>
         </div>

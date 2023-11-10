@@ -26,6 +26,7 @@ import CoffeeProductionProcess from './components/CoffeeStory/CoffeeProductionPr
 import CoffeeTypes from './components/CoffeeStory/CoffeeTypes';
 import CoffeeStoryCommon from './pages/CoffeeStoryCommon';
 import SignIn from './pages/SignIn';
+import LoginRoutes from './routes/LoginRoutes';
 
 const queryClient = new QueryClient();
 
@@ -43,18 +44,20 @@ const App:React.FC = () => {
             <Route path='/recipe/:name' element={<Recipe/>}/>
             <Route path='/shop' element={<Shopping/>}/>
             <Route path='/shopdetail/:name' element={<ShopDetail/>}/>
-            <Route path='/shopbasket' element={<ShopBasket/>}/>
-            <Route path='/shoporder' element={<ShopOrder/>}/>
-            <Route path='/shopcomplete' element={<ShopComplete/>}/>
             <Route element={<CoffeeStoryCommon/>}>
               <Route path='/coffeeproductionprocess' element={<CoffeeProductionProcess/>}/>
               <Route path='/coffeehistory' element={<CoffeeHistory/>}/>
               <Route path='/coffeetypes' element={<CoffeeTypes/>}/>
               <Route path='/coffeehealth' element={<CoffeeHealth/>}/>
             </Route>
+            <Route element={<LoginRoutes/>}>
+              <Route path='/mypage' element={<MyPage/>}/>
+              <Route path='/shopbasket' element={<ShopBasket/>}/>
+              <Route path='/shoporder' element={<ShopOrder/>}/>
+              <Route path='/shopcomplete' element={<ShopComplete/>}/>
+            </Route>
             <Route path='/login' element={<Login/>}/>
             <Route path='/signin' element={<SignIn/>}/>
-            <Route path='/mypage' element={<MyPage/>}/>
             <Route path='*' element={<ErrorPage/>}/>
           </Route>
         </Routes>

@@ -1,14 +1,23 @@
 import React from "react";
 import { AiOutlinePlus  } from "react-icons/ai";
 import {LuEqual} from "react-icons/lu";
-import { useRecoilValue } from "recoil";
 
-import { shopBaketPrice } from "../../../recoil/shop";
+interface dataa {
+  count: number;
+  name: string;
+  price: number;
+}
 
-const ShopTotal:React.FC = () => {
+interface dataaa {
+  data: dataa[] | undefined;
+}
 
-  const totalPrice = useRecoilValue(shopBaketPrice);
-
+const ShopTotal:React.FC<dataaa> = ({data}) => {  
+  
+  const totalPrice = React.useMemo(() => {
+    return data?.reduce((prev,cur) => prev + cur.price, 0);
+  },[data])?.toString();
+    
   return ( 
     <div className="basket__total">
       <div className="equal__product">

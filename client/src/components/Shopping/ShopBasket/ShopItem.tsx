@@ -26,8 +26,8 @@ const ShopItem:React.FC = () => {
 
   return (
     <>
-      {coffee?.map(item=> (
-        <div key={item.name} className="basket__inner">
+      {coffee?.map((item,index)=> (
+        <div key={index} className="basket__inner">
           <div className="inner__left">
             <div className="left__top">
               <p>상품명</p>

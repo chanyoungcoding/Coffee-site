@@ -3,6 +3,7 @@ import Cookies from "js-cookie";
 
 import { useBasketMutation } from "../../../../services/api";
 import { CoffeeShopData, BasketData } from "../../../../models/coffee";
+import { useNavigate } from "react-router-dom";
 
 interface NumberOfProduct {
   data: CoffeeShopData[] | undefined
@@ -11,6 +12,7 @@ interface NumberOfProduct {
 const NumberOfProduct:React.FC<NumberOfProduct> = ({data}) => {
 
   const userName = Cookies.get('사용자명');
+  const navigate = useNavigate();
 
   const [count, setCount] = useState(1);
   const [price, setPrice] = useState(0);
@@ -41,9 +43,19 @@ const NumberOfProduct:React.FC<NumberOfProduct> = ({data}) => {
   }
 
 
-  const onClickBasket = (name:string, price:number, count:number, userName:string | undefined) => {
-    const data: BasketData = { name, price, count, userName };
-    mutate(data);
+  const onClickBasket = (e:React.MouseEvent<HTMLButtonElement>,name:string, price:number, count:number, userName:string | undefined) => {
+    if(userName === undefined) {
+      alert('로그인 후 이용하실 수 있습니다.')
+      return
+    }
+    if(e.currentTarget.id === '바로-구매-버튼') {
+      const data: BasketData = { name, price, count, userName };
+      mutate(data);
+      navigate('/shopbasket')
+    } else {
+      const data: BasketData = { name, price, count, userName };
+      mutate(data);
+    }
   }
 
   return ( 
@@ -56,21 +68,23 @@ const NumberOfProduct:React.FC<NumberOfProduct> = ({data}) => {
           <button onClick={onClickPlus}>+</button>
         </div>
       </div>
-      
       <p className="total__price">총 금액 {price}</p>
-
-      <div className="intro__button">
-        <button>바로 구매하기</button>
-        {data?.map(item => (
+      {data?.map(item=> (
+        <div className="intro__button" key={item.coffeeNumber}>
           <button 
-            key={item.coffeeNumber} 
+            id="바로-구매-버튼"
+            onClick={(e) => onClickBasket(e,item.name, price, count, userName)}
+          >
+            바로 구매하기
+          </button>
+          <button 
             className="button_2" 
-            onClick={() => onClickBasket(item.name, price, count, userName)}
+            onClick={(e) => onClickBasket(e,item.name, price, count, userName)}
           >
             장바구니 담기
           </button>
-        ))}
-      </div>
+        </div>
+      ))}
     </>
   );
 }

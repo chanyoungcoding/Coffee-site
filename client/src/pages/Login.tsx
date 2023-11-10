@@ -42,7 +42,7 @@ const Login = () => {
         <button type="button" onClick={handleLogin}>로그인</button>
         <div className="login__signup">
           <p>Don't have an account?</p>
-          <Button href="/">Sign up</Button>
+          <Button href="/signin">Sign In</Button>
         </div>
       </form>
     </div>

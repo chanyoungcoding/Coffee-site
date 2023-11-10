@@ -1,10 +1,16 @@
 import React, { useState } from "react";
-import '../styles/navbar.scss'
-import coffeeIcon from '../assets/coffeeicon.png'
-import { Link } from "react-router-dom";
+import { SlBasket, SlLogin, SlLogout,SlUser, SlLoop } from "react-icons/sl";
+import Cookies from "js-cookie";
 
-import { SlBasket, SlLogin } from "react-icons/sl";
+import coffeeIcon from '../assets/coffeeicon.png'
+import { Link, useNavigate } from "react-router-dom";
+
+import '../styles/navbar.scss'
+
 const Navbar:React.FC = () => {
+
+  const username = Cookies.get('사용자명')
+  const navigate = useNavigate();
 
   const [visible, setVisible] = useState(false);
 
@@ -12,15 +18,37 @@ const Navbar:React.FC = () => {
     setVisible(!visible)
   }
 
+  const clearCookies = () => {
+    Cookies.remove('사용자명');
+    navigate('/')
+    window.location.reload();
+  }
+
   return (
     <div className="navbar">
       <div className="navbar__side">
-        <Link to='/login' className="inner__login">
-          <SlLogin size="30"/>
-        </Link>
-        <Link to='/shopbasket' className="inner__basket">
-          <SlBasket size="30"/>
-        </Link>
+        {username ? 
+        <>
+          <button className="logout" onClick={clearCookies}>
+            <SlLogout size="30"/>
+          </button>
+          <Link to='/shopbasket'>
+            <SlBasket size="30"/>
+          </Link> 
+          <Link to='/mypage'>
+            <SlUser size="30"/>
+          </Link>
+        </>
+          :
+          <>
+          <Link to='/login'>
+            <SlLogin size="30"/>
+          </Link>
+          <Link to='/signin'>
+            <SlLoop size="30"/>
+          </Link>
+          </>
+        }
       </div>
       <div className="navbar__logo" onClick={toggleNavVisible}>
         <img src={coffeeIcon} alt="#" />
