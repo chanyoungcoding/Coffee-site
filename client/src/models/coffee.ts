@@ -41,6 +41,11 @@ export interface LoginData {
   password: string;
 }
 
+export interface SignInData {
+  username: string;
+  password: string;
+}
+
 export interface CoffeeShopData {
   coffeeNumber: number;
   name: string;

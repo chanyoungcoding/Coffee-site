@@ -8,7 +8,6 @@ import Home from './pages/Home'
 import Common from './pages/Common'
 import MenuDetail from './components/Menu/MenuDetail'
 import MenuMain from './components/Menu/MenuMain'
-import Test from './components/Test'
 import Country from './components/Country/Country'
 import Recipe from './pages/RecipeDetail'
 import RecipeHome from './pages/Recipe'
@@ -26,6 +25,7 @@ import CoffeeHealth from './components/CoffeeStory/CoffeeHealth';
 import CoffeeProductionProcess from './components/CoffeeStory/CoffeeProductionProcess';
 import CoffeeTypes from './components/CoffeeStory/CoffeeTypes';
 import CoffeeStoryCommon from './pages/CoffeeStoryCommon';
+import SignIn from './pages/SignIn';
 
 const queryClient = new QueryClient();
 
@@ -52,11 +52,11 @@ const App:React.FC = () => {
               <Route path='/coffeetypes' element={<CoffeeTypes/>}/>
               <Route path='/coffeehealth' element={<CoffeeHealth/>}/>
             </Route>
-            <Route path='/mypage' element={<MyPage/>}/>
             <Route path='/login' element={<Login/>}/>
+            <Route path='/signin' element={<SignIn/>}/>
+            <Route path='/mypage' element={<MyPage/>}/>
             <Route path='*' element={<ErrorPage/>}/>
           </Route>
-          <Route path='/test' element={<Test/>}/>
         </Routes>
       </QueryClientProvider>
     </RecoilRoot>

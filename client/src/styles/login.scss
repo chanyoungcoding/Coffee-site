@@ -1,6 +1,11 @@
 @import './variable.scss';
 
 .login {
+  width: 50%;
+  margin: 0px auto 100px;
+  border-radius: 30px;
+  background: rgb(76,29,21);
+  background: linear-gradient(0deg, rgba(76,29,21,1) 0%, rgba(132,77,68,1) 48%, rgba(229,140,109,1) 100%);
   .login__form {
     display: flex;
     flex-direction: column;
@@ -8,7 +13,7 @@
     align-items: center;
     height: 100vh;
     input {
-      width: 25%;
+      width: 50%;
       margin-bottom: 10px;
       padding: 20px 10px;
       background-color: #E1DED9;
@@ -17,7 +22,7 @@
       outline: none;
     }
     button {
-      width: 26%;
+      width: 50%;
       padding: 15px 10px;
       background-color: $basic-color;
       border-radius: 10px;
@@ -44,5 +49,43 @@
         }
       }
     }
+  }
+}
+
+.signin {
+  width: 50%;
+  margin: 0px auto 100px;
+  border-radius: 30px;
+  background: rgb(76,29,21);
+  background: linear-gradient(0deg, rgba(76,29,21,1) 0%, rgba(132,77,68,1) 48%, rgba(229,140,109,1) 100%);
+  .signin__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  input {
+    width: 50%;
+    margin-bottom: 10px;
+    padding: 20px 10px;
+    background-color: #E1DED9;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+  }
+  button {
+    width: 50%;
+    padding: 15px 10px;
+    background-color: $basic-color;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+  .login__error {
+    margin: 10px 0px;
+    color: $line-color;
+    text-align: center;
   }
 }

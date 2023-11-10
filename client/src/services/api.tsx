@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { Data, LoginData, CoffeeShopData, BasketData, CoffeeTypes, CoffeeCountry } from '../models/coffee';
+import { Data, LoginData, CoffeeShopData, BasketData, CoffeeTypes, CoffeeCountry, SignInData } from '../models/coffee';
 import { useNavigate } from "react-router-dom";
 
 import Cookies from 'js-cookie';
@@ -189,3 +189,25 @@ export const useLoginMutation = () => {
     onError: e => console.log(e)
   });
 };
+
+// Sign In API
+
+export const useSignInMutation = () => {
+  const navigate = useNavigate();
+  return useMutation({
+    mutationFn: async (data: SignInData) => await axios.post('http://localhost:4000/api/signin', data),
+    mutationKey: 'signin',
+    onSuccess: (e) => {
+      if(e.data === 'existed username') {
+        alert('존재하는 아이디 입니다.')
+        return navigate('/signin')
+      }
+      alert('회원가입에 성공하였습니다.');
+      navigate('/');
+    },
+    onError: () => {
+      alert('알수없는 오류가 생겼습니다.')
+      navigate('/')
+    }
+  })
+}
