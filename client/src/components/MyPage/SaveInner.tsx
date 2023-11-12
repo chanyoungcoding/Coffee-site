@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useApiUser } from "../../services/api";
+import { useApiUser, useDeleteGreat } from "../../services/api";
 
 import Button from "../Button";
 
@@ -10,6 +10,7 @@ import { coffeeGreat, userName } from "../../recoil/shop";
 const SaveInner:React.FC = () => {
   const userDB = 'http://localhost:4000/api/user';
   const username = useRecoilValue(userName);
+  const {mutate} = useDeleteGreat();
 
   const { data, isError, isLoading } = useApiUser(userDB, username);
   const [coffee, setCoffee] = useRecoilState(coffeeGreat);
@@ -20,7 +21,7 @@ const SaveInner:React.FC = () => {
   },[setCoffee, data])
 
   const DeleteGreat = (username:string | undefined, userId: string | undefined) => {
-    console.log(username, userId);
+    mutate({username, userId})
   }
 
   if(isError) return (

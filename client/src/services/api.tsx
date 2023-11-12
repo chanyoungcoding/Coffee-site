@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { Data, LoginData, CoffeeShopData, BasketData, CoffeeTypes, CoffeeCountry, SignInData } from '../models/coffee';
+import { Data, LoginData, CoffeeShopData, BasketData, CoffeeTypes, CoffeeCountry, SignInData, DeleteGreat } from '../models/coffee';
 import { useNavigate } from "react-router-dom";
 
 import Cookies from 'js-cookie';
@@ -209,6 +209,16 @@ export const useSignInMutation = () => {
     onError: () => {
       alert('알수없는 오류가 생겼습니다.')
       navigate('/')
+    }
+  })
+}
+
+export const useDeleteGreat = () => {
+  return useMutation({
+    mutationFn: async (data:DeleteGreat) => await axios.delete('http://localhost:4000/api/delete', {data : data}),
+    mutationKey: 'deleteGreat',
+    onSuccess: e => {
+      console.log(e)
     }
   })
 }

@@ -81,3 +81,8 @@ export interface CoffeeCountry {
   beans: string;
   beansName: string;
 }
+
+export interface DeleteGreat {
+  username: string | undefined;
+  userId: string | undefined;
+}
