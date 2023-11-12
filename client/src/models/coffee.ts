@@ -63,6 +63,7 @@ export interface BasketData {
 export interface CoffeeGreat {
   coffeeName: string;
   coffeeUrl: string;
+  _id: string;
 }
 
 export interface CoffeeTypes {
