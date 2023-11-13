@@ -145,6 +145,7 @@ app.post('/api/signin', async (req, res) => {
   res.json('success');
 });
 
+// 커피 좋아요 삭제
 app.delete('/api/delete', async(req,res) => {
   const {username, userId} = req.body;
   try {
@@ -162,6 +163,46 @@ app.delete('/api/delete', async(req,res) => {
     res.status(500).json({success: false, message: 'Server Error'})
   }
 })
+
+// 커피 장바구니 개수 줄이기, 늘리기
+app.patch('/api/updateBasketCount', async (req, res) => {
+  const { username, itemName, plus, minus } = req.body;
+  try {
+
+    let count = 0;
+    if(plus) count = 1;
+    else if(minus) count = -1;
+
+    const user = await User.findOne({ username });
+    const item = user.shoppingBasket.find((basketItem) => basketItem.name === itemName);
+    if (item.count + count < 1) {
+      res.json({ success: true, message: '개수오류' });
+      return;
+    }
+
+    const result = await User.updateOne(
+      { 
+        username,
+        'shoppingBasket.name': itemName
+      },
+      {
+        $inc: { 'shoppingBasket.$.count': count }
+      }
+    );
+    if (result.modifiedCount === 1 && plus) {
+      res.json({ success: true, message: '하나 추가했습니다.' });
+    } else if(result.modifiedCount === 1 && minus) {
+      res.json({ success: true, message: '하나 감소했습니다.' });
+    } else {
+      res.status(404).json({ success: false, message: '해당 아이템이 존재하지 않음' });
+    }
+  } catch (e) {
+    console.error(e);
+    res.status(500).json({ success: false, message: '서버 오류' });
+  }
+});
+
+
 
 app.listen(process.env.PORT, () => {
   console.log('서버 실행')
