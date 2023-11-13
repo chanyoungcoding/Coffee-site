@@ -25,7 +25,8 @@ const UserSchema = new Schema({
       {
         name: String,
         count: Number,
-        price: Number
+        price: Number,
+        itemPrice: Number
       }
     ],
     default: []

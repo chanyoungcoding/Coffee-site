@@ -66,17 +66,18 @@ app.get('/api/coffeeCountry', async(req,res) => {
 })
 
 app.post('/api/coffeeBasket', async(req,res) => {
-  const {price, count, name, userName} = req.body;
+  const {price, count, name, userName, itemPrice} = req.body;
   try {
     const user = await User.findOne({username: userName});
     const foundItem = user.shoppingBasket.find(item => item.name === name);
     if(foundItem) {
       foundItem.count += count
       foundItem.price += price
+      foundItem.itemPrice = itemPrice
       await user.save();
       res.json('good');
     } else {
-      user.shoppingBasket.push({name, count, price});
+      user.shoppingBasket.push({name, count, price,itemPrice});
       await user.save();
       res.json('good');
     }
@@ -166,12 +167,17 @@ app.delete('/api/delete', async(req,res) => {
 
 // 커피 장바구니 개수 줄이기, 늘리기
 app.patch('/api/updateBasketCount', async (req, res) => {
-  const { username, itemName, plus, minus } = req.body;
+  const { username, itemName, itemPrice, plus, minus } = req.body;
   try {
-
     let count = 0;
-    if(plus) count = 1;
-    else if(minus) count = -1;
+    let price = 0;
+    if(plus) {
+      count = 1;
+      price = itemPrice;
+    } else if(minus) {
+      count = -1;
+      price = -itemPrice;
+    }
 
     const user = await User.findOne({ username });
     const item = user.shoppingBasket.find((basketItem) => basketItem.name === itemName);
@@ -186,7 +192,7 @@ app.patch('/api/updateBasketCount', async (req, res) => {
         'shoppingBasket.name': itemName
       },
       {
-        $inc: { 'shoppingBasket.$.count': count }
+        $inc: { 'shoppingBasket.$.count': count, 'shoppingBasket.$.price': price }
       }
     );
     if (result.modifiedCount === 1 && plus) {
