@@ -26,10 +26,9 @@ const MySwiper:React.FC = () => {
   return ( 
     <>
       <Swiper
-        // install Swiper modules
         modules={[Autoplay]}
-        spaceBetween={50}
-        slidesPerView={4}
+        spaceBetween={10}
+        slidesPerView={3}
         autoplay={{
           delay: 2500,
           disableOnInteraction: false,

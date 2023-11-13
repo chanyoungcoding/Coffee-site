@@ -7,7 +7,7 @@ import Right from "./components/Fourth/Right";
 const HomeFourth:React.FC = () => {
 
   const [ref, inView] = useInView({
-    threshold: 0.8
+    threshold: 0.3
   })
 
   return ( 
