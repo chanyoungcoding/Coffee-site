@@ -18,14 +18,14 @@ const ShopItem:React.FC = () => {
     setCoffee(data);
   },[setCoffee,data])
 
-  const onClickPlus = (itemName:string | undefined ) => {
+  const onClickPlus = (itemName:string, itemPrice: number | undefined) => {
     const plus = 'plus';
-    mutate({username, itemName, plus})
+    mutate({username, itemName,itemPrice, plus})
   }
 
-  const onClickMinus = (itemName:string | undefined) => {
+  const onClickMinus = (itemName:string, itemPrice: number | undefined) => {
     const minus = 'minus';
-    mutate({username, itemName, minus})
+    mutate({username, itemName, itemPrice, minus})
   }
 
   if(isError) return (
@@ -56,9 +56,9 @@ const ShopItem:React.FC = () => {
             </div>
             <div className="right__bottom">
               <div className="bottom__count">
-                <button onClick={() => onClickMinus(item.name)}>-</button>
+                <button onClick={() => onClickMinus(item.name, item.itemPrice)}>-</button>
                 <p>{item.count}</p>
-                <button onClick={() => onClickPlus(item.name)}>+</button>
+                <button onClick={() => onClickPlus(item.name, item.itemPrice)}>+</button>
               </div>
               <p>{item.price}원</p>
               <p>무료</p>

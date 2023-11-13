@@ -58,6 +58,7 @@ export interface BasketData {
   price: number;
   count: number;
   userName: string | undefined;
+  itemPrice: number | undefined;
 }
 
 export interface CoffeeGreat {
@@ -90,6 +91,7 @@ export interface DeleteGreat {
 export interface UpdataBaketCount {
   username: string | undefined;
   itemName: string | undefined;
+  itemPrice: number | undefined;
   plus?: string;
   minus?: string;
 }

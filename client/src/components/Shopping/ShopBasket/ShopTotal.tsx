@@ -1,23 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { AiOutlinePlus  } from "react-icons/ai";
 import {LuEqual} from "react-icons/lu";
+import { useRecoilState, useRecoilValue } from "recoil";
+import { shopBaket, userName } from "../../../recoil/shop";
+import { useApiBaket } from "../../../services/api";
 
-interface dataa {
-  count: number;
-  name: string;
-  price: number;
-}
+const ShopTotal:React.FC = () => {  
 
-interface dataaa {
-  data: dataa[] | undefined;
-}
+  const userDB = 'http://localhost:4000/api/Basket';
+  const username = useRecoilValue(userName);
 
-const ShopTotal:React.FC<dataaa> = ({data}) => {  
-  
-  const totalPrice = React.useMemo(() => {
-    return data?.reduce((prev,cur) => prev + cur.price, 0);
-  },[data])?.toString();
-    
+
+  const { data } = useApiBaket(userDB, username);
+  const [coffee, setCoffee] = useRecoilState(shopBaket);
+
+  useEffect(() => {
+    setCoffee(data);
+  },[setCoffee,data])
+
+  const totalPrice = coffee?.reduce((prev,cur) => prev + cur.price, 0).toString();
+
   return ( 
     <div className="basket__total">
       <div className="equal__product">

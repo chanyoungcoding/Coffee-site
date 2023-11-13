@@ -24,7 +24,6 @@ const ShopOrder = () => {
 
   const totalPrice = useRecoilValue(shopBaketPrice);
 
-  console.log(coffee)
   useEffect(() => {
     setCoffee(data);
   },[setCoffee,data])

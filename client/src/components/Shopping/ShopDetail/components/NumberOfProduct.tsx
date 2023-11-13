@@ -43,17 +43,17 @@ const NumberOfProduct:React.FC<NumberOfProduct> = ({data}) => {
   }
 
 
-  const onClickBasket = (e:React.MouseEvent<HTMLButtonElement>,name:string, price:number, count:number, userName:string | undefined) => {
+  const onClickBasket = (e:React.MouseEvent<HTMLButtonElement>,name:string, price:number, count:number, userName:string | undefined, itemPrice: number | undefined) => {
     if(userName === undefined) {
       alert('로그인 후 이용하실 수 있습니다.')
       return
     }
     if(e.currentTarget.id === '바로-구매-버튼') {
-      const data: BasketData = { name, price, count, userName };
+      const data: BasketData = { name, price, count, userName, itemPrice };
       mutate(data);
       navigate('/shopbasket')
     } else {
-      const data: BasketData = { name, price, count, userName };
+      const data: BasketData = { name, price, count, userName, itemPrice };
       mutate(data);
     }
   }
@@ -73,13 +73,13 @@ const NumberOfProduct:React.FC<NumberOfProduct> = ({data}) => {
         <div className="intro__button" key={item.coffeeNumber}>
           <button 
             id="바로-구매-버튼"
-            onClick={(e) => onClickBasket(e,item.name, price, count, userName)}
+            onClick={(e) => onClickBasket(e, item.name, price, count, userName, item.price)}
           >
             바로 구매하기
           </button>
           <button 
             className="button_2" 
-            onClick={(e) => onClickBasket(e,item.name, price, count, userName)}
+            onClick={(e) => onClickBasket(e, item.name, price, count, userName, item.price)}
           >
             장바구니 담기
           </button>
