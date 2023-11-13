@@ -40,6 +40,19 @@
           button {
             padding: 10px;
           }
+          .intro__delete {
+            border: none;
+            outline: none;
+            border-radius: 10px;
+            cursor: pointer;
+            &:hover {
+              color: white;
+              background-color: $basic-color;
+            }
+            &:active {
+              transform: scale(0.9);
+            }
+          }
         }
       }
     }

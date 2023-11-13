@@ -14,7 +14,6 @@ const SaveInner:React.FC = () => {
 
   const { data, isError, isLoading } = useApiUser(userDB, username);
   const [coffee, setCoffee] = useRecoilState(coffeeGreat);
-  console.log(coffee)
 
   useEffect(() => {
     setCoffee(data);
@@ -42,7 +41,7 @@ const SaveInner:React.FC = () => {
           <div className="inner__intro">
             <p>{item.coffeeName}</p>
             <Button href={`/menuDetail/${item.coffeeName}`}>자세한 정보</Button>
-            <button onClick={() => DeleteGreat(username, item._id)}>삭제하기</button>
+            <button className="intro__delete" onClick={() => DeleteGreat(username, item._id)}>삭제하기</button>
           </div>
         </div>
       ))}

@@ -219,6 +219,16 @@ export const useDeleteGreat = () => {
     mutationKey: 'deleteGreat',
     onSuccess: e => {
       console.log(e)
+      if(e.data.success === true) {
+        alert(e.data.message)
+      } else {
+        alert(e.data.message)
+      }
+      window.location.reload();
+    },
+    onError: e => {
+      console.log(e);
+      alert('예상치 못한 오류가 발생했습니다.')
     }
   })
 }

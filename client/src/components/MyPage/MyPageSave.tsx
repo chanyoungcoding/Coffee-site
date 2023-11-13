@@ -10,7 +10,7 @@ const BasketSave:React.FC = () => {
     <>
       <div className="save__top">
         <p>저장한 커피들</p>
-        <p>장바구니 개수 : {basketLength}</p>
+        <p>좋아요 개수 : {basketLength}</p>
       </div>
       <div className="save__inner">
         <SaveInner/>
