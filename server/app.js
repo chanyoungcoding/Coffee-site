@@ -145,6 +145,24 @@ app.post('/api/signin', async (req, res) => {
   res.json('success');
 });
 
+app.delete('/api/delete', async(req,res) => {
+  const {username, userId} = req.body;
+  try {
+    const result = await User.updateOne(
+      {username},
+      {$pull: {coffeeGreat:{_id: userId}}}
+    )
+    if(result.modifiedCount === 1) {
+      res.json({success: true, message: '좋아요 삭제 성공'})
+    } else {
+      res.status(404).json({success: false, message: 'false'})
+    }
+  } catch(e) {
+    console.error(e);
+    res.status(500).json({success: false, message: 'Server Error'})
+  }
+})
+
 app.listen(process.env.PORT, () => {
   console.log('서버 실행')
 })
