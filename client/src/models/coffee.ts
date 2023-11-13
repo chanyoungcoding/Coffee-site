@@ -86,3 +86,10 @@ export interface DeleteGreat {
   username: string | undefined;
   userId: string | undefined;
 }
+
+export interface UpdataBaketCount {
+  username: string | undefined;
+  itemName: string | undefined;
+  plus?: string;
+  minus?: string;
+}

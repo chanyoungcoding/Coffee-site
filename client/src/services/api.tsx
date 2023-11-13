@@ -1,8 +1,9 @@
 import axios from 'axios';
-import { Data, LoginData, CoffeeShopData, BasketData, CoffeeTypes, CoffeeCountry, SignInData, DeleteGreat } from '../models/coffee';
+import { Data, LoginData, CoffeeShopData, BasketData, CoffeeTypes, CoffeeCountry, SignInData, DeleteGreat, UpdataBaketCount } from '../models/coffee';
 import { useNavigate } from "react-router-dom";
 
 import Cookies from 'js-cookie';
+import { AxiosResponse } from 'axios';
 
 // useApiData.js
 import { useCallback, useState } from 'react';
@@ -229,6 +230,26 @@ export const useDeleteGreat = () => {
     onError: e => {
       console.log(e);
       alert('예상치 못한 오류가 발생했습니다.')
+    }
+  })
+}
+
+export const useDeleteBasket = () => {
+  return useMutation({
+    mutationFn: async (data:UpdataBaketCount) => await axios.patch('http://localhost:4000/api/updateBasketCount', data),
+    mutationKey: 'updataBasketCount',
+    onSuccess: (e:AxiosResponse) => {
+      if(e.data.success === true && e.data.message === '개수오류'){
+        alert('한개 이하로 내릴 수 없습니다.')
+      } else if(e.data.success === true) {
+        alert(e.data.message)
+      } else {
+        alert(e.data.message)
+      }
+      window.location.reload();
+    },
+    onError: (e:AxiosResponse) => {
+      alert(e.data.message || '예상치 못한 오류가 발생했습니다.')
     }
   })
 }

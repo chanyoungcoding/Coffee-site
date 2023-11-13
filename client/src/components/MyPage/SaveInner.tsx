@@ -19,7 +19,7 @@ const SaveInner:React.FC = () => {
     setCoffee(data);
   },[setCoffee, data])
 
-  const DeleteGreat = (username:string | undefined, userId: string | undefined) => {
+  const DeleteGreat = (userId: string | undefined) => {
     mutate({username, userId})
   }
 
@@ -41,7 +41,7 @@ const SaveInner:React.FC = () => {
           <div className="inner__intro">
             <p>{item.coffeeName}</p>
             <Button href={`/menuDetail/${item.coffeeName}`}>자세한 정보</Button>
-            <button className="intro__delete" onClick={() => DeleteGreat(username, item._id)}>삭제하기</button>
+            <button className="intro__delete" onClick={() => DeleteGreat(item._id)}>삭제하기</button>
           </div>
         </div>
       ))}
