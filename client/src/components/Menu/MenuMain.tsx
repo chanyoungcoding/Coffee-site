@@ -1,10 +1,45 @@
 import React, {useEffect, useState } from 'react';
-import '../../styles/menu.scss';
+import '../../styles/pagination.scss';
 
 import Button from '../Button';
 import { useApiDataSlice } from '../../services/api';
 
 import Pagination from 'react-js-pagination';
+import styled from 'styled-components';
+
+const MenuTitle = styled.h1`
+  margin-bottom: 30px;
+  padding: 30px;
+  font-size: 2rem;
+  text-align: center;
+  border-top: 1px solid #444444;
+`
+
+const MenuBox = styled.div`
+  display: flex;
+  justify-content: space-between;
+`
+
+const MenuDetail = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
+const DetailImg = styled.img`
+  background-color: #F9F5EA;
+  width: 95%;
+  height: 100%;
+  object-fit: cover;
+`
+
+const DetailName = styled.p`
+  margin: 20px 0px;
+  font-size: 20px;
+  color: #444444;
+  @media (max-width:500px) {
+    font-size: 14px;
+  }
+`
 
 const MenuMain: React.FC = () => {
   const [page, setPage] = useState<number>(1);
@@ -30,16 +65,16 @@ const MenuMain: React.FC = () => {
 
   return (
     <div className='menumain'>
-      <h1>메뉴</h1>
-      <div className="menu__center">
+      <MenuTitle>메뉴</MenuTitle>
+      <MenuBox>
       {currentData.map((item) => (
-        <div key={item._id} className='menumain__detail'>
-          <img src={item.imgurl} alt="#" />
-          <p>{item.name}</p>
+        <MenuDetail key={item._id}>
+          <DetailImg src={item.imgurl} alt="#" />
+          <DetailName>{item.name}</DetailName>
           <Button href={`/menuDetail/${item.name}`}>자세한 정보</Button>
-        </div>
+        </MenuDetail>
       ))}
-      </div>
+      </MenuBox>
 
       {/* 페이지네이션 컴포넌트 */}
       <Pagination

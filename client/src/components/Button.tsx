@@ -29,6 +29,13 @@ const StyledButton = styled.button`
     transform: scale(0.9);
   }
 
+  // iPhone XR ~ 15
+  @media (max-width: 500px) {
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 400;
+  }
+
 `;
 
 interface ButtonProps {

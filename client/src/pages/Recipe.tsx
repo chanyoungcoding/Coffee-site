@@ -1,5 +1,4 @@
 import React from 'react';
-import '../styles/recipehome.scss';
 
 import RecipeBanner from '../components/Recipe/RecipeHome/RecipeBanner';
 import RecipeIntro from '../components/Recipe/RecipeHome/RecipeIntro';

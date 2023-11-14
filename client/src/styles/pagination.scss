@@ -21,6 +21,11 @@ ul.pagination li {
   justify-content: center;
   align-items: center;
   font-size: 1rem;
+  @media screen and (max-width: 500px) {
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+  }
 }
 
 ul.pagination li:first-child{
@@ -54,35 +59,4 @@ ul.pagination li a.active {
   width: 48px;
   height: 30px;
   color: $basic-color;
-}
-
-
-
-.menumain {
-  h1 {
-    margin-bottom: 30px;
-    padding: 30px;
-    border-top: 1px solid $line-color;
-    font-size: 2rem;
-  }
-  .menu__center { 
-    display: flex;
-    justify-content: space-between;
-    .menumain__detail {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      img {
-        background-color: #F9F5EA;
-        width: 95%;
-        height: 100%;
-        object-fit: cover;
-      }
-      p {
-        margin: 20px 0px;
-        font-size: 20px;
-        color: $line-color;
-      }
-    }
-  }
 }
