@@ -93,43 +93,14 @@
 .homefifth {
   position: relative;
   margin-top: 150px;
-  .homefifth__line {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 1920px;
-    position: absolute;
-    top: -40px;
-    height: 100px;
-    background-color: $basic-dark-color;
-    transform: rotate(-2deg);
-
-    p {
-      color: $basic-text-color;
-      font-size: 3rem;
-      font-family: 'Dancing Script', cursive;
-    }
-  }
   .homefifth__inner {
+    display: flex;
+    align-items: center;
+    padding: 70px;
     height: 700px;
     background: url('../assets/coffeebackground6.jpg') no-repeat center/cover;
-    .inner__box {
-      position: relative;
-      top: 300px;
-      left: 10%;
-      h1 { 
-        font-size: 3rem;
-      }
-      h2 {
-        margin: 10px 0px 30px;
-        font-size: 2rem;
-      }
-    }
-    .inner__img {
-      position: absolute;
-      right: 500px;
-      top: 500px;
-      width: 250px;
+    @media screen and (max-width: 500px) {
+      height: 400px;
     }
   }
 }
