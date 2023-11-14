@@ -19,7 +19,12 @@ const ThirdNavbar = styled.div`
     &:nth-child(4) {
       margin-right: 0;
     }
+
+    @media (max-width: 500px) {
+      font-size: 20px;
+    }
   }
+
 `
 
 const Main:React.FC = () => {

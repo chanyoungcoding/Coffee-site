@@ -96,7 +96,7 @@ $coffee-backgroundColor: #313131;
       padding-top: 100px;
 
       .li__inner {
-        width: 70%;
+        width: 100%;
 
         .li__left,
         .li__right {
@@ -109,11 +109,9 @@ $coffee-backgroundColor: #313131;
           }
         }
 
-        .li__left {
-          border-radius: 50px 50px 0px 0px;
-        }
+        .li__left,
         .li__right {
-          border-radius: 0px 0px 50px 50px;
+          border-radius: 0px;
         }
       }
     }

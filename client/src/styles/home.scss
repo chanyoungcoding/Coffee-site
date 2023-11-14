@@ -61,17 +61,6 @@
 
 .homesecond {
   font-family: 'Fira Sans', sans-serif;
-  .second__left {
-    h1 {
-      margin-bottom: 20px;
-      font-size: 60px;
-    }
-    p {
-      width: 600px;
-      font-size: 25px;
-      word-break: keep-all;
-    }
-  }
   .second__right {
     .right__imgbox {
       height: 350px;
@@ -91,55 +80,12 @@
 
 .homefourth {
   h1 {
-    margin-bottom: 60px;
-    text-align: center;
-    font-size: 50px;
     font-family: 'Fira Sans', sans-serif;
   }
   h2 {
-    margin-bottom: 10px;
-    text-align: center;
-    font-size: 25px;
     font-family: 'Zeyada', cursive;
   }
-  .homefourth__container {
-    display: flex;
-    justify-content: space-around;
-    .fourth__left,
-    .fourth__right {
-      .fourth__container {
-        display: flex;
-        align-items: center;
-        width: 600px;
-        .container__left {
-          flex-grow: 1;
-          margin-bottom: 20px;
-          h3 {
-            font-size: 30px;
-            padding-bottom: 3px;
-            margin-bottom: 10px;
-            border-bottom: 1px solid $basic-color;
-          }
-          p {
-            color: $basic-color;
-          }
-        }
-        .container__right {
-          p {
-            padding-left: 15px;
-            font-size: 20px;
-          }
-        }
-      }
-    }
-    @media screen and (max-width: 1200px) {
-      flex-direction: column;
-      align-items: center;
-    }
-  }
 }
-
-
 
 
 // homeFifth

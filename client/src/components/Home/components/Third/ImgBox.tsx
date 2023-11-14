@@ -15,6 +15,11 @@ const CarouselSlide = styled.div`
     @media (max-width: 1200px) {
       font-size: 26px;
     }
+
+    // iPhone XR ~ 15
+    @media (max-width: 500px) {
+      font-size: 20px;
+    }
   }
 `
 const CarouselImg = styled.img`
@@ -34,6 +39,12 @@ const CarouselImg = styled.img`
   @media (max-width: 900px) {
     width: 200px;
     height: 200px;
+  }
+
+  // iPhone XR ~ 15
+  @media (max-width: 500px) {
+    width: 160px;
+    height: 160px;
   }
 `
 

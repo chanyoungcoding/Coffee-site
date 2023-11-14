@@ -7,6 +7,14 @@ import coffeeBackground from '../../assets/coffeebackground2.png';
 const SecondBox = styled.div`
   height: 700px;
   display: flex;
+
+  //iPhone XR
+  @media (max-width: 500px) {
+    justify-content: center;
+    width: 414px;
+    height: 500px;
+    margin: 50px auto 0px;
+  }
 `
 const LeftBox = styled.div`
   flex-grow: 1;
@@ -15,6 +23,9 @@ const LeftBox = styled.div`
   flex-direction: column;
   align-items: center;
   text-align: center;
+  @media (max-width: 500px) {
+    text-align: start;
+  }
 `
 
 const RightBox = styled.div`
@@ -22,6 +33,8 @@ const RightBox = styled.div`
   display: flex;
   flex-direction: column;
   margin-left: 80px;
+
+  // iPad Pro && Air && Mini
   @media (max-width: 1024px) {
     display: block;
     text-align: start;
@@ -29,7 +42,7 @@ const RightBox = styled.div`
     background: none;
   }
 
-  // iPad Pro
+  // iPad Pro && Air && Mini
   @media (max-width: 1024px) {
     display: none;
   }
