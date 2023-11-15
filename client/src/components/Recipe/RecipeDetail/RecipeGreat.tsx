@@ -4,6 +4,14 @@ import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 
 import { RecipeData } from "../../../models/coffee";
 import { useGreatMutation } from "../../../services/api";
+import styled from "styled-components";
+
+const RecipeHeart = styled.button`
+  outline: none;
+  border: none;
+  background-color: white;
+  color: red;
+`
 
 const RecipeGreat:React.FC<RecipeData> = ({data}) => {
 
@@ -20,13 +28,12 @@ const RecipeGreat:React.FC<RecipeData> = ({data}) => {
   return ( 
     <>
       {data?.map(item => (
-        <button 
+        <RecipeHeart
           key={item._id} 
-          className="good__button"
           onClick={(e) => onClick(e, item.name, item.imgurl)}
         >
           {disabled ? <AiFillHeart size="40"/> : <AiOutlineHeart size="40"/>}
-        </button>
+        </RecipeHeart>
       ))}
     </>
   );

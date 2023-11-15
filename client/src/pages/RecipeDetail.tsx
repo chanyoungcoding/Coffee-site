@@ -1,13 +1,32 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 
-import '../styles/recipe.scss';
 import { useApiDataName } from "../services/api";
 import RecipeOrder from "../components/Recipe/RecipeDetail/RecipeOrder";
 import RecipeMaterials from "../components/Recipe/RecipeDetail/RecipeMaterials";
 import RecipeImage from "../components/Recipe/RecipeDetail/RecipeImage";
 import RecipeGreat from "../components/Recipe/RecipeDetail/RecipeGreat";
 import RecipeYoutube from "../components/Recipe/RecipeDetail/RecipeYoutube";
+import styled from "styled-components";
+
+const RecipeName = styled.h3`
+  margin: 50px 0px 20px;
+  color: #4281C1;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: bold;
+`
+
+const GreatBox = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    color: #4281C1;
+    text-align: center;
+    font-size: 2rem;
+  }
+`
 
 const Recipe:React.FC = () => {
   const {name} = useParams();
@@ -22,11 +41,11 @@ const Recipe:React.FC = () => {
     <div className="recipe">
       <RecipeImage data={data}/>
       <div className="recipe__intro">
-        <h3>{data?.[0].name}</h3>
-        <div className="intro__good">
-          <h1>COFFEE</h1>
+        <RecipeName>{data?.[0].name}</RecipeName>
+        <GreatBox>
+          <h1>좋아요</h1>
           <RecipeGreat data={data}/>
-        </div>
+        </GreatBox>
         <RecipeMaterials data={data}/>
         <RecipeOrder data={data} />
         <RecipeYoutube data={data}/>
