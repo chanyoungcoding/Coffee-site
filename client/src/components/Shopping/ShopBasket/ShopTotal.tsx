@@ -4,6 +4,37 @@ import {LuEqual} from "react-icons/lu";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { shopBaket, userName } from "../../../recoil/shop";
 import { useApiBaket } from "../../../services/api";
+import styled from "styled-components";
+
+const TotalPriceContainer = styled.div`
+  display: flex;
+  justify-content: space-around;
+  width: 60%;
+  margin: 0 auto;
+  padding: 50px;
+  background-color: #F9F9F9;
+
+  // iPhone XR ~ 15
+  @media (max-width:500px) {
+    width: 80%;
+  }
+`
+const PriceBox = styled.p`
+  font-size: 30px;
+  font-weight: bold;
+  color: #333333;
+  @media (max-width:500px) {
+    font-size: 20px;
+  }
+`
+const InformationBox = styled.p`
+  margin-bottom: 20px;
+  color: #777777;
+` 
+const FormulaBox = styled.div`
+  display: flex;
+  align-items: center;
+`
 
 const ShopTotal:React.FC = () => {  
 
@@ -21,26 +52,26 @@ const ShopTotal:React.FC = () => {
   const totalPrice = coffee?.reduce((prev,cur) => prev + cur.price, 0).toString();
 
   return ( 
-    <div className="basket__total">
-      <div className="equal__product">
-        <p className="equal__name">총 상품금액</p>
-        <p className="equal__price">{totalPrice}</p>
+    <TotalPriceContainer>
+      <div>
+        <InformationBox>총 상품금액</InformationBox>
+        <PriceBox>{totalPrice}원</PriceBox>
       </div>
-      <div className="total__plus">
-        <AiOutlinePlus size="30"/>
+      <FormulaBox>
+        <AiOutlinePlus size="25"/>
+      </FormulaBox>
+      <div>
+        <InformationBox>총 배송비</InformationBox>
+        <PriceBox>0원</PriceBox>
       </div>
-      <div className="equal__product">
-        <p className="equal__name">총 배송비</p>
-        <p className="equal__price">0원</p>
+      <FormulaBox>
+        <LuEqual size="25"/>
+      </FormulaBox>
+      <div>
+        <InformationBox>결제예정금액</InformationBox>
+        <PriceBox>{totalPrice}원</PriceBox>
       </div>
-      <div className="total__equal">
-        <LuEqual size="30"/>
-      </div>
-      <div className="equal__product">
-        <p className="equal__name">결제예정금액</p>
-        <p className="equal__price">{totalPrice}</p>
-      </div>
-    </div>
+    </TotalPriceContainer>
   );
 }
 export default ShopTotal;

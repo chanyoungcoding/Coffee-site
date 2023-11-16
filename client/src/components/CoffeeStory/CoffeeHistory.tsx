@@ -32,7 +32,7 @@ const CoffeeHistory:React.FC = () => {
           커피나무가 세계로 퍼져 나가면서 인도, 서인도제도, 중앙아메리카, 그리고 에티오피아의 바로 이웃나라인 케냐, 탄자니아 등에서도 광범위하게 재배되었다.<br/>
           커피가 점차 대중화되면서 유럽 곳곳에 커피하우스가 생기기 시작했다.<br/>
         </p>
-        <img src={history_2} alt="#" className="img_2"/>
+        <img src={history_2} alt="#" className="img1_2"/>
       </div>
       <h2>우리나라 커피의 역사</h2>
       <div className="history__inner">

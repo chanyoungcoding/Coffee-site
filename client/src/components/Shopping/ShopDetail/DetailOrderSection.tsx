@@ -9,7 +9,13 @@ import ProductInfo from "./components/ProductInfo";
 const ShopImg = styled.img`
   width: 550px;
   height: 550px;
+  margin-right: 10px;
   background-color: #EDE2D2;
+  @media (max-width: 500px) {
+    width: 300px;
+    height: 300px;
+    margin-bottom: 50px;
+  }
 `
 
 const DetailOrderSection:React.FC = () => {

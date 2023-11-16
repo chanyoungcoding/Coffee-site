@@ -3,6 +3,57 @@ import React, {useEffect} from "react";
 import { useRecoilValue, useRecoilState } from "recoil";
 import { userName, shopBaket } from "../../../recoil/shop";
 import { useApiBaket, useDeleteBasket } from "../../../services/api";
+import styled from "styled-components";
+
+const SaveProductContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 70%;
+  margin: 0 auto 50px;
+  @media (max-width:500px) {
+    width: 100%;
+  }
+`
+const ProductNameBox = styled.div`
+  flex-grow: 2;
+`
+const ProductNameBoxTop = styled.div`
+  font-weight: bold;
+  padding: 20px;
+  border-top: 2px solid #353535;
+  border-bottom: 2px solid #353535;
+`
+const ProductNameBoxBottom = styled.div`
+  padding: 25.7px;
+  border-bottom: 1px solid #cccccc;
+`
+const ProductInformationBox = styled.div`
+  flex-grow: 1;
+`
+const ProductInformationBoxTop = styled.div`
+  display: flex;
+  justify-content: space-around;
+  font-weight: bold;
+  padding: 20px 10px 20px 50px;
+  border-top: 2px solid #353535;
+  border-bottom: 2px solid #353535;
+  &:nth-child(2) {
+    padding-left: 30px;
+  }
+`
+const ProductInformationBoxBottom = styled.div`
+  display: flex;
+  justify-content: space-around;
+  padding: 25px;
+  border-bottom: 1px solid #cccccc;
+`
+const QuantityButton = styled.button`
+  border: none;
+  outline: none;
+  cursor: pointer;
+  margin: 0px 15px;
+  border-radius: 15px;
+`
 
 const ShopItem:React.FC = () => {
 
@@ -39,32 +90,32 @@ const ShopItem:React.FC = () => {
   return (
     <>
       {coffee?.map((item,index)=> (
-        <div key={index} className="basket__inner">
-          <div className="inner__left">
-            <div className="left__top">
+        <SaveProductContainer key={index} className="basket__inner">
+          <ProductNameBox className="inner__left">
+            <ProductNameBoxTop>
               <p>상품명</p>
-            </div>
-            <div className="left__bottom">
-            <p>{item.name}</p>
-            </div>
-          </div>
-          <div className="inner__right">
-            <div className="right__top">
+            </ProductNameBoxTop>
+            <ProductNameBoxBottom>
+              <p>{item.name}</p>
+            </ProductNameBoxBottom>
+          </ProductNameBox>
+          <ProductInformationBox className="inner__right">
+            <ProductInformationBoxTop>
               <p>수량</p>
               <p>판매가</p>
               <p>배송비</p>
-            </div>
-            <div className="right__bottom">
-              <div className="bottom__count">
-                <button onClick={() => onClickMinus(item.name, item.itemPrice)}>-</button>
+            </ProductInformationBoxTop>
+            <ProductInformationBoxBottom className="right__bottom">
+              <div className="bottom__count" style={{display: "flex"}}>
+                <QuantityButton onClick={() => onClickMinus(item.name, item.itemPrice)}>-</QuantityButton>
                 <p>{item.count}</p>
-                <button onClick={() => onClickPlus(item.name, item.itemPrice)}>+</button>
+                <QuantityButton onClick={() => onClickPlus(item.name, item.itemPrice)}>+</QuantityButton>
               </div>
               <p>{item.price}원</p>
               <p>무료</p>
-            </div>
-          </div>
-        </div>
+            </ProductInformationBoxBottom>
+          </ProductInformationBox>
+        </SaveProductContainer>
       ))}
     </>
 

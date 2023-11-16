@@ -7,6 +7,7 @@ const CoffeeHealth = () => {
       <h1>커피와 건강</h1>
       <h2>커피가 미치는 좋은 영향</h2>
       <div className="health__inner">
+        <img src={health01} alt="#" className='img1_1'/>
         <div className="inner__introduce">
           <h3>각종 암예방 효과</h3>
           <p>

@@ -2,6 +2,7 @@ import React from "react";
 
 import Button from "../../../Button";
 import styled from "styled-components";
+import Speech from "../../../../Hooks/Speech";
 
 const CoffeeTitle = styled.h1`
   margin-top: 70px;
@@ -49,6 +50,7 @@ const Left:React.FC = () => {
         <Button href={'/test'}>Explore our products</Button>
         <Button href={'/login'}>Log in / Sign up</Button>
       </ButtonBox>
+      <Speech/>
     </>
   );
 }

@@ -45,6 +45,9 @@
         display: flex;
         p {
           font-size: 3rem;
+          @media screen and (max-width: 500px) {
+            font-size: 30px;
+          }
         }
       }
       .type__intro {
@@ -57,6 +60,11 @@
             width: 300px;
             height: 200px;
             object-fit: cover;
+            @media screen and (max-width: 500px) {
+              width: 150px;
+              height: 100px;
+              object-fit: contain;
+            }
           }
         }
       }

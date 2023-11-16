@@ -3,7 +3,15 @@
     display: flex;
     justify-content: space-around;
     margin: 150px;
+    @media (max-width:500px) {
+      flex-direction: column;
+      margin: 0;
+      align-items: center;
+    }
     .detail__intro {
+      @media (max-width:500px) {
+        margin: 10px;
+      }
       h1,h2 {
         margin-bottom: 30px;
         font-size: 2rem;
@@ -38,6 +46,9 @@
         .order__calculate {
           display: flex;
           margin-right: 60px;
+          @media (max-width:1300px) {
+            margin-right: 5px;
+          }
           p {
             margin: 10px;
           }
@@ -70,11 +81,18 @@
           outline: none;
           border: none;
           cursor: pointer;
+          @media (max-width:500px) {
+            margin-bottom: 10px;
+          }
         }
         .button_2 {
           background-color: white;
           color: black;
           border: 1px solid black;
+        }
+        @media (max-width:500px) {
+          display: flex;
+          flex-direction: column;
         }
       }
     }

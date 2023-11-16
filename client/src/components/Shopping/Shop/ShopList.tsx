@@ -2,6 +2,33 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import { useApiDataShop } from "../../../services/api";
+import styled from "styled-components";
+
+const ShopImg = styled.img`
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  background-color: #EDE2D2;
+`
+
+const ShopProductName = styled.p`
+  position: relative;
+  display: inline-block;
+  top: -40px;
+  margin-left: 20px;
+  font-size: 20px;
+  font-weight: bold;
+`
+
+const ShopProductPrice = styled.p`
+  margin: 10px 0px;
+  font-size: 20px;
+  font-weight: bold;
+`
+
+const ShopProductData = styled.p`
+  color: #7D7D7D;
+`
 
 const ShopList:React.FC = () => {
 
@@ -21,11 +48,11 @@ const ShopList:React.FC = () => {
       {data?.map(item => (
         <div key={item.coffeeNumber} className="shopping__inner">
           <Link to={`/shopdetail/${item.name}`}>
-            <img src={item.imgurl} alt="#"/>
-            <p>{item.name}</p>
+            <ShopImg src={item.imgurl} alt="#"/>
+            <ShopProductName>{item.name}</ShopProductName>
           </Link>
-          <p className="shopping__date">제조일 2023.04.25</p>
-          <p className="shopping__price">{item.price} 원</p>
+          <ShopProductData className="shopping__date">제조일 2023.04.25</ShopProductData>
+          <ShopProductPrice className="shopping__price">{item.price} 원</ShopProductPrice>
         </div>
       ))}
     </>
