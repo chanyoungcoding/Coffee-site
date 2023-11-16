@@ -24,6 +24,9 @@ const Navbar:React.FC = () => {
     window.location.reload();
   }
 
+  const test = 'test'
+  console.log("🚀 ~ file: Navbar.tsx:28 ~ test:", test)
+
   return (
     <div className="navbar">
       <div className="navbar__side">
