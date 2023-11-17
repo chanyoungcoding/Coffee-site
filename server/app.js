@@ -8,6 +8,7 @@ const User = require('./models/users');
 const CoffeeShop = require('./models/coffeeShop');
 const CoffeeType = require('./models/coffeeType');
 const CoffeeCountry = require('./models/coffeeCountry');
+const CoffeeStore = require('./models/coffeeStore');
 
 
 //MongoDB 연결
@@ -123,6 +124,11 @@ app.get('/api/Basket', async (req,res) => {
   } catch(e) {
     res.json(e);
   }
+})
+
+app.get('/api/kakaoMapInfo', async(req,res) => {
+  const kakaoInfo = await CoffeeStore.find({});
+  res.json(kakaoInfo);
 })
 
 app.post('/api/login', async (req,res) => {
