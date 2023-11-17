@@ -253,3 +253,21 @@ export const useDeleteBasket = () => {
     }
   })
 }
+
+// 매점 이름과 좌표 API
+
+interface kakaoData {
+  storeName: string;
+  latitude: number;
+  longitude: number;
+}
+
+export function useApiKakaoMapInfo(url:string) {
+  const {data, isLoading, isError} = useQuery<kakaoData[]>({ 
+    queryKey: ['kakaoMapInfo'], 
+    queryFn: async () => {
+      const response = await axios.get(url);
+      return response.data;
+  }})
+  return {data, isLoading, isError }
+}
