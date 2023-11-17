@@ -2,6 +2,7 @@
 import { useEffect } from "react";
 import coffeIcon from '../assets/coffeeicon.png';
 
+
 declare global {
   interface Window {
     kakao: any;
@@ -28,11 +29,11 @@ const KakaoMap = () => {
         latlng: new window.kakao.maps.LatLng(37.57043727089248, 126.97907571276365)
       },
       {
-        content: '<div id="infowindow">투썸</div>', 
+        content: '투썸', 
         latlng: new window.kakao.maps.LatLng(37.5698246140704, 126.97918907926261)
       },
       {
-        content: '<div>메가커피</div>', 
+        content: '메가커피', 
         latlng: new window.kakao.maps.LatLng(37.57206798691837, 126.97859982283231)
       }
     ];
@@ -47,7 +48,7 @@ const KakaoMap = () => {
 
       marker.setMap(map);
 
-      const content = '<div class="customoverlay">' +
+      const content = '<div class="kakaomapcontainer">' +
                         '<a href="https://map.kakao.com/link/map/11394059" target="_blank">' +
                           `<span class="title">${positions[i].content}</span>` +
                         '</a>' +
@@ -56,8 +57,8 @@ const KakaoMap = () => {
     const customOverlay = new window.kakao.maps.CustomOverlay({
       position: positions[i].latlng,
       content: content,
-      xAnchor: .5,
-      yAnchor: 5
+      xAnchor: .4,
+      yAnchor: 0
     });
 
     
@@ -90,7 +91,7 @@ const KakaoMap = () => {
   return (
     <div>
       <p>hello</p>
-      <div id="map" style={{width:'1000px', height: '1000px'}}></div>
+      <div id="map" style={{width:'1300px', height: '1000px'}}></div>
     </div>
   )
 }

@@ -27,6 +27,7 @@ import CoffeeTypes from './components/CoffeeStory/CoffeeTypes';
 import CoffeeStoryCommon from './pages/CoffeeStoryCommon';
 import SignIn from './pages/SignIn';
 import LoginRoutes from './routes/LoginRoutes';
+import KakaoMap from './Hooks/KakaoMap';
 
 const queryClient = new QueryClient();
 
@@ -58,6 +59,7 @@ const App:React.FC = () => {
             </Route>
             <Route path='/login' element={<Login/>}/>
             <Route path='/signin' element={<SignIn/>}/>
+            <Route path='/kakaomap' element={<KakaoMap/>}/>
             <Route path='*' element={<ErrorPage/>}/>
           </Route>
         </Routes>
