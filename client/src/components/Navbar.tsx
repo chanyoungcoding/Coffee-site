@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { SlBasket, SlLogin, SlLogout,SlUser, SlLoop } from "react-icons/sl";
+import { SlBasket, SlLogin, SlLogout,SlUser, SlLoop, SlCup } from "react-icons/sl";
 import Cookies from "js-cookie";
 
 import coffeeIcon from '../assets/coffeeicon.png'
@@ -41,6 +41,9 @@ const Navbar:React.FC = () => {
           <Link to='/mypage'>
             <SlUser size="30"/>
           </Link>
+          <Link to='/kakaomap'>
+            <SlCup size="30"/>
+          </Link>
         </>
           :
           <>
@@ -49,6 +52,9 @@ const Navbar:React.FC = () => {
           </Link>
           <Link to='/signin'>
             <SlLoop size="30"/>
+          </Link>
+          <Link to='/kakaomap'>
+            <SlCup size="30"/>
           </Link>
           </>
         }

@@ -1,6 +1,9 @@
 /* eslint-disable */ 
 import { ChangeEvent, useEffect, useState } from "react";
-import coffeIcon from '../assets/coffeeicon.png';
+import styled from "styled-components";
+import {  BsSearch } from "react-icons/bs";
+
+import coffeIcon from '../assets/coffeemarker.png';
 import { useApiKakaoMapInfo } from "../services/api";
 
 declare global {
@@ -8,6 +11,43 @@ declare global {
     kakao: any;
   }
 }
+
+const StoreFindIntro = styled.h1`
+  margin: 100px 0px;
+  padding-bottom: 50px;
+  border-bottom: 1px solid black;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: bold;
+`
+
+const KakaoMapContainer = styled.div`
+  width: 1400px;
+  margin: 0 auto;
+`
+
+const KakaoSearchContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  margin: 10px 0px 50px;
+`
+
+const KakaoMapFindInput = styled.input`
+  outline: none;
+  padding: 10px;
+  font-size: 20px;
+  border: 1px solid black;
+  border-right: none;
+`
+
+const KakaoMapButton = styled.button`
+  outline: none;
+  background-color: white;
+  padding: 10px;
+  border: 1px solid black;
+  border-left: none;
+  cursor: pointer;
+`
 
 const KakaoMap = () => {
   const [coffeeName, setCoffeeName] = useState('');
@@ -77,8 +117,8 @@ const KakaoMap = () => {
         const customOverlay = new window.kakao.maps.CustomOverlay({
           position: positions[i].latlng,
           content: content,
-          xAnchor: .4,
-          yAnchor: 0
+          xAnchor: .45,
+          yAnchor: 3
         });
 
         const makeMouseOverListener = () => {
@@ -92,19 +132,12 @@ const KakaoMap = () => {
             customOverlay.setMap(null);
           }
         }
-
-        const makeClickListener = () => {
-          return function() {
-            window.open('https://map.kakao.com/link/map/11394059', '_blank');
-          }
-        }
         
         window.kakao.maps.event.addListener(marker, 'mouseover', makeMouseOverListener());
         window.kakao.maps.event.addListener(marker, 'mouseout', makeOutListener());
-        window.kakao.maps.event.addListener(marker, 'click', makeClickListener());
       }
     }
-  }, [coffeeName, positions, data]);
+  }, [coffeeName, positions]);
 
   const handleInputChange = (e:ChangeEvent<HTMLInputElement>) => {
     setFilterValue(e.target.value);
@@ -115,12 +148,27 @@ const KakaoMap = () => {
     setFilterValue('');
   }
 
+  const handleEnterChange = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if(e.key === 'Enter') handleClickChange();
+  }
+
   return (
     <div>
-      <p>Filter by name:</p>
-      <input type="text" value={filterValue} onChange={handleInputChange} />
-      <button onClick={handleClickChange}>검색하기</button>
-      <div id="map" style={{ width: '1300px', height: '1000px' }}></div>
+      <StoreFindIntro>매장 찾기</StoreFindIntro>
+      
+      <KakaoSearchContainer>
+        <KakaoMapFindInput 
+          type="text" 
+          value={filterValue} 
+          onChange={handleInputChange} 
+          onKeyDown={handleEnterChange}
+          placeholder="매장을 입력하세요." 
+        />
+        <KakaoMapButton onClick={handleClickChange}><BsSearch size="20"/></KakaoMapButton>
+      </KakaoSearchContainer>
+      <KakaoMapContainer>
+        <div id="map" style={{ width: '1400px', height: '1000px' }}></div>
+      </KakaoMapContainer>
     </div>
   )
 }

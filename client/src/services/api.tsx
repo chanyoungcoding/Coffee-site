@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { Data, LoginData, CoffeeShopData, BasketData, CoffeeTypes, CoffeeCountry, SignInData, DeleteGreat, UpdataBaketCount } from '../models/coffee';
+import { Data, LoginData, CoffeeShopData, BasketData, CoffeeTypes, CoffeeCountry, SignInData, DeleteGreat, UpdataBaketCount, kakaoData } from '../models/coffee';
 import { useNavigate } from "react-router-dom";
 
 import Cookies from 'js-cookie';
@@ -255,12 +255,6 @@ export const useDeleteBasket = () => {
 }
 
 // 매점 이름과 좌표 API
-
-interface kakaoData {
-  storeName: string;
-  latitude: number;
-  longitude: number;
-}
 
 export function useApiKakaoMapInfo(url:string) {
   const {data, isLoading, isError} = useQuery<kakaoData[]>({ 
