@@ -1,1 +1,29 @@
-# myProject
+#  📚 찬스 커피
+
+기획 및 제작: 박찬영
+
+제작 기간: 2021.10 ~ 11.
+
+주요 기능: 음성 인식, 모든 커피 매점 찾기, 커피의 영양소,레시피 보기
+
+😋 사용 기술
+   - 프론트 : React, TypeScripts, Recoil, React-router, styled-components, Scss
+   - 서버 : node, mongoDB, express
+
+<div align="center">
+  <p>프론트</p>
+	<img src="https://img.shields.io/badge/React-61DAFB?style=flat&logo=React&logoColor=white" />
+	<img src="https://img.shields.io/badge/Typescript-3178C6?style=flat&logo=typescript&logoColor=white" />
+	<img src="https://img.shields.io/badge/Javascript-F7DF1E?style=flat&logo=javascript&logoColor=white" />
+  <hr/>
+  <p>서버</p>
+  <img src="https://img.shields.io/badge/mongodb-47A248?style=flat&logo=mongodb&logoColor=white" />
+  <img src="https://img.shields.io/badge/node-76D04B?style=flat&logo=mongodb&logoColor=47A248" />
+  <hr/>
+  <p>도구</p>
+  <img src="https://img.shields.io/badge/styled components-DB7093?style=flat&logo=styledcomponents&logoColor=white" />
+  <img src="https://img.shields.io/badge/sass-CC6699?style=flat&logo=sass&logoColor=white" />
+  <img src="https://img.shields.io/badge/react router-CA4245?style=flat&logo=reactrouter&logoColor=white" />
+  <img src="https://img.shields.io/badge/Recoil-3578E5?style=flat&logo=recoil&logoColor=white" />
+  <img src="https://img.shields.io/badge/express-000000?style=flat&logo=express&logoColor=white" />
+</div>
