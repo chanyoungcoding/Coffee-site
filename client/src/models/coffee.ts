@@ -97,7 +97,7 @@ export interface UpdataBaketCount {
 }
 
 export interface kakaoData {
-  storeName: string;
+  coffeeName: string;
   latitude: number;
   longitude: number;
 }

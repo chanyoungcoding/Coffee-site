@@ -57,7 +57,7 @@ const KakaoMap = () => {
   const { data } = useApiKakaoMapInfo(kakaoMapInfoDB);
 
   const positions = data?.map(item => ({
-    content: item.storeName,
+    content: item.coffeeName,
     latlng: new window.kakao.maps.LatLng(item.latitude, item.longitude)
   })) || [];  
 
