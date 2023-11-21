@@ -12,9 +12,9 @@ const CoffeeStore = require('./models/coffeeStore');
 
 
 //MongoDB 연결
-// const dbUrl = process.env.DB_URL;
+const dbUrl = process.env.DB_URL;
 
-mongoose.connect(process.env.DB)
+mongoose.connect(dbUrl)
   .then(() => {
     console.log("CoffeeDB 연결");
   })

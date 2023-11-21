@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const coffeeStoreSchema = new mongoose.Schema({
-  storeName: String,
+  coffeeName: String,
   latitude: Number,
   longitude: Number
 })

@@ -1,7 +1,10 @@
 const mongoose = require('mongoose');
 const coffeeShopList = require('./커피쇼핑.json');
+require("dotenv").config();
 
-mongoose.connect("mongodb://127.0.0.1:27017/coffeeDB")
+const dbUrl = process.env.DB_URL;
+
+mongoose.connect(dbUrl)
   .then(() => {
     console.log("CoffeeDB 연결");
   })
@@ -19,7 +22,6 @@ const coffeeShopSchema = new mongoose.Schema({
 const CoffeeShop = mongoose.model('CoffeeShop', coffeeShopSchema);
 
 const shopDB = async () => {
-  await CoffeeShop.deleteMany({});
   for(let list of coffeeShopList) {
     const coffeeShop = new CoffeeShop({
       coffeeNumber: list.coffeeNumber,

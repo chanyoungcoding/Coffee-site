@@ -1,7 +1,10 @@
 const mongoose = require('mongoose');
 const coffeeStoreList = require('./커피매점.json');
 
-mongoose.connect("mongodb://127.0.0.1:27017/coffeeDB")
+require("dotenv").config();
+const dbUrl = process.env.DB_URL;
+
+mongoose.connect(dbUrl)
   .then(() => {
     console.log("CoffeeDB 연결");
   })
