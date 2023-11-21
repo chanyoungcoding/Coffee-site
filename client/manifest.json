@@ -1,0 +1,23 @@
+{
+  "background_color": "#ffffff",
+  "description": "찬스 커피에 오신것을 환영합니다.",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "chanscoffee.netlify",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "chanscoffee.netlify",
+  "start_url": "/",
+  "theme_color": "#ffffff",
+  "categories": [],
+  "screenshots": [],
+  "icons": [
+    {
+      "src": "/assets/coffeeicon-ba1a9dc8.png",
+      "type": "image/png",
+      "sizes": "100x100"
+    }
+  ],
+  "shortcuts": [],
+  "lang": "ko"
+}
