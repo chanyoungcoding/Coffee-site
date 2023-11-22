@@ -34,6 +34,9 @@
 
 </div>
 
+## 시연 영상
+[![동영상 썸네일](https://img.youtube.com/vi/ZoqNff6jPYI/0.jpg)](https://www.youtube.com/watch?v=ZoqNff6jPYI)
+
 
   <img src="https://github.com/chanyoungcoding/Coffee-site/assets/95753171/0f210e39-4836-47ad-b737-1528a62e7c0b"/>
     <img src="https://github.com/chanyoungcoding/Coffee-site/assets/95753171/fd8305c7-751b-4d77-9e3b-8678c54c6613"/>
