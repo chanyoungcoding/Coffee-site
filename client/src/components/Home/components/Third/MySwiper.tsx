@@ -13,7 +13,7 @@ import { useApiData } from "../../../../services/api";
 
 const MySwiper:React.FC = () => {
 
-  const coffeeDB = 'http://localhost:4000/api/coffee'
+  const coffeeDB = 'https://port-0-coffeesiteserver-32updzt2alpmp3ic8.sel4.cloudtype.app/api/coffee'
   const {data, isLoading, isError} = useApiData(coffeeDB);
   
   if(isError) return 
