@@ -53,7 +53,7 @@ const KakaoMap = () => {
   const [coffeeName, setCoffeeName] = useState('');
   const [filterValue, setFilterValue] = useState('');
 
-  const kakaoMapInfoDB = 'http://localhost:4000/api/kakaoMapInfo';
+  const kakaoMapInfoDB = 'https://port-0-coffeesiteserver-32updzt2alpmp3ic8.sel4.cloudtype.app/api/kakaoMapInfo';
   const { data } = useApiKakaoMapInfo(kakaoMapInfoDB);
 
   const positions = data?.map(item => ({

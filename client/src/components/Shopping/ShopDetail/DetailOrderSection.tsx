@@ -22,7 +22,7 @@ const DetailOrderSection:React.FC = () => {
 
   const {name} = useParams();
 
-  const coffeeShopDetailDB = 'http://localhost:4000/api/coffeeShopDetail';
+  const coffeeShopDetailDB = 'https://port-0-coffeesiteserver-32updzt2alpmp3ic8.sel4.cloudtype.app/api/coffeeShopDetail';
   const {data, isError, isLoading} = useApiDataShopDetail(coffeeShopDetailDB, name);
 
 

@@ -125,7 +125,7 @@ type BasketMutationResult = UseMutationResult<void, Error, BasketData>;
 
 export const useBasketMutation = (): BasketMutationResult => {
   return useMutation({
-    mutationFn: async (data: BasketData) => await axios.post('http://localhost:4000/api/coffeeBasket', data),
+    mutationFn: async (data: BasketData) => await axios.post('https://port-0-coffeesiteserver-32updzt2alpmp3ic8.sel4.cloudtype.app/api/coffeeBasket', data),
     mutationKey: 'basket',
     onSuccess: () => {
       alert('장바구니에 추가했습니다.');
@@ -138,7 +138,7 @@ export const useBasketMutation = (): BasketMutationResult => {
 
 export const useGreatMutation = () => {
   return useMutation<number, string, unknown, { coffeeName: string, coffeeUrl:string ,userName: string}>({
-    mutationFn: async (data) =>  await axios.post('http://localhost:4000/api/coffeeGreat', data),
+    mutationFn: async (data) =>  await axios.post('https://port-0-coffeesiteserver-32updzt2alpmp3ic8.sel4.cloudtype.app/api/coffeeGreat', data),
     mutationKey: 'great',
     onSuccess: () => {
       alert('좋아요 등록했습니다.');
@@ -175,7 +175,7 @@ export function useApiUser(url:string, userName:string | undefined) {
 export const useLoginMutation = () => {
   const navigate = useNavigate();
   return useMutation({
-    mutationFn : async (data:LoginData) => await axios.post('http://localhost:4000/api/login', data),
+    mutationFn : async (data:LoginData) => await axios.post('https://port-0-coffeesiteserver-32updzt2alpmp3ic8.sel4.cloudtype.app/api/login', data),
     mutationKey: 'login',
     onSuccess: (e) => {
       if(e.data == '실패') {
@@ -197,7 +197,7 @@ export const useLoginMutation = () => {
 export const useSignInMutation = () => {
   const navigate = useNavigate();
   return useMutation({
-    mutationFn: async (data: SignInData) => await axios.post('http://localhost:4000/api/signin', data),
+    mutationFn: async (data: SignInData) => await axios.post('https://port-0-coffeesiteserver-32updzt2alpmp3ic8.sel4.cloudtype.app/api/signin', data),
     mutationKey: 'signin',
     onSuccess: (e) => {
       if(e.data === 'existed username') {
@@ -216,7 +216,7 @@ export const useSignInMutation = () => {
 
 export const useDeleteGreat = () => {
   return useMutation({
-    mutationFn: async (data:DeleteGreat) => await axios.delete('http://localhost:4000/api/delete', {data : data}),
+    mutationFn: async (data:DeleteGreat) => await axios.delete('https://port-0-coffeesiteserver-32updzt2alpmp3ic8.sel4.cloudtype.app/api/delete', {data : data}),
     mutationKey: 'deleteGreat',
     onSuccess: e => {
       console.log(e)
@@ -236,7 +236,7 @@ export const useDeleteGreat = () => {
 
 export const useDeleteBasket = () => {
   return useMutation({
-    mutationFn: async (data:UpdataBaketCount) => await axios.patch('http://localhost:4000/api/updateBasketCount', data),
+    mutationFn: async (data:UpdataBaketCount) => await axios.patch('https://port-0-coffeesiteserver-32updzt2alpmp3ic8.sel4.cloudtype.app/api/updateBasketCount', data),
     mutationKey: 'updataBasketCount',
     onSuccess: (e:AxiosResponse) => {
       if(e.data.success === true && e.data.message === '개수오류'){

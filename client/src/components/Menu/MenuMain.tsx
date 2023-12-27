@@ -49,7 +49,7 @@ const MenuMain: React.FC = () => {
     setPage(pageNumber);
   };
 
-  const coffeeDB = 'http://localhost:4000/api/coffee'
+  const coffeeDB = 'https://port-0-coffeesiteserver-32updzt2alpmp3ic8.sel4.cloudtype.app/api/coffee'
 
   const {data, currentData, isError, setCurrentData} = useApiDataSlice(coffeeDB, itemsPerPage);
 

@@ -7,7 +7,7 @@ import { useApiCoffeeCountry } from "../../services/api";
 
 const Country:React.FC = () => {
 
-  const coffeeCountryDB = 'http://localhost:4000/api/coffeeCountry';
+  const coffeeCountryDB = 'https://port-0-coffeesiteserver-32updzt2alpmp3ic8.sel4.cloudtype.app/api/coffeeCountry';
   const {data, isLoading, isError} =  useApiCoffeeCountry(coffeeCountryDB);
 
   if(isError) return (

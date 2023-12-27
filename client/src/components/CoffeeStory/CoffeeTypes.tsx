@@ -3,7 +3,7 @@ import CoffeeTypesIntroduce from "./components/CoffeeTypesIntroduce";
 
 const CoffeeTypes = () => {
 
-  const coffeeTypesDB = 'http://localhost:4000/api/coffeeTypes';
+  const coffeeTypesDB = 'https://port-0-coffeesiteserver-32updzt2alpmp3ic8.sel4.cloudtype.app/api/coffeeTypes';
   const {data, isLoading, isError} = useApiCoffeeTypes(coffeeTypesDB);
 
   if(isError) return 

@@ -54,7 +54,7 @@ const RecipeButton = styled.button`
 `
 
 const RecipeIntro = () => {
-  const coffeeDB = 'http://localhost:4000/api/coffeeNumber';
+  const coffeeDB = 'https://port-0-coffeesiteserver-32updzt2alpmp3ic8.sel4.cloudtype.app/api/coffeeNumber';
 
   const {data, isLoading, isError, changeNumber } = useApiDataNumber(coffeeDB);
 

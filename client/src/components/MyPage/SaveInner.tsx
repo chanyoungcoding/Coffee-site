@@ -8,7 +8,7 @@ import { coffeeGreat, userName } from "../../recoil/shop";
 
 
 const SaveInner:React.FC = () => {
-  const userDB = 'http://localhost:4000/api/user';
+  const userDB = 'https://port-0-coffeesiteserver-32updzt2alpmp3ic8.sel4.cloudtype.app/api/user';
   const username = useRecoilValue(userName);
   const {mutate} = useDeleteGreat();
 

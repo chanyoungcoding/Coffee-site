@@ -31,7 +31,7 @@ const GreatBox = styled.div`
 const Recipe:React.FC = () => {
   const {name} = useParams();
 
-  const coffeeDB = 'http://localhost:4000/api/coffeeName'
+  const coffeeDB = 'https://port-0-coffeesiteserver-32updzt2alpmp3ic8.sel4.cloudtype.app/api/coffeeName'
   const {data, isError, isLoading} = useApiDataName(coffeeDB, name);
 
   if(isError) return <p>에러가 발생했습니다.</p>

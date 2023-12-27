@@ -32,7 +32,7 @@ const ShopProductData = styled.p`
 
 const ShopList:React.FC = () => {
 
-  const coffeeShopUrl = 'http://localhost:4000/api/coffeeShop'
+  const coffeeShopUrl = 'https://port-0-coffeesiteserver-32updzt2alpmp3ic8.sel4.cloudtype.app/api/coffeeShop'
   const {data, isError, isLoading} = useApiDataShop(coffeeShopUrl);
 
   if(isError) return (

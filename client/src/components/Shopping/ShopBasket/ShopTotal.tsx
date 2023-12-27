@@ -38,7 +38,7 @@ const FormulaBox = styled.div`
 
 const ShopTotal:React.FC = () => {  
 
-  const userDB = 'http://localhost:4000/api/Basket';
+  const userDB = 'https://port-0-coffeesiteserver-32updzt2alpmp3ic8.sel4.cloudtype.app/api/Basket';
   const username = useRecoilValue(userName);
 
 
