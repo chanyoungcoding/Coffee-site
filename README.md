@@ -37,5 +37,12 @@
 ## 시연 영상
 [![동영상 썸네일](https://img.youtube.com/vi/ZoqNff6jPYI/0.jpg)](https://www.youtube.com/watch?v=ZoqNff6jPYI)
 
+## 🔧 코드 분석 및 성능 개선
+
+![image](https://github.com/chanyoungcoding/Coffee-site/assets/95753171/7dc3cffa-d5bd-408e-826e-178729e460c1)
+
+![image](https://github.com/chanyoungcoding/Coffee-site/assets/95753171/8096c034-e6fd-4df9-97ae-4f19f3022458)
+
+
 
 
