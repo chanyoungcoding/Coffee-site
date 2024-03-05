@@ -43,6 +43,8 @@
 
 ![image](https://github.com/chanyoungcoding/Coffee-site/assets/95753171/8096c034-e6fd-4df9-97ae-4f19f3022458)
 
+![image](https://github.com/chanyoungcoding/Coffee-site/assets/95753171/01ef2af4-0f14-4500-bbb4-f38e11f2c774)
+
 
 
 
