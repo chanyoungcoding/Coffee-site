@@ -237,7 +237,7 @@ export const useDeleteGreat = () => {
 export const useDeleteBasket = () => {
   return useMutation({
     mutationFn: async (data:UpdataBaketCount) => await axios.patch('https://port-0-coffeesiteserver-32updzt2alpmp3ic8.sel4.cloudtype.app/api/updateBasketCount', data),
-    mutationKey: 'updataBasketCount',
+    mutationKey: 'updateBasketCount',
     onSuccess: (e:AxiosResponse) => {
       if(e.data.success === true && e.data.message === '개수오류'){
         alert('한개 이하로 내릴 수 없습니다.')
