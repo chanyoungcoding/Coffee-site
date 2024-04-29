@@ -2,7 +2,7 @@ import Left from './components/Second/Left'
 import Right from './components/Second/Right'
 import styled from 'styled-components';
 
-import coffeeBackground from '../../assets/coffeebackground2.png';
+import coffeeBackground from '../../assets/coffeebackground2.webp';
 
 const SecondBox = styled.div`
   height: 700px;
@@ -36,14 +36,6 @@ const RightBox = styled.div`
 
   // iPad Pro && Air && Mini
   @media (max-width: 1024px) {
-    display: block;
-    text-align: start;
-    margin-left: 70px;
-    background: none;
-  }
-
-  // iPad Pro && Air && Mini
-  @media (max-width: 1024px) {
     display: none;
   }
 `
@@ -51,12 +43,15 @@ const RightBox = styled.div`
 const HomeSecond = () => {
   return ( 
     <SecondBox className="homesecond">
+
       <LeftBox className="second__left">
         <Left/>
       </LeftBox>
+
       <RightBox className="second__right">
         <Right/>
       </RightBox>
+      
     </SecondBox>
   );
 }

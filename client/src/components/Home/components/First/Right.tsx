@@ -1,9 +1,11 @@
-import React from "react";
-import { animated, useTrail } from 'react-spring';
-
-import coffeecup from "../../../../assets/coffeecup1.png";
-import coffeecup1 from "../../../../assets/coffeecup2.png";
 import styled from "styled-components";
+
+import coffeecup_png from "../../../../assets/coffeecup1.png";
+import coffeecup_jpg from "../../../../assets/coffeecup1.jpg";
+import coffeecup_webp from "../../../../assets/coffeecup1.webp";
+import coffeecup1_png from "../../../../assets/coffeecup2.png";
+import coffeecup1_jpg from "../../../../assets/coffeecup2.jpg";
+import coffeecup1_webp from "../../../../assets/coffeecup2.webp";
 
 const RightBox = styled.div`
   position: relative;
@@ -12,7 +14,7 @@ const RightBox = styled.div`
   margin: 50px 0px;
 `
 
-const CoffeeImg = styled(animated.img)`
+const CoffeeImgBase = `
   position: absolute;
   width: 400px;
   height: 400px;  
@@ -23,28 +25,35 @@ const CoffeeImg = styled(animated.img)`
     width: 300px;
     height: 300px;
   }
-`
+`;
 
-const Right:React.FC = () => {
-  const items = [coffeecup, coffeecup1]; 
+const CoffeeImg = styled.img`
+  ${CoffeeImgBase}
+`;
 
-  const springPropsRight = useTrail(items.length, {
-    from: {opacity: 0},
-    to: {opacity: 1},
-    config: { mass: 2, tension: 80, friction: 20, delay: 5000 },
-  });
+const CoffeeSource = styled.source`
+  ${CoffeeImgBase}
+`;
+
+
+const Right = () => {
+
+  const items = [
+    [coffeecup_webp, coffeecup_jpg, coffeecup_png],
+    [coffeecup1_webp, coffeecup1_jpg, coffeecup1_png]
+  ]; 
 
   return ( 
     <RightBox className="right__box">
-      {springPropsRight.map((styles, index) => (
-        <CoffeeImg 
-          key={index} 
-          style={styles} 
-          className={`box__img${index + 1}`} 
-          src={items[index]} 
-          alt="#" 
-        />
+
+      {items.map((item, index) => (
+        <picture key={index}>
+          <CoffeeSource className={`box__img${index + 1}`}  srcSet={item[0]} />
+          <CoffeeSource className={`box__img${index + 1}`}  srcSet={item[1]} />
+          <CoffeeImg className={`box__img${index + 1}`}  src={item[2]} alt="cup"/>
+        </picture>
       ))}
+
     </RightBox>
   );
 }

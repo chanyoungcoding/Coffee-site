@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import LazyLoad from "react-lazyload";
+
 import Main from "./components/Third/Main";
 import MySwiper from "./components/Third/MySwiper";
 
@@ -17,14 +19,19 @@ const SwiperContainer = styled.div`
   }
 `
 
-const HomeThird: React.FC = () => {
+const HomeThird = () => {
 
   return (
     <div className="homethird">
+
       <Main/>
-      <SwiperContainer>
-        <MySwiper/>
-      </SwiperContainer>
+
+      <LazyLoad>
+        <SwiperContainer>
+          <MySwiper/>
+        </SwiperContainer>
+      </LazyLoad>
+
     </div>
   );
 }

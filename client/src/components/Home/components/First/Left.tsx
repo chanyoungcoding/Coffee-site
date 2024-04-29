@@ -1,4 +1,3 @@
-import React from "react";
 
 import Button from "../../../Button";
 import styled from "styled-components";
@@ -30,8 +29,10 @@ const CoffeeSubtitle = styled.h2`
 const ButtonBox = styled.div`
   display: flex;
   margin-top: 50px;
+
   @media (max-width: 1024px) {
     flex-direction: column;
+    
     button {
       margin-bottom: 20px;
       padding: 10px 20px;
@@ -40,16 +41,21 @@ const ButtonBox = styled.div`
   }
 `
 
-const Left:React.FC = () => {
+const Left = () => {
+
   return ( 
     <>
       <CoffeeTitle>COFFEE</CoffeeTitle>
+
       <CoffeeSubtitle>An online coffee store</CoffeeSubtitle>
+
       <p>Learn more about coffee, and learn more about its types and recipes.</p>
+
       <ButtonBox className="leftButton">
         <Button href={'/test'}>Explore our products</Button>
         <Button href={'/login'}>Log in / Sign up</Button>
       </ButtonBox>
+
       <Speech/>
     </>
   );

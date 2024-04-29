@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 
 const Title = styled.h1`
@@ -27,16 +26,18 @@ const ThirdNavbar = styled.div`
 
 `
 
-const Main:React.FC = () => {
+const Main = () => {
   const navbarLists = ['COFFEE','TASTE','COUNTRY',"SMELL"]
   return ( 
     <>
       <Title>MENU</Title>
+
       <ThirdNavbar>
         {navbarLists.map((item, index) => (
           <li key={index}>{item}</li>
         ))}
       </ThirdNavbar>
+
     </>
   );
 }
