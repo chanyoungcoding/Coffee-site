@@ -11,6 +11,7 @@
 
 주요 기능: 음성 인식, 모든 커피 매점 찾기, 커피의 영양소,레시피 보기
 
+
 ## 🔨 사용 기술
 
 <div>
@@ -38,6 +39,8 @@
 [![동영상 썸네일](https://img.youtube.com/vi/ZoqNff6jPYI/0.jpg)](https://www.youtube.com/watch?v=ZoqNff6jPYI)
 
 ## 🔧 코드 분석 및 성능 개선
+
+### 🔧🔧🔧 최근 페이지 렌더링 시간 1800 ms -> 498ms 축소 🔧🔧🔧
 
 ![image](https://github.com/chanyoungcoding/Coffee-site/assets/95753171/7dc3cffa-d5bd-408e-826e-178729e460c1)
 
