@@ -1,16 +1,16 @@
-// OrderForm.tsx
 import React, {useEffect} from 'react';
 import { useRecoilState, useRecoilValue } from 'recoil';
+import { useNavigate } from 'react-router-dom';
 
 
 import { shopBaketPrice, shopOrder } from '../../../recoil/shop';
-import { useNavigate } from 'react-router-dom';
 import ShopProgress from '../ShopBasket/ShopProgress';
 import { userName } from '../../../recoil/shop';
 import { useApiBaket } from '../../../services/api';
 import { shopBaket } from '../../../recoil/shop';
 
 import '../../../styles/shoporder.scss';
+import Loading from '../../Loading/Loading';
 
 const ShopOrder = () => {
   const [orderData, setOrderData] = useRecoilState(shopOrder);
@@ -44,7 +44,7 @@ const ShopOrder = () => {
     </div>
   )
 
-  if(isLoading) return <p>로딩중입니다..</p>
+  if(isLoading) return <Loading/>
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -56,39 +56,49 @@ const ShopOrder = () => {
       <ShopProgress/>
       <div className="shoporder__inner">
         <div className="shoporder__form">
+
           <h1>주문 정보</h1>
+
           <form onSubmit={handleSubmit}>
+
             <div className='form__input'>
               <label htmlFor="name">이름</label>
               <input type="text" id="name" value={orderData.name} onChange={(e) => setOrderData({ ...orderData, name: e.target.value })} required/>
             </div>
+
             <div className='form__input'>
               <label htmlFor="address">주소</label>
               <input type="text" id="address" value={orderData.address} onChange={(e) => setOrderData({ ...orderData, address: e.target.value })} required/>
             </div>
+
             <div className='form__input'>
               <label htmlFor="name">전화번호</label>
               <input type="text" id="Phonenumber" value={orderData.phoneNumber} onChange={(e) => setOrderData({ ...orderData, phoneNumber: e.target.value })} required/>
             </div>
+
             <button type="submit" className='form__button'>주문 확인</button>
           </form>
         </div>
+
         <div className="shoporder__myorder">
+
           <h1>Submit my order</h1>
+
           <div className="myorder__receipt">
             <p>Count</p>
             {totalCount}
           </div>
+
           <div className="myorder__receipt">
             <p>Products</p>
-            <p>
-            {totalProductName?.map(product => `${product} `)}
-            </p>
+            <p>{totalProductName?.map(product => `${product} `)}</p>
           </div>
+
           <div className="myorder__receipt">
             <p>Total</p>
             {totalPrice}
           </div>
+          
         </div>
       </div>
     </div>

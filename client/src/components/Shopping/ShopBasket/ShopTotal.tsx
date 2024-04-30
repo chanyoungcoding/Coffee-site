@@ -1,10 +1,12 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { AiOutlinePlus  } from "react-icons/ai";
 import {LuEqual} from "react-icons/lu";
 import { useRecoilState, useRecoilValue } from "recoil";
+import styled from "styled-components";
+
 import { shopBaket, userName } from "../../../recoil/shop";
 import { useApiBaket } from "../../../services/api";
-import styled from "styled-components";
+import Loading from "../../Loading/Loading";
 
 const TotalPriceContainer = styled.div`
   display: flex;
@@ -36,13 +38,13 @@ const FormulaBox = styled.div`
   align-items: center;
 `
 
-const ShopTotal:React.FC = () => {  
+const ShopTotal = () => {  
 
   const userDB = 'https://port-0-coffeesiteserver-32updzt2alpmp3ic8.sel4.cloudtype.app/api/Basket';
   const username = useRecoilValue(userName);
 
 
-  const { data } = useApiBaket(userDB, username);
+  const { data, isError, isLoading } = useApiBaket(userDB, username);
   const [coffee, setCoffee] = useRecoilState(shopBaket);
 
   useEffect(() => {
@@ -51,26 +53,40 @@ const ShopTotal:React.FC = () => {
 
   const totalPrice = coffee?.reduce((prev,cur) => prev + cur.price, 0).toString();
 
+  if(isError) return (
+    <div className='mainmenu__error'>
+      <p>무엇인가 에러가 발생했습니다.</p>
+    </div>
+  )
+
+  if(isLoading) return <Loading/>
+
   return ( 
     <TotalPriceContainer>
+
       <div>
         <InformationBox>총 상품금액</InformationBox>
         <PriceBox>{totalPrice}원</PriceBox>
       </div>
+
       <FormulaBox>
         <AiOutlinePlus size="25"/>
       </FormulaBox>
+
       <div>
         <InformationBox>총 배송비</InformationBox>
         <PriceBox>0원</PriceBox>
       </div>
+
       <FormulaBox>
         <LuEqual size="25"/>
       </FormulaBox>
+
       <div>
         <InformationBox>결제예정금액</InformationBox>
         <PriceBox>{totalPrice}원</PriceBox>
       </div>
+
     </TotalPriceContainer>
   );
 }

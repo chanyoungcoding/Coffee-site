@@ -39,14 +39,17 @@ const IconLink = styled.a`
   margin-left: 15px;
 `;
 
-const Footer: React.FC = () => {
+const Footer = () => {
   return (
     <StyledFooter>
       <Inner>
+
         <Introduce>
           <p>CHAN COFFEE - &#169; {getCurrentYear()}</p>
         </Introduce>
+
         <Logo />
+
         <IconContainer>
           <IconLink href="/">
             <AiFillFacebook size="40" />
@@ -58,6 +61,7 @@ const Footer: React.FC = () => {
             <AiFillYoutube size="40" />
           </IconLink>
         </IconContainer>
+        
       </Inner>
     </StyledFooter>
   );

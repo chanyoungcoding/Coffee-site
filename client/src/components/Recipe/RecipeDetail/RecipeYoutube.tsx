@@ -23,7 +23,7 @@ const RecipeYoutube:React.FC<YoutubeData> = ({data}) => {
     <YoutubeContainer>
       <YouTube 
         className="youtube"
-        videoId={youtubeUrl}//동영상 주소
+        videoId={youtubeUrl}
         opts={options}
       />
     </YoutubeContainer>

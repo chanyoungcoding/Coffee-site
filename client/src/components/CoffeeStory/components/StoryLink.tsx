@@ -36,14 +36,17 @@ const LinkBox = styled.div`
 const StoryLink:React.FC = () => {
   return ( 
     <StoryLinkContainer>
+
       <LinkBox>
         <li><NavLink to={'/coffeeproductionprocess'}>커피재배와 생산과정</NavLink></li>
         <li><NavLink to={'/coffeehistory'}>커피의 역사</NavLink></li>
       </LinkBox>
+
       <LinkBox>
         <li><NavLink to={'/coffeetypes'}>커피의 종류</NavLink></li>
         <li><NavLink to={'/coffeehealth'}>커피의 건강</NavLink></li>
       </LinkBox>
+      
     </StoryLinkContainer>
   );
 }

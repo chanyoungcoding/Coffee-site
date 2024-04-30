@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import coffeLogo from '../assets/coffeeicon.png'
 
@@ -12,11 +11,9 @@ const StyledLogo = styled.div`
   border-radius: 100%;
 `
 
-const Logo:React.FC = () => {
+const Logo = () => {
   return (
-  <StyledLogo>
-    <img src={coffeLogo} alt='#'></img>
-  </StyledLogo>)
+  <StyledLogo><img src={coffeLogo} alt='#'/></StyledLogo>)
 }
 
 export default Logo;

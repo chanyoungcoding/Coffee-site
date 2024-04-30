@@ -1,5 +1,4 @@
 import React from "react";
-import { MenuDetail } from "../../../../models/coffee";
 import styled from "styled-components";
 
 const CoffeeLine = styled.div`
@@ -39,16 +38,25 @@ const CoffeePrice = styled.p`
   }
 `
 
-const MenuDetail:React.FC<MenuDetail> = React.memo(({coffeeName, coffeeIntro, coffeePrice}) => {
+interface MenuDetailData {
+  coffeeName:string;
+  coffeeIntro:string;
+  coffeePrice:string;
+}
+
+const MenuDetail:React.FC<MenuDetailData> = React.memo(({coffeeName, coffeeIntro, coffeePrice}) => {
   return (
     <CoffeeLine className="fourth__container">
+
       <LineLeft className="container__left">
         <h3>{coffeeName}</h3>
         <p>{coffeeIntro}</p>
       </LineLeft>
+
       <div className="container__right">
         <CoffeePrice>{coffeePrice}원</CoffeePrice>
       </div>
+      
     </CoffeeLine>
   );
 })

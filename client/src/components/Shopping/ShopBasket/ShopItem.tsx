@@ -1,9 +1,10 @@
 import React, {useEffect} from "react";
+import styled from "styled-components";
 
 import { useRecoilValue, useRecoilState } from "recoil";
 import { userName, shopBaket } from "../../../recoil/shop";
 import { useApiBaket, useDeleteBasket } from "../../../services/api";
-import styled from "styled-components";
+import Loading from "../../Loading/Loading";
 
 const SaveProductContainer = styled.div`
   display: flex;
@@ -58,16 +59,20 @@ const QuantityButton = styled.button`
 const ShopItem:React.FC = () => {
 
   const username = useRecoilValue(userName);
-
-  const userDB = 'https://port-0-coffeesiteserver-32updzt2alpmp3ic8.sel4.cloudtype.app/api/Basket';
-  const {mutate} = useDeleteBasket();
-
-  const { data, isError, isLoading } = useApiBaket(userDB, username);
   const [coffee, setCoffee] = useRecoilState(shopBaket);
 
-  useEffect(() => {
-    setCoffee(data);
-  },[setCoffee,data])
+  const userDB = 'https://port-0-coffeesiteserver-32updzt2alpmp3ic8.sel4.cloudtype.app/api/Basket';
+
+  const {mutate} = useDeleteBasket();
+
+  const { 
+    data, 
+    isError, 
+    isLoading 
+  } = useApiBaket(userDB, username);
+  
+
+  useEffect(() => { setCoffee(data) },[ setCoffee, data ])
 
   const onClickPlus = (itemName:string, itemPrice: number | undefined) => {
     const plus = 'plus';
@@ -85,35 +90,44 @@ const ShopItem:React.FC = () => {
     </div>
   )
 
-  if(isLoading) return <p>로딩중입니다..</p>
+  if(isLoading) return <Loading/>
 
   return (
     <>
       {coffee?.map((item,index)=> (
         <SaveProductContainer key={index} className="basket__inner">
+
           <ProductNameBox className="inner__left">
+
             <ProductNameBoxTop>
               <p>상품명</p>
             </ProductNameBoxTop>
+
             <ProductNameBoxBottom>
               <p>{item.name}</p>
             </ProductNameBoxBottom>
+
           </ProductNameBox>
           <ProductInformationBox className="inner__right">
+
             <ProductInformationBoxTop>
               <p>수량</p>
               <p>판매가</p>
               <p>배송비</p>
             </ProductInformationBoxTop>
+
             <ProductInformationBoxBottom className="right__bottom">
+
               <div className="bottom__count" style={{display: "flex"}}>
                 <QuantityButton onClick={() => onClickMinus(item.name, item.itemPrice)}>-</QuantityButton>
                 <p>{item.count}</p>
                 <QuantityButton onClick={() => onClickPlus(item.name, item.itemPrice)}>+</QuantityButton>
               </div>
+              
               <p>{item.price}원</p>
               <p>무료</p>
             </ProductInformationBoxBottom>
+            
           </ProductInformationBox>
         </SaveProductContainer>
       ))}

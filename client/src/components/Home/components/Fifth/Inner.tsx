@@ -1,6 +1,6 @@
-import React from "react";
-import Button from "../../../Button";
 import styled from "styled-components";
+
+import Button from "../../../Button";
 
 const InnerBox = styled.div`
   h1 {
@@ -15,11 +15,14 @@ const InnerBox = styled.div`
   }
 `
 
-const Inner:React.FC = () => {
+const Inner = () => {
   return ( 
     <InnerBox className="inner__box">          
+
       <h1>레시피</h1>
+
       <h2>커피 레시피를 참고해서 커피를 만들어 보세요.</h2>
+
       <Button href="/recipeHome">보러 가기</Button>
     </InnerBox>
   );

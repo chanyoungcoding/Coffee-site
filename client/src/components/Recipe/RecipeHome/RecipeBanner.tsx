@@ -1,4 +1,3 @@
-import React from "react";
 import Button from "../../Button";
 import styled from "styled-components";
 
@@ -40,14 +39,16 @@ const Banner = styled.div`
 `
 
 
-const RecipeBanner:React.FC = () => {
+const RecipeBanner = () => {
   return ( 
     <BannerBackground>
+
       <Banner>
         <p>Our Recipe</p>
         <h1>레시피를 보고 따라 만들어 보세요</h1>
         <Button href={`/recipe/아메리카노`}>가장 인기 있는 메뉴</Button>
       </Banner>
+      
     </BannerBackground>
   );
 }

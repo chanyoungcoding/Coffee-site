@@ -39,12 +39,16 @@ const HomeFourth:React.FC = () => {
 
   return ( 
     <div className="homefourth">
+
       <FourthSubTitle>What Happens Here</FourthSubTitle>
+
       <FourthTitle>요즘 커피 가격</FourthTitle>
+
       <FourthContainer ref={ref} className="homefourth__container">
         <Left inView={inView}/>
         <Right inView={inView}/>
       </FourthContainer>
+      
     </div>
   );
 }

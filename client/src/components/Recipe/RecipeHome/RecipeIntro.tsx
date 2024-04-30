@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { useApiDataNumber } from "../../../services/api";
 import Button from "../../Button";
+import Loading from "../../Loading/Loading";
 
 const RecipeTitle = styled.h1`
   margin-bottom: 50px;
@@ -54,16 +55,24 @@ const RecipeButton = styled.button`
 `
 
 const RecipeIntro = () => {
+
   const coffeeDB = 'https://port-0-coffeesiteserver-32updzt2alpmp3ic8.sel4.cloudtype.app/api/coffeeNumber';
 
-  const {data, isLoading, isError, changeNumber } = useApiDataNumber(coffeeDB);
+  const {
+    data, 
+    isLoading, 
+    isError, 
+    changeNumber 
+  } = useApiDataNumber(coffeeDB);
 
   if(isError) return <div className='mainmenu__error'><p>에러가 발생했습니다..</p></div>
-  if(isLoading) return <p>로딩중입니다..</p>
+  if(isLoading) return <Loading/>
 
   return ( 
     <div className="recipehome__recommend">
+
       <RecipeTitle>레시피</RecipeTitle>
+
       <RecipeContainer>
         {data?.map(item => (
           <RecipeBox key={item._id}>
@@ -74,6 +83,7 @@ const RecipeIntro = () => {
           </RecipeBox>
         ))}
       </RecipeContainer>
+      
       <RecipeButton onClick={changeNumber}>더보기</RecipeButton>
   </div>
   );

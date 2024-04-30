@@ -61,14 +61,19 @@ const NumberOfProduct:React.FC<NumberOfProduct> = ({data}) => {
   return ( 
     <>
       <div className="intro__order">
+
         <p>동진시장 블렌드</p>
+
         <div className="order__calculate">
           <button onClick={onClickMinus}>-</button>
           <p>{count}</p>
           <button onClick={onClickPlus}>+</button>
         </div>
+
       </div>
+
       <p className="total__price">총 금액 {price}</p>
+      
       {data?.map(item=> (
         <div className="intro__button" key={item.coffeeNumber}>
           <button 

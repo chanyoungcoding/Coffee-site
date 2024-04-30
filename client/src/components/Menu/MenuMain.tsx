@@ -1,11 +1,11 @@
-import React, {useEffect, useState } from 'react';
-import '../../styles/pagination.scss';
-
-import Button from '../Button';
-import { useApiDataSlice } from '../../services/api';
-
+import {useEffect, useState } from 'react';
 import Pagination from 'react-js-pagination';
 import styled from 'styled-components';
+
+import { useApiDataSlice } from '../../services/api';
+import '../../styles/pagination.scss';
+import Button from '../Button';
+import Loading from '../Loading/Loading';
 
 const MenuTitle = styled.h1`
   margin-bottom: 30px;
@@ -41,7 +41,8 @@ const DetailName = styled.p`
   }
 `
 
-const MenuMain: React.FC = () => {
+const MenuMain = () => {
+  
   const [page, setPage] = useState<number>(1);
   const itemsPerPage = 4; 
 
@@ -51,32 +52,43 @@ const MenuMain: React.FC = () => {
 
   const coffeeDB = 'https://port-0-coffeesiteserver-32updzt2alpmp3ic8.sel4.cloudtype.app/api/coffee'
 
-  const {data, currentData, isError, setCurrentData} = useApiDataSlice(coffeeDB, itemsPerPage);
+  const {
+    data, 
+    currentData, 
+    isError, 
+    isLoading, 
+    setCurrentData
+  } = useApiDataSlice(coffeeDB, itemsPerPage);
 
-  // 페이지가 변경될 때마다 보여줄 데이터 변경
   useEffect(() => {
     const startIndex = (page - 1) * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
     setCurrentData(data.slice(startIndex, endIndex));
   }, [page, data, setCurrentData]);
 
-  //에러 발생시 출력
+
+  if(isLoading) return <Loading/>
+
   if(isError) return <div className='mainmenu__error'><p>에러가 발생했습니다.</p></div>
 
   return (
     <div className='menumain'>
+
       <MenuTitle>메뉴</MenuTitle>
+
       <MenuBox>
       {currentData.map((item) => (
         <MenuDetail key={item._id}>
+
           <DetailImg src={item.imgurl} alt="#" />
           <DetailName>{item.name}</DetailName>
           <Button href={`/menuDetail/${item.name}`}>자세한 정보</Button>
+
         </MenuDetail>
       ))}
+
       </MenuBox>
 
-      {/* 페이지네이션 컴포넌트 */}
       <Pagination
         activePage={page}
         itemsCountPerPage={itemsPerPage}
@@ -86,6 +98,7 @@ const MenuMain: React.FC = () => {
         nextPageText={'>'}
         onChange={handlePageChange}
       />
+
     </div>
   );
 };

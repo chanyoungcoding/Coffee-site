@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 
 const BasketProgressContainer = styled.div`
@@ -41,23 +40,29 @@ const ProgressName = styled.p`
   }
 `
 
-const ShopProgress:React.FC = () => {
+const ShopProgress = () => {
   return ( 
     <BasketProgressContainer className="basket__progress">
+
       <BasketProgressBox className="progress__basket">
         <ProgressNumber className="basket__procedure">01</ProgressNumber>
         <ProgressName className="basket__procedurename">장바구니</ProgressName>
       </BasketProgressBox>
+
       <BasketProgressLine/>
+
       <BasketProgressBox className="progress__order">
         <ProgressNumber className="basket__procedure">02</ProgressNumber>
         <ProgressName className="basket__procedurename">주문/결제</ProgressName>
       </BasketProgressBox>
+
       <BasketProgressLine/>
+
       <BasketProgressBox className="progress__complete">
         <ProgressNumber className="basket__procedure">03</ProgressNumber>
         <ProgressName className="basket__procedurename">주문완료</ProgressName>
       </BasketProgressBox>
+      
     </BasketProgressContainer>
   );
 }

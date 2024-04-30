@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { SlBasket, SlLogin, SlLogout,SlUser, SlLoop, SlCup } from "react-icons/sl";
 import Cookies from "js-cookie";
 
@@ -7,7 +7,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 import '../styles/navbar.scss'
 
-const Navbar:React.FC = () => {
+const Navbar = () => {
 
   const username = Cookies.get('사용자명')
   const navigate = useNavigate();
@@ -35,12 +35,15 @@ const Navbar:React.FC = () => {
           <button className="logout" onClick={clearCookies}>
             <SlLogout size="30"/>
           </button>
+
           <Link to='/shopbasket'>
             <SlBasket size="30"/>
           </Link> 
+          
           <Link to='/mypage'>
             <SlUser size="30"/>
           </Link>
+
           <Link to='/kakaomap'>
             <SlCup size="30"/>
           </Link>
@@ -50,9 +53,11 @@ const Navbar:React.FC = () => {
           <Link to='/login'>
             <SlLogin size="30"/>
           </Link>
+
           <Link to='/signin'>
             <SlLoop size="30"/>
           </Link>
+
           <Link to='/kakaomap'>
             <SlCup size="30"/>
           </Link>
@@ -62,6 +67,7 @@ const Navbar:React.FC = () => {
       <div className="navbar__logo" onClick={toggleNavVisible}>
         <img src={coffeeIcon} alt="#" />
       </div>
+
       <div className="navbar__li">
         <div className="li__inner">
           <div className={`li__left ${visible ? "visible" : ""}`}>
@@ -70,6 +76,7 @@ const Navbar:React.FC = () => {
             <Link to='/recipeHome'><li>RECIPE</li></Link>
           </div>
         </div>
+        
         <div className="li__inner">
           <div className={`li__right ${visible ? "visible" : ""}`}>
             <Link to='/country'><li>COUNTRY</li></Link>

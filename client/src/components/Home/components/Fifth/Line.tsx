@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 
 const LineContainer = styled.div`
@@ -17,12 +16,15 @@ const LineContainer = styled.div`
   }
 `
 
-const Line:React.FC = () => {
+const Line = () => {
+
   const lineText = ['COFFEE','COFFEE','COFFEE','COFFEE','COFFEE','COFFEE'];
 
   return ( 
     <LineContainer className="homefifth__line">
+
       {lineText.map((text,index) => (<p key={index}>{text}</p>))}
+
     </LineContainer>
   );
 }

@@ -1,9 +1,8 @@
-import React from "react";
 import history_1 from '../../assets/history01.jpeg';
 import history_2 from '../../assets/history02.jpeg';
 import history_3 from '../../assets/history03.jpeg';
 
-const CoffeeHistory:React.FC = () => {
+const CoffeeHistory = () => {
   return ( 
     <div className="coffeehistory">
       <h1>커피의 역사</h1>
