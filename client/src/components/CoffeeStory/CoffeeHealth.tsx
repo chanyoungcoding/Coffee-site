@@ -1,5 +1,10 @@
-import health01 from '../../assets/health01.jpeg';
-import health02 from '../../assets/health02.jpeg';
+import health01_png from '../../assets/health01.png';
+import health01_jpg from '../../assets/health01.jpg';
+import health01_webp from '../../assets/health01.webp';
+
+import health02_png from '../../assets/health02.png';
+import health02_jpg from '../../assets/health02.jpg';
+import health02_webp from '../../assets/health02.webp';
 
 const CoffeeHealth = () => {
   return ( 
@@ -7,7 +12,11 @@ const CoffeeHealth = () => {
       <h1>커피와 건강</h1>
       <h2>커피가 미치는 좋은 영향</h2>
       <div className="health__inner">
-        <img src={health01} alt="#" className='img1_1'/>
+        <picture>
+          <source srcSet={health01_webp} className='img1_1'/>
+          <source srcSet={health01_jpg} className='img1_1'/>
+          <img src={health01_png} alt="#" className='img1_1'/>
+        </picture>
         <div className="inner__introduce">
           <h3>각종 암예방 효과</h3>
           <p>
@@ -28,10 +37,18 @@ const CoffeeHealth = () => {
             하버드 보건대학 연구팀에서는 하루에 2-4잔 정도의 커피를 마신 사람들의 자살 위험률도 무려 50%나 떨어진다고 한다.
           </p>
         </div>
-        <img src={health01} alt="#" className='img1_3'/>
+        <picture>
+          <source srcSet={health01_webp} className='img1_3' />
+          <source srcSet={health01_jpg} className='img1_3' />
+          <img src={health01_png} alt="#" className='img1_3' />
+        </picture>
       </div>
       <div className="health__inner">
-        <img src={health02} alt="#" className='img_2' />
+        <picture>
+          <source srcSet={health02_webp} className='img_2' />
+          <source srcSet={health02_jpg} className='img_2' />
+          <img src={health02_png} alt="#" className='img_2' />
+        </picture>
         <div className="inner_introduce">
           <h3>성인병 예방 및 항산화 효과</h3>
           <p>

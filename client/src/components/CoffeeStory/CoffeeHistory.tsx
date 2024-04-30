@@ -1,6 +1,14 @@
-import history_1 from '../../assets/history01.jpeg';
-import history_2 from '../../assets/history02.jpeg';
-import history_3 from '../../assets/history03.jpeg';
+import history_1_png from '../../assets/history01.png';
+import history_1_jpg from '../../assets/history01.jpg';
+import history_1_webp from '../../assets/history01.webp';
+
+import history_2_png from '../../assets/history02.png';
+import history_2_jpg from '../../assets/history02.jpg';
+import history_2_webp from '../../assets/history02.webp';
+
+import history_3_png from '../../assets/history03.png';
+import history_3_jpg from '../../assets/history03.jpg';
+import history_3_webp from '../../assets/history03.webp';
 
 const CoffeeHistory = () => {
   return ( 
@@ -8,7 +16,11 @@ const CoffeeHistory = () => {
       <h1>커피의 역사</h1>
       <h2>커피의 발견</h2>
       <div className="history__inner">
-        <img src={history_1} alt="#" className="img1_3"/>
+        <picture>
+          <source srcSet={history_1_webp} className='img1_3' />
+          <source srcSet={history_1_jpg} className='img1_3' />
+          <img src={history_1_png} alt="#" className='img1_3' />
+        </picture>
         <p>
           오랜 옛날 &#40;6~7세기경으로 추정&#41; 아프리카의 에디오피아&#40;Ethiopia&#41; 양치기 소년 칼디&#40;Kaldi&#41;가 살았는데, 어느날 칼디는 자기가 기르고 있는 염소들이 흥분하여 이리저리 뛰어다니더니 그날밤 잠을 자지 못하는 것을 발견했다.<br/> 
           염소들이 갑작스레 흥분하는 모습을 본 칼디는 그 뒤로 염소들이 주변에 잇는 어떤 나무의 빨간 열매를 따 먹었을 때 이러한 현상이 일어난다는 것을 알게 되었다.<br/>
@@ -31,11 +43,19 @@ const CoffeeHistory = () => {
           커피나무가 세계로 퍼져 나가면서 인도, 서인도제도, 중앙아메리카, 그리고 에티오피아의 바로 이웃나라인 케냐, 탄자니아 등에서도 광범위하게 재배되었다.<br/>
           커피가 점차 대중화되면서 유럽 곳곳에 커피하우스가 생기기 시작했다.<br/>
         </p>
-        <img src={history_2} alt="#" className="img1_2"/>
+        <picture>
+          <source srcSet={history_2_webp} className="img1_2" />
+          <source srcSet={history_2_jpg} className="img1_2" />
+          <img src={history_2_png} alt="#" className="img1_2" />
+        </picture>
       </div>
       <h2>우리나라 커피의 역사</h2>
       <div className="history__inner">
-        <img src={history_3} alt="#" className="img1_3"/>
+        <picture>
+          <source srcSet={history_3_webp} className="img1_3" />
+          <source srcSet={history_3_jpg} className="img1_3" />
+          <img src={history_3_png} alt="#" className="img1_3" />
+        </picture>
         <p>
           한국에서는 1895년 을미사변 당시 러시아 공사관에 피신해 있던 고종황제가 처음 커피를 마셨다고 전해진다.<br/>
           고종은 세자와 함께 약 1년간 러시아 공사관에 머물면서 커피를 마셨고, 궁중의 다례의식에까지 사용하도록 했을 만큼 커피를 좋아했다.<br/>

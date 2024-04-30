@@ -1,4 +1,3 @@
-import React from "react";
 import { NavLink } from "react-router-dom";
 import '../../../styles/coffeeStory.scss';
 import styled from "styled-components";
@@ -33,7 +32,7 @@ const LinkBox = styled.div`
   }
 `
 
-const StoryLink:React.FC = () => {
+const StoryLink = () => {
   return ( 
     <StoryLinkContainer>
 
